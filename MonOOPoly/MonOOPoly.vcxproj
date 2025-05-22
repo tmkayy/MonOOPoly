@@ -123,16 +123,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\Downloads\homework\homework\MyString.h" />
-    <ClInclude Include="..\..\..\..\Downloads\homework\homework\Vector.hpp" />
     <ClInclude Include="Bank.h" />
+    <ClInclude Include="Board.h" />
+    <ClInclude Include="CardField.h" />
     <ClInclude Include="Consts.h" />
+    <ClInclude Include="Field.h" />
+    <ClInclude Include="Jail.h" />
+    <ClInclude Include="Mortgage.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Property.h" />
+    <ClInclude Include="Vector.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\Downloads\homework\homework\MyString.cpp" />
     <ClCompile Include="Bank.cpp" />
+    <ClCompile Include="Board.cpp" />
+    <ClCompile Include="CardField.cpp" />
+    <ClCompile Include="Jail.cpp" />
+    <ClCompile Include="Mortgage.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Property.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

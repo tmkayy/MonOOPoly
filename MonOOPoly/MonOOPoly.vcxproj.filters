@@ -25,15 +25,21 @@
     <Filter Include="Source Files\player">
       <UniqueIdentifier>{f72bc477-c205-451f-a54a-e9c15a96f00e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Board">
+      <UniqueIdentifier>{edb6ccad-9754-4ec3-999b-b0b1267fa73f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Board">
+      <UniqueIdentifier>{31488f46-8fa4-44e7-ad84-413f8dc2fc04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Board\Mortgage">
+      <UniqueIdentifier>{e0a2e897-f8da-45f1-bd5f-7524512f1982}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Board\Mortgage">
+      <UniqueIdentifier>{57ba3b3c-a5dd-4105-9535-374b1605fa0d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Consts.h">
-      <Filter>Header Files\utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\Downloads\homework\homework\MyString.h">
-      <Filter>Header Files\utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\Downloads\homework\homework\Vector.hpp">
       <Filter>Header Files\utils</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
@@ -42,16 +48,52 @@
     <ClInclude Include="Bank.h">
       <Filter>Header Files\player</Filter>
     </ClInclude>
+    <ClInclude Include="Field.h">
+      <Filter>Header Files\Board</Filter>
+    </ClInclude>
+    <ClInclude Include="Property.h">
+      <Filter>Header Files\Board</Filter>
+    </ClInclude>
+    <ClInclude Include="Mortgage.h">
+      <Filter>Header Files\Board\Mortgage</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.hpp">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="CardField.h">
+      <Filter>Header Files\Board</Filter>
+    </ClInclude>
+    <ClInclude Include="Jail.h">
+      <Filter>Header Files\Board</Filter>
+    </ClInclude>
+    <ClInclude Include="Board.h">
+      <Filter>Header Files\Board</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Downloads\homework\homework\MyString.cpp">
-      <Filter>Source Files\utils</Filter>
-    </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Source Files\player</Filter>
     </ClCompile>
     <ClCompile Include="Bank.cpp">
       <Filter>Source Files\player</Filter>
+    </ClCompile>
+    <ClCompile Include="Property.cpp">
+      <Filter>Source Files\Board</Filter>
+    </ClCompile>
+    <ClCompile Include="Mortgage.cpp">
+      <Filter>Source Files\Board\Mortgage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\homework\homework\MyString.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="CardField.cpp">
+      <Filter>Source Files\Board</Filter>
+    </ClCompile>
+    <ClCompile Include="Jail.cpp">
+      <Filter>Source Files\Board</Filter>
+    </ClCompile>
+    <ClCompile Include="Board.cpp">
+      <Filter>Source Files\Board</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -32,9 +32,9 @@ bool Player::isImprisoned()
 	return imprisoned;
 }
 
-Player::Player(Token username, double money)
+Player::Player(size_t username, double money)
 {
-	this->username = username;
+	setUsername(username);
 	this->money = money;
 }
 

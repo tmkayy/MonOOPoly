@@ -20,6 +20,6 @@ public:
 	bool isImprisoned();
 
 	Player() : username(Token::Unknown), money(0), id(0), imprisoned(false){}
-	Player(Token username, double money);
+	Player(size_t username, double money);
 };
 
