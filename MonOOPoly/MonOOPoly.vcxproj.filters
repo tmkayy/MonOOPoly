@@ -37,6 +37,12 @@
     <Filter Include="Source Files\Board\Mortgage">
       <UniqueIdentifier>{57ba3b3c-a5dd-4105-9535-374b1605fa0d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\cards">
+      <UniqueIdentifier>{db6c05f2-0820-4e91-9d68-25812c1f5d33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\cards">
+      <UniqueIdentifier>{2b039c92-8eb3-455e-a8e1-2eaf6552223f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Consts.h">
@@ -69,6 +75,27 @@
     <ClInclude Include="Board.h">
       <Filter>Header Files\Board</Filter>
     </ClInclude>
+    <ClInclude Include="Card.h">
+      <Filter>Header Files\cards</Filter>
+    </ClInclude>
+    <ClInclude Include="MovePositionCard.h">
+      <Filter>Header Files\cards</Filter>
+    </ClInclude>
+    <ClInclude Include="PaymentCard.h">
+      <Filter>Header Files\cards</Filter>
+    </ClInclude>
+    <ClInclude Include="GroupPaymentCard.h">
+      <Filter>Header Files\cards</Filter>
+    </ClInclude>
+    <ClInclude Include="CardDeck.h">
+      <Filter>Header Files\cards</Filter>
+    </ClInclude>
+    <ClInclude Include="Stack.hpp">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="MyString.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Player.cpp">
@@ -83,9 +110,6 @@
     <ClCompile Include="Mortgage.cpp">
       <Filter>Source Files\Board\Mortgage</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Downloads\homework\homework\MyString.cpp">
-      <Filter>Source Files\utils</Filter>
-    </ClCompile>
     <ClCompile Include="CardField.cpp">
       <Filter>Source Files\Board</Filter>
     </ClCompile>
@@ -94,6 +118,18 @@
     </ClCompile>
     <ClCompile Include="Board.cpp">
       <Filter>Source Files\Board</Filter>
+    </ClCompile>
+    <ClCompile Include="MovePositionCard.cpp">
+      <Filter>Source Files\cards</Filter>
+    </ClCompile>
+    <ClCompile Include="PaymentCard.cpp">
+      <Filter>Source Files\cards</Filter>
+    </ClCompile>
+    <ClCompile Include="GroupPaymentCard.cpp">
+      <Filter>Source Files\cards</Filter>
+    </ClCompile>
+    <ClCompile Include="CardDeck.cpp">
+      <Filter>Source Files\cards</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

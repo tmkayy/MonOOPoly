@@ -38,4 +38,9 @@ Player::Player(size_t username, double money)
 	this->money = money;
 }
 
+bool Player::buyProperty(const Property& property)
+{
+	if(money<property.)
+}
+
 

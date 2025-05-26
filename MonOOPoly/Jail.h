@@ -1,6 +1,7 @@
 #pragma once
-class Jail
+#include "Field.h"
+class Jail:public Field
 {
-
+	Field* clone() const override;
 };
 

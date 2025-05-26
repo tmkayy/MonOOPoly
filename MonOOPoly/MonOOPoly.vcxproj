@@ -125,22 +125,32 @@
   <ItemGroup>
     <ClInclude Include="Bank.h" />
     <ClInclude Include="Board.h" />
+    <ClInclude Include="Card.h" />
+    <ClInclude Include="CardDeck.h" />
     <ClInclude Include="CardField.h" />
     <ClInclude Include="Consts.h" />
     <ClInclude Include="Field.h" />
+    <ClInclude Include="GroupPaymentCard.h" />
     <ClInclude Include="Jail.h" />
     <ClInclude Include="Mortgage.h" />
+    <ClInclude Include="MovePositionCard.h" />
+    <ClInclude Include="MyString.h" />
+    <ClInclude Include="PaymentCard.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Property.h" />
+    <ClInclude Include="Stack.hpp" />
     <ClInclude Include="Vector.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Downloads\homework\homework\MyString.cpp" />
     <ClCompile Include="Bank.cpp" />
     <ClCompile Include="Board.cpp" />
+    <ClCompile Include="CardDeck.cpp" />
     <ClCompile Include="CardField.cpp" />
+    <ClCompile Include="GroupPaymentCard.cpp" />
     <ClCompile Include="Jail.cpp" />
     <ClCompile Include="Mortgage.cpp" />
+    <ClCompile Include="MovePositionCard.cpp" />
+    <ClCompile Include="PaymentCard.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Property.cpp" />
   </ItemGroup>

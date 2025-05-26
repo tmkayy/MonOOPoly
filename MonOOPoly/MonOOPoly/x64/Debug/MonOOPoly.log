@@ -1,0 +1,130 @@
+﻿  MyString.cpp
+  Bank.cpp
+\Downloads\homework\homework\MyString.cpp(1,1): error C1083: Cannot open source file: '..\..\..\..\Downloads\homework\homework\MyString.cpp': No such file or directory
+  (compiling source file '/Downloads/homework/homework/MyString.cpp')
+  
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Consts.h(7,2): error C2086: 'Token RaceCar': redefinition
+  (compiling source file 'Bank.cpp')
+      C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Consts.h(6,2):
+      see declaration of 'Token::RaceCar'
+  
+  Board.cpp
+  CardDeck.cpp
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Consts.h(7,2): error C2086: 'Token RaceCar': redefinition
+  (compiling source file 'CardDeck.cpp')
+      C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Consts.h(6,2):
+      see declaration of 'Token::RaceCar'
+  
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Stack.hpp(227,23): error C2382: 'Stack<T>::free': redefinition; different exception specifications
+  (compiling source file 'CardDeck.cpp')
+      C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Stack.hpp(24,7):
+      see declaration of 'Stack<T>::free'
+  
+  CardField.cpp
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Consts.h(7,2): error C2086: 'Token RaceCar': redefinition
+  (compiling source file 'CardField.cpp')
+      C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Consts.h(6,2):
+      see declaration of 'Token::RaceCar'
+  
+  GroupPaymentCard.cpp
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Consts.h(7,2): error C2086: 'Token RaceCar': redefinition
+  (compiling source file 'GroupPaymentCard.cpp')
+      C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Consts.h(6,2):
+      see declaration of 'Token::RaceCar'
+  
+  Jail.cpp
+  Mortgage.cpp
+  MovePositionCard.cpp
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Consts.h(7,2): error C2086: 'Token RaceCar': redefinition
+  (compiling source file 'MovePositionCard.cpp')
+      C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Consts.h(6,2):
+      see declaration of 'Token::RaceCar'
+  
+  PaymentCard.cpp
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Consts.h(7,2): error C2086: 'Token RaceCar': redefinition
+  (compiling source file 'PaymentCard.cpp')
+      C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Consts.h(6,2):
+      see declaration of 'Token::RaceCar'
+  
+  Player.cpp
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Consts.h(7,2): error C2086: 'Token RaceCar': redefinition
+  (compiling source file 'Player.cpp')
+      C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Consts.h(6,2):
+      see declaration of 'Token::RaceCar'
+  
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Player.cpp(43,20): error C2059: syntax error: ')'
+  Property.cpp
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.h(14,11): error C3646: 'owner': unknown override specifier
+  (compiling source file 'Property.cpp')
+  
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.h(14,5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Property.cpp')
+  
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.h(25,27): error C2061: syntax error: identifier 'Token'
+  (compiling source file 'Property.cpp')
+  
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.h(37,11): error C3646: 'getOwner': unknown override specifier
+  (compiling source file 'Property.cpp')
+  
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.h(37,19): error C2059: syntax error: '('
+  (compiling source file 'Property.cpp')
+  
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.h(37,27): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'Property.cpp')
+  
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.h(44,19): error C2061: syntax error: identifier 'Token'
+  (compiling source file 'Property.cpp')
+  
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Consts.h(7,2): error C2086: 'Token RaceCar': redefinition
+  (compiling source file 'Property.cpp')
+      C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Consts.h(6,2):
+      see declaration of 'Token::RaceCar'
+  
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.cpp(16,5): error C2065: 'owner': undeclared identifier
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.cpp(16,19): error C2039: 'owner': is not a member of 'Property'
+      C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.h(8,7):
+      see declaration of 'Property'
+  
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.cpp(37,5): error C2065: 'owner': undeclared identifier
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.cpp(37,19): error C2039: 'owner': is not a member of 'Property'
+      C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.h(8,7):
+      see declaration of 'Property'
+  
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.cpp(38,11): error C2039: 'owner': is not a member of 'Property'
+      C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.h(8,7):
+      see declaration of 'Property'
+  
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.cpp(46,22): error C2614: 'Property': illegal member initialization: 'owner' is not a base or member
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.cpp(81,17): error C2039: 'getOwner': is not a member of 'Property'
+      C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.h(8,7):
+      see declaration of 'Property'
+  
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.cpp(81,17): error C2270: 'getOwner': modifiers not allowed on nonmember functions
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.cpp(81,43): error C2065: 'owner': undeclared identifier
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.cpp(111,16): error C2511: 'void Property::setOwner(Token)': overloaded member function not found in 'Property'
+      C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.h(8,7):
+      see declaration of 'Property'
+  
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.cpp(113,5): error C2065: 'owner': undeclared identifier
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.cpp(116,11): error C2511: 'Property::Property(double,double,double,double,Token)': overloaded member function not found in 'Property'
+      C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.h(8,7):
+      see declaration of 'Property'
+  
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.cpp(118,5): error C2352: 'Property::setPriceToBuy': a call of a non-static member function requires an object
+      C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.cpp(91,16):
+      see declaration of 'Property::setPriceToBuy'
+  
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.cpp(119,5): error C2352: 'Property::setPriceForCottage': a call of a non-static member function requires an object
+      C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.cpp(96,16):
+      see declaration of 'Property::setPriceForCottage'
+  
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.cpp(120,5): error C2352: 'Property::setPriceForCastle': a call of a non-static member function requires an object
+      C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.cpp(101,16):
+      see declaration of 'Property::setPriceForCastle'
+  
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.cpp(121,5): error C2352: 'Property::setPriceForRent': a call of a non-static member function requires an object
+      C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.cpp(106,16):
+      see declaration of 'Property::setPriceForRent'
+  
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.cpp(122,5): error C2065: 'owner': undeclared identifier
+  Generating Code...

@@ -1,6 +1,7 @@
 #pragma once
 #include "Consts.h"
 #include <stdexcept>
+#include "Property.h"
 class Player
 {
 	Token username;
@@ -21,5 +22,8 @@ public:
 
 	Player() : username(Token::Unknown), money(0), id(0), imprisoned(false){}
 	Player(size_t username, double money);
+
+	bool buyProperty(const Property& property);
+	bool sellProperty(const Property& property);
 };
 
