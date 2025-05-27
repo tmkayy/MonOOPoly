@@ -38,9 +38,19 @@ Player::Player(size_t username, double money)
 	this->money = money;
 }
 
+bool Player::deductMoney(double amount) {
+	if (amount < 0 || money < amount)
+		return false;
+	money -= amount;
+	return true;
+}
+
 bool Player::buyProperty(const Property& property)
 {
-	if(money<property.)
+	if (deductMoney(property.getPriceToBuy())) {
+		return false;
+	}
+
 }
 
 

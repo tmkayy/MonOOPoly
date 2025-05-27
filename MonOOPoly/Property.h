@@ -5,13 +5,15 @@
 #include <stdexcept>
 #include "MyString.h"
 
+class Player;
+
 class Property : public Field
 {
     double priceToBuy;
     double priceForCottage;
     double priceForCastle;
     double priceForRent;
-    Token owner;
+    Player* owner = nullptr;
     Vector<Mortgage*> mortgages;
 
     void copyFrom(const Property& other);
@@ -22,7 +24,7 @@ class Property : public Field
 public:
     Property();
     Property(double buyPrice, double cottagePrice, double castlePrice,
-        double rentPrice, Token ownerToken = Token::Unknown);
+        double rentPrice, Player* owner = nullptr);
 
     ~Property();
     Property(const Property& other);
@@ -34,16 +36,16 @@ public:
     double getPriceForCottage() const;
     double getPriceForCastle() const;
     double getPriceForRent() const;
-    Token getOwner() const;
+    Player* getOwner() const;
     const Vector<Mortgage*>& getMortgages() const;
 
     void setPriceToBuy(double price);
     void setPriceForCottage(double price);
     void setPriceForCastle(double price);
     void setPriceForRent(double price);
-    void setOwner(Token newOwner);
+    void setOwner(Player* newOwner);
 
-    bool buildCottage();
-    bool buildCastle();
+    bool buildCottage(Player* player);
+    bool buildCastle(Player* player);
     Field* clone() const override;
 };

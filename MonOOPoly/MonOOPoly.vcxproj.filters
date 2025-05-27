@@ -96,6 +96,12 @@
     <ClInclude Include="MyString.h">
       <Filter>Header Files\utils</Filter>
     </ClInclude>
+    <ClInclude Include="Cottage.h">
+      <Filter>Header Files\Board\Mortgage</Filter>
+    </ClInclude>
+    <ClInclude Include="Castle.h">
+      <Filter>Header Files\Board\Mortgage</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Player.cpp">
@@ -106,9 +112,6 @@
     </ClCompile>
     <ClCompile Include="Property.cpp">
       <Filter>Source Files\Board</Filter>
-    </ClCompile>
-    <ClCompile Include="Mortgage.cpp">
-      <Filter>Source Files\Board\Mortgage</Filter>
     </ClCompile>
     <ClCompile Include="CardField.cpp">
       <Filter>Source Files\Board</Filter>
@@ -130,6 +133,15 @@
     </ClCompile>
     <ClCompile Include="CardDeck.cpp">
       <Filter>Source Files\cards</Filter>
+    </ClCompile>
+    <ClCompile Include="Cottage.cpp">
+      <Filter>Source Files\Board\Mortgage</Filter>
+    </ClCompile>
+    <ClCompile Include="MyString.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Castle.cpp">
+      <Filter>Source Files\Board\Mortgage</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

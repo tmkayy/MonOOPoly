@@ -1,9 +1,10 @@
 #pragma once
 
 const short maxTokens = 7;
+const double cottageRent = 1.15;
+const double castleRent = 1.50;
 
 enum class Token {
-	RaceCar,
 	RaceCar,
 	Thimble,
 	ScottishTerrier,
