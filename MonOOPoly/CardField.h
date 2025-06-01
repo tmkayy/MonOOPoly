@@ -3,10 +3,11 @@
 #include "Player.h"
 #include "Stack.hpp"
 #include "Card.h"
+#include "CardDeck.h"
 class CardField:public Field
 {
 public:
 	Field* clone() const override;
-	void drawCard(Player& player, Stack<Card*> cards);
+	bool drawCard(Player& player, CardDeck& deck);
 };
 

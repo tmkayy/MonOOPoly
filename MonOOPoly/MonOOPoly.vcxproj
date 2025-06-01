@@ -140,6 +140,7 @@
     <ClInclude Include="PaymentCard.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Property.h" />
+    <ClInclude Include="SpecialField.h" />
     <ClInclude Include="Stack.hpp" />
     <ClInclude Include="Vector.hpp" />
   </ItemGroup>
@@ -157,6 +158,7 @@
     <ClCompile Include="PaymentCard.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Property.cpp" />
+    <ClCompile Include="SpecialField.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -44,7 +44,16 @@ public:
 	const T& top() const;
 
 	~Stack() noexcept;
+
+	bool isEmpty() const;
 };
+
+
+template<typename T>
+inline bool Stack<T>::isEmpty() const
+{
+	return this->size == 0;
+}
 
 template<typename T>
 inline Stack<T>::Stack() : Stack(4)

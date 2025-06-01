@@ -1,6 +1,10 @@
 #pragma once
 #include "Card.h"
+#include "PaymentCard.h"
+#include "GroupPaymentCard.h"
+#include "MovePositionCard.h"
 #include "Stack.hpp"
+#include "Vector.hpp"
 #include "Consts.h"
 class CardDeck
 {
@@ -18,6 +22,8 @@ public:
     CardDeck& operator=(const CardDeck& other);
     CardDeck& operator=(CardDeck&& other) noexcept;
 
-    void clear();
+    Stack<Card*> getCards() const;
+
+    void shuffle();
 };
 

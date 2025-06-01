@@ -2,10 +2,15 @@
 
 Field* CardField::clone() const
 {
-    return new CardField(*this);
+	return new CardField(*this);
 }
 
-void CardField::drawCard(Player& player, Stack<Card*> cards)
+bool CardField::drawCard(Player& player, CardDeck& deck)
 {
-    cards.top()->applyEffect(player);
+	if (deck.getCards().isEmpty()) {
+		return false;
+	}
+	deck.getCards().top()->applyEffect(player);
+	deck.getCards().pop();
+	return true;
 }

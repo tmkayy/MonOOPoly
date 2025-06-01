@@ -1,5 +1,10 @@
 #include "PaymentCard.h"
 
+PaymentCard::PaymentCard(double money)
+{
+    this->moneyAmount = money;
+}
+
 Card* PaymentCard::clone() const
 {
     return new PaymentCard(*this);
@@ -7,4 +12,8 @@ Card* PaymentCard::clone() const
 
 void PaymentCard::applyEffect(Player& player) const
 {
+    if (moneyAmount < 0)
+        Bank::subtractMoney(player, moneyAmount);
+    else
+        Bank::addMoney(player, moneyAmount);
 }

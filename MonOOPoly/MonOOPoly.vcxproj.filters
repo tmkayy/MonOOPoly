@@ -102,6 +102,9 @@
     <ClInclude Include="Castle.h">
       <Filter>Header Files\Board\Mortgage</Filter>
     </ClInclude>
+    <ClInclude Include="SpecialField.h">
+      <Filter>Header Files\Board</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Player.cpp">
@@ -142,6 +145,9 @@
     </ClCompile>
     <ClCompile Include="Castle.cpp">
       <Filter>Source Files\Board\Mortgage</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecialField.cpp">
+      <Filter>Source Files\Board</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
