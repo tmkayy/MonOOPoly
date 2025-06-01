@@ -20,12 +20,12 @@ public:
 	size_t getId();
 	bool isImprisoned();
 
+	void setId(int n);
+
 	Player() : username(Token::Unknown), money(0), id(0), imprisoned(false){}
 	Player(size_t username, double money);
 
-	bool deductMoney(double amount);
-
-	bool buyProperty(const Property& property);
-	bool sellProperty(const Property& property);
+	bool buyProperty(Property& property);
+	bool sellProperty(Property& property);//trade
 };
 

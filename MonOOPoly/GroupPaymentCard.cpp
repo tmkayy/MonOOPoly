@@ -1,10 +1,17 @@
 #include "GroupPaymentCard.h"
+#include "Bank.h"
+
+GroupPaymentCard::GroupPaymentCard(double money)
+{
+	this->paymentAmount = money;
+}
 
 Card* GroupPaymentCard::clone() const
 {
-    return new GroupPaymentCard(*this);
+	return new GroupPaymentCard(*this);
 }
 
-void GroupPaymentCard::applyEffect(const Player& player) const
+void GroupPaymentCard::applyEffect(Player& player) const
 {
+	//TODO
 }

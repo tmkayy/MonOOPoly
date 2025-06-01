@@ -1,20 +1,18 @@
 #include "Bank.h"
 
-void Bank::addMoney(Player& player, double cash)
+bool Bank::addMoney(Player& player, double cash)
 {
 	if (cash < 0) {
-		throw std::invalid_argument("negative money");
+		return false;
 	}
 	player.money += cash;
+	return true;
 }
 
-void Bank::subtractMoney(Player& player, double cash)
+bool Bank::subtractMoney(Player& player, double cash)
 {
-	if (cash > 0) {
-		throw std::invalid_argument("positive money");
-	}
+	if (cash < 0 || player.money < cash)
+		return false;
 	player.money -= cash;
-	if (player.money < 0) {
-		//implement
-	}
+	return true;
 }

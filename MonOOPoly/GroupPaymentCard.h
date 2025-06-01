@@ -2,8 +2,10 @@
 #include "Card.h"
 class GroupPaymentCard:public Card
 {
+	double paymentAmount = 0;
 public:
+	GroupPaymentCard(double money);
 	Card* clone() const override;
-	void applyEffect(const Player& player) const override;
+	void applyEffect(Player& player) const override;
 };
 

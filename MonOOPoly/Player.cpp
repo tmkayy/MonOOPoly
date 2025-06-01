@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Bank.h"
 
 void Player::setUsername(size_t n)
 {
@@ -32,25 +33,34 @@ bool Player::isImprisoned()
 	return imprisoned;
 }
 
+void Player::setId(int n)
+{
+	id = (n % fieldCount + fieldCount) % fieldCount;
+}
+
 Player::Player(size_t username, double money)
 {
 	setUsername(username);
 	this->money = money;
 }
 
-bool Player::deductMoney(double amount) {
-	if (amount < 0 || money < amount)
-		return false;
-	money -= amount;
-	return true;
-}
-
-bool Player::buyProperty(const Property& property)
+bool Player::buyProperty(Property& property)
 {
-	if (deductMoney(property.getPriceToBuy())) {
+	if (property.getOwner() != nullptr) {
 		return false;
 	}
 
+	if (!Bank::subtractMoney(*this, property.getPriceToBuy())) {
+		return false;
+	}
+
+	property.setOwner(this);
+	return true;
+}
+
+bool Player::sellProperty(Property& property)
+{
+	//trade
 }
 
 

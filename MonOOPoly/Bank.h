@@ -3,7 +3,7 @@
 class Bank
 {
 public:
-	void addMoney(Player& player, double cash);
-	void subtractMoney(Player& player, double cash);
+	static bool addMoney(Player& player, double cash);
+	static bool subtractMoney(Player& player, double cash);
 };
 
