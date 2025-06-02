@@ -134,6 +134,7 @@
     <ClInclude Include="Field.h" />
     <ClInclude Include="GroupPaymentCard.h" />
     <ClInclude Include="Jail.h" />
+    <ClInclude Include="Monopoly.h" />
     <ClInclude Include="Mortgage.h" />
     <ClInclude Include="MovePositionCard.h" />
     <ClInclude Include="MyString.h" />
@@ -153,6 +154,7 @@
     <ClCompile Include="Cottage.cpp" />
     <ClCompile Include="GroupPaymentCard.cpp" />
     <ClCompile Include="Jail.cpp" />
+    <ClCompile Include="Monopoly.cpp" />
     <ClCompile Include="MovePositionCard.cpp" />
     <ClCompile Include="MyString.cpp" />
     <ClCompile Include="PaymentCard.cpp" />

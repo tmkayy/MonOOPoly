@@ -43,6 +43,12 @@
     <Filter Include="Source Files\cards">
       <UniqueIdentifier>{2b039c92-8eb3-455e-a8e1-2eaf6552223f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Monopoly">
+      <UniqueIdentifier>{6dd068a3-d7e4-4763-a5d6-c090de04ffbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Monopoly">
+      <UniqueIdentifier>{11f01903-82ba-4d0f-965b-8b05215e4bf8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Consts.h">
@@ -105,6 +111,9 @@
     <ClInclude Include="SpecialField.h">
       <Filter>Header Files\Board</Filter>
     </ClInclude>
+    <ClInclude Include="Monopoly.h">
+      <Filter>Header Files\Monopoly</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Player.cpp">
@@ -148,6 +157,9 @@
     </ClCompile>
     <ClCompile Include="SpecialField.cpp">
       <Filter>Source Files\Board</Filter>
+    </ClCompile>
+    <ClCompile Include="Monopoly.cpp">
+      <Filter>Source Files\Monopoly</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

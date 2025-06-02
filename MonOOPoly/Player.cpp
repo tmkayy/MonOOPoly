@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "Bank.h"
+#include "Board.h"
 
 void Player::setUsername(size_t n)
 {
@@ -33,10 +34,6 @@ bool Player::isImprisoned()
 	return imprisoned;
 }
 
-void Player::setId(int n)
-{
-	id = (n % fieldCount + fieldCount) % fieldCount;
-}
 
 Player::Player(size_t username, double money)
 {
@@ -55,6 +52,19 @@ bool Player::buyProperty(Property& property)
 	}
 
 	property.setOwner(this);
+
+	const MyString& color = property.getColor();
+	if (color == "Brown") brownProperties++;
+	else if (color == "Light Blue") lightBlueProperties++;
+	else if (color == "Pink") pinkProperties++;
+	else if (color == "Orange") orangeProperties++;
+	else if (color == "Red") redProperties++;
+	else if (color == "Yellow") yellowProperties++;
+	else if (color == "Green") greenProperties++;
+	else if (color == "Blue") blueProperties++;
+	else if (color == "Railroad") railroadProperties++;
+	else if (color == "Utility") utilityProperties++;
+
 	return true;
 }
 
@@ -63,4 +73,17 @@ bool Player::sellProperty(Property& property)
 	//trade
 }
 
-
+int Player::getPropertiesOfColor(const MyString& color) const
+{
+	if (color == "Brown") return brownProperties;
+	if (color == "Light Blue") return lightBlueProperties;
+	if (color == "Pink") return pinkProperties;
+	if (color == "Orange") return orangeProperties;
+	if (color == "Red") return redProperties;
+	if (color == "Yellow") return yellowProperties;
+	if (color == "Green") return greenProperties;
+	if (color == "Blue") return blueProperties;
+	if (color == "Railroad") return railroadProperties;
+	if (color == "Utility") return utilityProperties;
+	return -1;
+}

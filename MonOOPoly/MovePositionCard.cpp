@@ -1,4 +1,5 @@
 #include "MovePositionCard.h"
+#include "Board.h"
 
 MovePositionCard::MovePositionCard(int tiles)
 {
@@ -12,5 +13,5 @@ Card* MovePositionCard::clone() const
 
 void MovePositionCard::applyEffect(Player& player) const
 {
-    player.setId(player.getId() + tiles);
+    Board::setId(player, player.getId() + tiles);
 }

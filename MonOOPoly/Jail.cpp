@@ -2,5 +2,5 @@
 
 Field* Jail::clone() const
 {
-    return new Jail(*this);
+	return nullptr;
 }
