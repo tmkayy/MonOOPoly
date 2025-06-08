@@ -131,6 +131,7 @@
     <ClInclude Include="Castle.h" />
     <ClInclude Include="Consts.h" />
     <ClInclude Include="Cottage.h" />
+    <ClInclude Include="Dice.h" />
     <ClInclude Include="Field.h" />
     <ClInclude Include="GroupPaymentCard.h" />
     <ClInclude Include="Jail.h" />
@@ -152,6 +153,7 @@
     <ClCompile Include="CardField.cpp" />
     <ClCompile Include="Castle.cpp" />
     <ClCompile Include="Cottage.cpp" />
+    <ClCompile Include="Dice.cpp" />
     <ClCompile Include="GroupPaymentCard.cpp" />
     <ClCompile Include="Jail.cpp" />
     <ClCompile Include="Monopoly.cpp" />
