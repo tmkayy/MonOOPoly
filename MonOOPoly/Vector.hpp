@@ -43,6 +43,9 @@ public:
 	Vector& insert(const T& element, size_t position);
 	Vector& insert(T&& element, size_t position);
 
+	const T& peek() const;
+	T& peek();
+
 	Vector& remove(size_t position);
 
 	bool isEmpty() const;
@@ -71,6 +74,26 @@ public:
 
 	~Vector() noexcept;
 };
+
+template <typename T>
+inline const T& Vector<T>::peek() const
+{
+	if (this->size == 0)
+	{
+		throw std::out_of_range("Vector is empty");
+	}
+	return this->data[this->size - 1];
+}
+
+template <typename T>
+inline T& Vector<T>::peek()
+{
+	if (this->size == 0)
+	{
+		throw std::out_of_range("Vector is empty");
+	}
+	return this->data[this->size - 1];
+}
 
 template <typename T>
 inline Vector<T>::Vector() : Vector(4) {}

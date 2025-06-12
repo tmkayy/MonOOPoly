@@ -144,6 +144,7 @@
     <ClInclude Include="Property.h" />
     <ClInclude Include="SpecialField.h" />
     <ClInclude Include="Stack.hpp" />
+    <ClInclude Include="Trade.h" />
     <ClInclude Include="Vector.hpp" />
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +164,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Property.cpp" />
     <ClCompile Include="SpecialField.cpp" />
+    <ClCompile Include="Trade.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

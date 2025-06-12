@@ -26,3 +26,18 @@ static constexpr const char* Tokens[] = {
 		"RaceCar", "RaceCar", "Thimble", "ScottishTerrier",
 		"SackOfMoney", "Cat", "Penguin", "RubberDuck", "Unknown"
 };
+
+enum class PropertyColor {
+    Brown,
+    LightBlue,
+    Pink,
+    Orange,
+    Red,
+    Yellow,
+    Green,
+    Blue,
+    Railroad,
+    Utility,
+    Unknown,
+    Count
+};

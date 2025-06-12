@@ -117,6 +117,9 @@
     <ClInclude Include="Dice.h">
       <Filter>Header Files\Monopoly</Filter>
     </ClInclude>
+    <ClInclude Include="Trade.h">
+      <Filter>Header Files\player</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Player.cpp">
@@ -166,6 +169,9 @@
     </ClCompile>
     <ClCompile Include="Dice.cpp">
       <Filter>Source Files\Monopoly</Filter>
+    </ClCompile>
+    <ClCompile Include="Trade.cpp">
+      <Filter>Source Files\player</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

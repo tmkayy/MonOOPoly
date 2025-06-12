@@ -19,7 +19,7 @@ void Property::copyFrom(const Property& other) {
     priceForCastle = other.priceForCastle;
     priceForRent = other.priceForRent;
     owner = other.owner;
-    color = other.color; // Copy color
+    color = other.color;
 
     for (size_t i = 0; i < other.mortgages.getSize(); ++i) {
         Mortgage* mortgage = other.mortgages[i];
@@ -43,8 +43,8 @@ void Property::moveFrom(Property&& other) noexcept {
     owner = other.owner;
     other.owner = nullptr;
 
-    color = std::move(other.color); // Move color
-    other.color = MyString();
+    color = other.color;
+    other.color = PropertyColor::Unknown;
 
     mortgages = std::move(other.mortgages);
     other.mortgages.clear();
@@ -52,11 +52,11 @@ void Property::moveFrom(Property&& other) noexcept {
 
 Property::Property()
     : priceToBuy(0), priceForCottage(0), priceForCastle(0),
-    priceForRent(0), owner(nullptr), mortgages(), color() {
+    priceForRent(0), owner(nullptr), mortgages(), color(PropertyColor::Unknown) {
 }
 
 Property::Property(double buyPrice, double cottagePrice, double castlePrice,
-    double rentPrice, const MyString& color, Player* owner)
+    double rentPrice, PropertyColor color, Player* owner)
     : color(color)
 {
     setPriceToBuy(buyPrice);
@@ -100,7 +100,9 @@ double Property::getPriceForCastle() const { return priceForCastle; }
 double Property::getPriceForRent() const { return priceForRent; }
 Player* Property::getOwner() const { return owner; }
 const Vector<Mortgage*>& Property::getMortgages() const { return mortgages; }
-const MyString& Property::getColor() const { return color; } // Implemented getter
+PropertyColor Property::getColor() const {
+    return color;
+}
 
 void Property::validatePrice(double price) {
     if (price < 0) {
@@ -132,7 +134,7 @@ void Property::setOwner(Player* newOwner) {
     owner = newOwner;
 }
 
-void Property::setColor(const MyString& newColor) { // Implemented setter
+void Property::setColor(PropertyColor newColor) {
     color = newColor;
 }
 
@@ -167,4 +169,21 @@ bool Property::buildCastle(Player* player) {
 
 Field* Property::clone() const {
     return new Property(*this);
+}
+
+
+MyString Property::colorToString(PropertyColor color) { //IDK IF I NEED THIS
+    switch (color) {
+    case PropertyColor::Brown: return "Brown";
+    case PropertyColor::LightBlue: return "Light Blue";
+    case PropertyColor::Pink: return "Pink";
+    case PropertyColor::Orange: return "Orange";
+    case PropertyColor::Red: return "Red";
+    case PropertyColor::Yellow: return "Yellow";
+    case PropertyColor::Green: return "Green";
+    case PropertyColor::Blue: return "Blue";
+    case PropertyColor::Railroad: return "Railroad";
+    case PropertyColor::Utility: return "Utility";
+    default: return "Unknown";
+    }
 }

@@ -4,18 +4,19 @@
 #include "Vector.hpp"
 #include <stdexcept>
 #include "MyString.h"
+#include "Consts.h"
 
-class Player;
 
 class Property : public Field
 {
+    friend class Player;
     double priceToBuy;
     double priceForCottage;
     double priceForCastle;
     double priceForRent;
     Player* owner = nullptr;
     Vector<Mortgage*> mortgages;
-    MyString color; 
+    PropertyColor color; 
 
     void copyFrom(const Property& other);
     void moveFrom(Property&& other) noexcept;
@@ -25,7 +26,7 @@ class Property : public Field
 public:
     Property();
     Property(double buyPrice, double cottagePrice, double castlePrice,
-        double rentPrice, const MyString& color, Player* owner = nullptr);
+        double rentPrice, PropertyColor color, Player* owner = nullptr);
 
     ~Property();
     Property(const Property& other);
@@ -39,16 +40,18 @@ public:
     double getPriceForRent() const;
     Player* getOwner() const;
     const Vector<Mortgage*>& getMortgages() const;
-    const MyString& getColor() const;
+    PropertyColor getColor() const;
 
     void setPriceToBuy(double price);
     void setPriceForCottage(double price);
     void setPriceForCastle(double price);
     void setPriceForRent(double price);
     void setOwner(Player* newOwner);
-    void setColor(const MyString& newColor); 
+    void setColor(PropertyColor newColor);
 
     bool buildCottage(Player* player);
     bool buildCastle(Player* player);
     Field* clone() const override;
+
+    static MyString colorToString(PropertyColor color);
 };
