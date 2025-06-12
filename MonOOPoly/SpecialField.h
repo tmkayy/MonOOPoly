@@ -10,9 +10,7 @@ public:
         JAIL,
         GO_TO_JAIL,
         INCOME_TAX,
-        LUXURY_TAX,
-        UTILITY,
-        RAILROAD
+        LUXURY_TAX
     };
 
 private:
@@ -24,7 +22,9 @@ public:
     explicit SpecialField(Type type, const MyString& name = "", double value = 0);
     Field* clone() const override;
 
-    Type getType() const { return fieldType; }
-    const MyString& getName() const { return name; }
-    double getValue() const { return value; }
+    Type getType() const;
+    const MyString& getName() const;
+    double getValue() const;
+    void onLand(class Player& player) override;
+    void onPass(class Player& player) override;
 };

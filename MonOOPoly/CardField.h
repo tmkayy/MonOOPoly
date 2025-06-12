@@ -6,8 +6,9 @@
 #include "CardDeck.h"
 class CardField:public Field
 {
+	bool drawCard(Player& player, CardDeck& deck);
 public:
 	Field* clone() const override;
-	bool drawCard(Player& player, CardDeck& deck);
+	void onLand(Player& player) override;
 };
 

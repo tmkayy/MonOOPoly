@@ -24,6 +24,7 @@ class Property : public Field
     void validatePrice(double price);
 
 public:
+    void onLand(Player& player) override;
     Property();
     Property(double buyPrice, double cottagePrice, double castlePrice,
         double rentPrice, PropertyColor color, Player* owner = nullptr);

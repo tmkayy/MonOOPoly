@@ -50,6 +50,13 @@ void Property::moveFrom(Property&& other) noexcept {
     other.mortgages.clear();
 }
 
+void Property::onLand(Player& player)
+{
+    if (owner != nullptr && owner != &player) {
+        Bank::transferMoney(player, *owner, priceForRent);
+    }
+}
+
 Property::Property()
     : priceToBuy(0), priceForCottage(0), priceForCastle(0),
     priceForRent(0), owner(nullptr), mortgages(), color(PropertyColor::Unknown) {

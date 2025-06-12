@@ -11,6 +11,8 @@ const short bailCost = 50;
 const short maxTurnsJail = 3;
 const short jailPos = 10;
 
+const short goMoney = 200;
+
 enum class Token {
 	RaceCar,
 	Thimble,

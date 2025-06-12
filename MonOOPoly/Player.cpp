@@ -43,7 +43,7 @@ void Player::moveFrom(Player&& other) noexcept
 
 Player::Player() : username(Token::Unknown), money(0), id(0), imprisoned(false), pendingTrades()
 {
-    // propertyCounts is already zero-initialized
+    //propertyCounts is already zero-initialized
 }
 
 Player::Player(size_t username, double money) : Player()
@@ -97,6 +97,16 @@ void Player::setImprisoned(bool status)
 	imprisoned = status;
 }
 
+void Player::setTurnsInJail(size_t n)
+{
+    turnsInJail = n;
+}
+
+void Player::setPairsThrown(size_t n)
+{
+    pairsThrown = n;
+}
+
 Token Player::getUsername() const
 {
 	return username;
@@ -107,9 +117,19 @@ double Player::getMoney() const
 	return money;
 }
 
+size_t Player::getTurnsInJail() const
+{
+    return turnsInJail;
+}
+
 size_t Player::getId()
 {
 	return id;
+}
+
+size_t Player::getPairsThrown() const
+{
+    return pairsThrown;
 }
 
 bool Player::isImprisoned()
@@ -303,4 +323,9 @@ void Player::decrementPropertyCount(PropertyColor color)
         return;
     }
     propertyCounts[static_cast<size_t>(color)]--;
+}
+
+MyString Player::tokenToString() const
+{
+    return MyString(Tokens[(int)(username)]);
 }

@@ -8,6 +8,8 @@ class Player
 	Token username;
 	double money;
 	size_t id;
+	size_t turnsInJail = 0;
+	size_t pairsThrown = 0;
 	bool imprisoned;
 	Vector<Trade*> pendingTrades;
 
@@ -32,10 +34,14 @@ public:
 	Player& operator=(Player&& other) noexcept;
 
 	void setImprisoned(bool status);
+	void setTurnsInJail(size_t n);
+	void setPairsThrown(size_t n);
 	
 	Token getUsername() const;
 	double getMoney() const;
+	size_t getTurnsInJail() const;
 	size_t getId();
+	size_t getPairsThrown() const;
 	bool isImprisoned();
 	Player(size_t username, double money);
 
@@ -57,5 +63,7 @@ public:
 	int getPropertiesOfColor(const MyString& color) const;
 	void incrementPropertyCount(PropertyColor color);
 	void decrementPropertyCount(PropertyColor color);
+
+	MyString tokenToString() const;
 };
 
