@@ -42,7 +42,7 @@ void Trade::execute() {
         return;
     }
 
-    //transfer properties from proposer to receiver
+    // tansfer properties from proposer to receiver
     for (size_t i = 0; i < proposerProperties.getSize(); ++i) {
         Property* prop = proposerProperties[i];
         if (prop) {
@@ -58,12 +58,18 @@ void Trade::execute() {
         }
     }
 
-    Bank::addMoney(*proposer, -proposerMoney + receiverMoney);
-    Bank::subtractMoney(*receiver, -receiverMoney + proposerMoney);
+    if (proposerMoney > 0) {
+        Bank::transferMoney(*proposer, *receiver, proposerMoney);
+    }
+    if (receiverMoney > 0) {
+        Bank::transferMoney(*receiver, *proposer, receiverMoney);
+    }
 }
 
 bool Trade::isValid() const {
     if (!proposer || !receiver) return false;
+
+    if (proposerMoney < 0 || receiverMoney < 0) return false;
 
     if (proposer->getMoney() < proposerMoney) return false;
     if (receiver->getMoney() < receiverMoney) return false;

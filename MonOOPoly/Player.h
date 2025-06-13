@@ -11,6 +11,7 @@ class Player
 	size_t turnsInJail = 0;
 	size_t pairsThrown = 0;
 	bool imprisoned;
+	Vector<PropertyColor> monopolies;
 	Vector<Trade*> pendingTrades;
 
 	int propertyCounts[static_cast<size_t>(PropertyColor::Count)]{};
@@ -65,5 +66,7 @@ public:
 	void decrementPropertyCount(PropertyColor color);
 
 	MyString tokenToString() const;
+
+	bool hasMonopoly(PropertyColor color) const;
 };
 

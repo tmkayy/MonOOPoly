@@ -150,6 +150,10 @@ bool Property::buildCottage(Player* player) {
         return false;
     }
 
+    if (!player->hasMonopoly(color)) {
+        return false;
+    }
+
     if (!Bank::subtractMoney(*player, priceForCottage)) {
         return false;
     }
@@ -161,6 +165,10 @@ bool Property::buildCottage(Player* player) {
 
 bool Property::buildCastle(Player* player) {
     if (!player || owner != player) {
+        return false;
+    }
+
+    if (!player->hasMonopoly(color)) {
         return false;
     }
 

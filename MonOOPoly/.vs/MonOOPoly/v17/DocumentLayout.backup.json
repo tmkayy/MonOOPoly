@@ -3,36 +3,68 @@
   "WorkspaceRootPath": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Jail.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Jail.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\MyString.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:MyString.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Jail.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Jail.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Dice.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Dice.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Trade.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Trade.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Consts.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Consts.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Trade.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Trade.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Bank.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Bank.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Property.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Property.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Bank.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Bank.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Property.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Property.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Consts.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Consts.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardField.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:CardField.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardField.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:CardField.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\SpecialField.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:SpecialField.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Trade.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Trade.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\MyString.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:MyString.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Trade.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Trade.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Vector.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -43,14 +75,6 @@
       "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:PaymentCard.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Dice.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Dice.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Jail.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Jail.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Monopoly.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Monopoly.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -59,24 +83,12 @@
       "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Monopoly.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Jail.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Jail.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\GroupPaymentCard.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:GroupPaymentCard.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardDeck.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:CardDeck.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\SpecialField.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:SpecialField.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardField.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:CardField.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Board.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -119,18 +131,6 @@
       "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Card.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\SpecialField.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:SpecialField.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Field.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Field.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardField.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:CardField.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Board.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Board.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -158,16 +158,42 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "Consts.h",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Consts.h",
               "RelativeDocumentMoniker": "Consts.h",
               "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Consts.h",
               "RelativeToolTip": "Consts.h",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAIwB0AAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAIwBoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-06-01T19:03:36.926Z",
               "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Bank.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Bank.cpp",
+              "RelativeDocumentMoniker": "Bank.cpp",
+              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Bank.cpp",
+              "RelativeToolTip": "Bank.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-12T15:19:49.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Bank.h",
+              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Bank.h",
+              "RelativeDocumentMoniker": "Bank.h",
+              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Bank.h",
+              "RelativeToolTip": "Bank.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-12T15:19:41.121Z",
               "EditorCaption": ""
             },
             {
@@ -176,84 +202,162 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Vector.hpp",
-              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Vector.hpp",
-              "RelativeDocumentMoniker": "Vector.hpp",
-              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Vector.hpp",
-              "RelativeToolTip": "Vector.hpp",
-              "ViewState": "AgIAAGYBAAAAAAAAAADwv4IBAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-12T10:44:34.994Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 13,
               "Title": "Trade.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Trade.cpp",
               "RelativeDocumentMoniker": "Trade.cpp",
               "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Trade.cpp",
               "RelativeToolTip": "Trade.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-12T09:41:03.22Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Trade.h",
-              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Trade.h",
-              "RelativeDocumentMoniker": "Trade.h",
-              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Trade.h",
-              "RelativeToolTip": "Trade.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-12T08:37:46.683Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 1,
               "Title": "Jail.h",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Jail.h",
               "RelativeDocumentMoniker": "Jail.h",
               "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Jail.h",
               "RelativeToolTip": "Jail.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-08T17:34:06.923Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MyString.cpp",
-              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\MyString.cpp",
-              "RelativeDocumentMoniker": "MyString.cpp",
-              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\MyString.cpp",
-              "RelativeToolTip": "MyString.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-08T17:33:01.207Z",
+              "WhenOpened": "2025-06-08T17:34:06.923Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Player.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Player.cpp",
               "RelativeDocumentMoniker": "Player.cpp",
               "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Player.cpp",
               "RelativeToolTip": "Player.cpp",
-              "ViewState": "AgIAABsAAAAAAAAAAAAIwCQAAABMAAAAAAAAAA==",
+              "ViewState": "AgIAAC4BAAAAAAAAAAAEwEUBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-08T17:32:53.953Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 0,
+              "Title": "Jail.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Jail.cpp",
+              "RelativeDocumentMoniker": "Jail.cpp",
+              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Jail.cpp",
+              "RelativeToolTip": "Jail.cpp",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAUwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-08T17:32:05.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Property.h",
+              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Property.h",
+              "RelativeDocumentMoniker": "Property.h",
+              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Property.h",
+              "RelativeToolTip": "Property.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-08T17:09:51.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Property.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Property.cpp",
+              "RelativeDocumentMoniker": "Property.cpp",
+              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Property.cpp",
+              "RelativeToolTip": "Property.cpp",
+              "ViewState": "AgIAACEAAAAAAAAAAAAEwDgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-08T17:32:10.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Player.h",
+              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Player.h",
+              "RelativeDocumentMoniker": "Player.h",
+              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Player.h",
+              "RelativeToolTip": "Player.h",
+              "ViewState": "AgIAACkAAAAAAAAAAAAEwEIAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-08T17:10:48.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dice.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Dice.cpp",
+              "RelativeDocumentMoniker": "Dice.cpp",
+              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Dice.cpp",
+              "RelativeToolTip": "Dice.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-08T17:52:14.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SpecialField.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\SpecialField.cpp",
+              "RelativeDocumentMoniker": "SpecialField.cpp",
+              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\SpecialField.cpp",
+              "RelativeToolTip": "SpecialField.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-08T17:32:15.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CardField.h",
+              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardField.h",
+              "RelativeDocumentMoniker": "CardField.h",
+              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardField.h",
+              "RelativeToolTip": "CardField.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-08T17:09:35.7Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CardField.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardField.cpp",
+              "RelativeDocumentMoniker": "CardField.cpp",
+              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardField.cpp",
+              "RelativeToolTip": "CardField.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-08T17:31:57.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "PaymentCard.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\PaymentCard.cpp",
+              "RelativeDocumentMoniker": "PaymentCard.cpp",
+              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\PaymentCard.cpp",
+              "RelativeToolTip": "PaymentCard.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-08T17:32:39.354Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "GroupPaymentCard.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\GroupPaymentCard.cpp",
               "RelativeDocumentMoniker": "GroupPaymentCard.cpp",
@@ -266,81 +370,42 @@
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "Jail.cpp",
-              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Jail.cpp",
-              "RelativeDocumentMoniker": "Jail.cpp",
-              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Jail.cpp",
-              "RelativeToolTip": "Jail.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "MyString.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\MyString.cpp",
+              "RelativeDocumentMoniker": "MyString.cpp",
+              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\MyString.cpp",
+              "RelativeToolTip": "MyString.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-08T17:32:05.978Z"
+              "WhenOpened": "2025-06-08T17:33:01.207Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Property.h",
-              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Property.h",
-              "RelativeDocumentMoniker": "Property.h",
-              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Property.h",
-              "RelativeToolTip": "Property.h",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAC8AAAAnAAAAAAAAAA==",
+              "DocumentIndex": 15,
+              "Title": "Trade.h",
+              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Trade.h",
+              "RelativeDocumentMoniker": "Trade.h",
+              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Trade.h",
+              "RelativeToolTip": "Trade.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-08T17:09:51.163Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-12T08:37:46.683Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Property.cpp",
-              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Property.cpp",
-              "RelativeDocumentMoniker": "Property.cpp",
-              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Property.cpp",
-              "RelativeToolTip": "Property.cpp",
-              "ViewState": "AgIAAJMAAAAAAAAAAAAAAK8AAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-08T17:32:10.649Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Player.h",
-              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Player.h",
-              "RelativeDocumentMoniker": "Player.h",
-              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Player.h",
-              "RelativeToolTip": "Player.h",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAYwBkAAAAHAAAAAAAAAA==",
+              "DocumentIndex": 16,
+              "Title": "Vector.hpp",
+              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Vector.hpp",
+              "RelativeDocumentMoniker": "Vector.hpp",
+              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Vector.hpp",
+              "RelativeToolTip": "Vector.hpp",
+              "ViewState": "AgIAAGYBAAAAAAAAAADwv4IBAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-08T17:10:48.069Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-12T10:44:34.994Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "PaymentCard.cpp",
-              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\PaymentCard.cpp",
-              "RelativeDocumentMoniker": "PaymentCard.cpp",
-              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\PaymentCard.cpp",
-              "RelativeToolTip": "PaymentCard.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-08T17:32:39.354Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Dice.cpp",
-              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Dice.cpp",
-              "RelativeDocumentMoniker": "Dice.cpp",
-              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Dice.cpp",
-              "RelativeToolTip": "Dice.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-08T17:52:14.11Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 19,
               "Title": "Monopoly.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Monopoly.cpp",
               "RelativeDocumentMoniker": "Monopoly.cpp",
@@ -352,7 +417,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 21,
               "Title": "CardDeck.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardDeck.cpp",
               "RelativeDocumentMoniker": "CardDeck.cpp",
@@ -364,7 +429,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 18,
               "Title": "Monopoly.h",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Monopoly.h",
               "RelativeDocumentMoniker": "Monopoly.h",
@@ -376,31 +441,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "SpecialField.cpp",
-              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\SpecialField.cpp",
-              "RelativeDocumentMoniker": "SpecialField.cpp",
-              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\SpecialField.cpp",
-              "RelativeToolTip": "SpecialField.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-08T17:32:15.531Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "CardField.cpp",
-              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardField.cpp",
-              "RelativeDocumentMoniker": "CardField.cpp",
-              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardField.cpp",
-              "RelativeToolTip": "CardField.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-08T17:31:57.874Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "Board.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Board.cpp",
               "RelativeDocumentMoniker": "Board.cpp",
@@ -412,7 +453,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "Cottage.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Cottage.cpp",
               "RelativeDocumentMoniker": "Cottage.cpp",
@@ -424,7 +465,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "Castle.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Castle.cpp",
               "RelativeDocumentMoniker": "Castle.cpp",
@@ -436,7 +477,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "Stack.hpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Stack.hpp",
               "RelativeDocumentMoniker": "Stack.hpp",
@@ -448,7 +489,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "MyString.h",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\MyString.h",
               "RelativeDocumentMoniker": "MyString.h",
@@ -460,7 +501,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "PaymentCard.h",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\PaymentCard.h",
               "RelativeDocumentMoniker": "PaymentCard.h",
@@ -472,7 +513,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "MovePositionCard.h",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\MovePositionCard.h",
               "RelativeDocumentMoniker": "MovePositionCard.h",
@@ -484,7 +525,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 30,
               "Title": "GroupPaymentCard.h",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\GroupPaymentCard.h",
               "RelativeDocumentMoniker": "GroupPaymentCard.h",
@@ -496,7 +537,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "CardDeck.h",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardDeck.h",
               "RelativeDocumentMoniker": "CardDeck.h",
@@ -508,7 +549,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 31,
               "Title": "Card.h",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Card.h",
               "RelativeDocumentMoniker": "Card.h",
@@ -517,42 +558,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-06-08T17:10:07.765Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "SpecialField.h",
-              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\SpecialField.h",
-              "RelativeDocumentMoniker": "SpecialField.h",
-              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\SpecialField.h",
-              "RelativeToolTip": "SpecialField.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-08T17:09:56.864Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Field.h",
-              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Field.h",
-              "RelativeDocumentMoniker": "Field.h",
-              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Field.h",
-              "RelativeToolTip": "Field.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-08T17:09:41.894Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "CardField.h",
-              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardField.h",
-              "RelativeDocumentMoniker": "CardField.h",
-              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardField.h",
-              "RelativeToolTip": "CardField.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-08T17:09:35.7Z"
             },
             {
               "$type": "Document",
