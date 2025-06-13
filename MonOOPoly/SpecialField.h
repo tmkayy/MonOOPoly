@@ -25,6 +25,7 @@ public:
     Type getType() const;
     const MyString& getName() const;
     double getValue() const;
+
     void onLand(class Player& player) override;
     void onPass(class Player& player) override;
 };

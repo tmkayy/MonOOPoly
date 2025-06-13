@@ -28,5 +28,5 @@ public:
 
     Vector<Field*> getBoard() const;
     Vector<Property*> getProperties() const;
-    Vector<Property*> getPropertiesByColor(const MyString& color) const;
+    Vector<Property*> getPropertiesByColor(PropertyColor color) const;
 };

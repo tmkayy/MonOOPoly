@@ -1,4 +1,5 @@
 #pragma once
+#include "MyString.h"
 
 const short maxTokens = 7;
 const double cottageRent = 1.15;
@@ -30,16 +31,44 @@ static constexpr const char* Tokens[] = {
 };
 
 enum class PropertyColor {
-    Brown,
-    LightBlue,
-    Pink,
-    Orange,
-    Red,
-    Yellow,
-    Green,
-    Blue,
-    Railroad,
-    Utility,
-    Unknown,
-    Count
+	Brown,
+	LightBlue,
+	Pink,
+	Orange,
+	Red,
+	Yellow,
+	Green,
+	Blue,
+	Railroad,
+	Utility,
+	Unknown,
+	Count
 };
+
+static constexpr const char* PropertyColorStrings[] = {
+	"Brown",
+	"Light Blue",
+	"Pink",
+	"Orange",
+	"Red",
+	"Yellow",
+	"Green",
+	"Blue",
+	"Railroad",
+	"Utility",
+	"Unknown"
+};
+
+const char* colorToString(PropertyColor color) {
+	const size_t index = (size_t)(color);
+	return (index < (size_t)(PropertyColor::Count)) ? PropertyColorStrings[index] : "Unknown";
+}
+
+PropertyColor stringToColor(const MyString& str) {
+	for (size_t i = 0; i < (size_t)(PropertyColor::Count); ++i) {
+		if (str == PropertyColorStrings[i]) {
+			return (PropertyColor)(i);
+		}
+	}
+	return PropertyColor::Unknown;
+}
