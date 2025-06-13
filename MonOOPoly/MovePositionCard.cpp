@@ -11,7 +11,7 @@ Card* MovePositionCard::clone() const
     return new MovePositionCard(*this);
 }
 
-void MovePositionCard::applyEffect(Player& player) const
+void MovePositionCard::applyEffect(Player& player, const Vector<Player*>& allPlayers) const
 {
     Board::setId(player, player.getId() + tiles);
 }

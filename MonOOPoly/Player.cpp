@@ -165,18 +165,18 @@ bool Player::sellProperty(Property& property) {
 		return false;
 
 	bool wasMonopoly = hasMonopoly(property.getColor());
+	double totalRefund = property.getPriceToBuy() / 2; //base 50% refund
 
 	//sell buildings
-	double totalRefund = property.getPriceToBuy() / 2; // base 50% refund
-
-	while (!property.mortgages.isEmpty()) {
-		Mortgage* m = property.mortgages.pop_back();
+	while (property.mortgages.getSize() > 0) {
+		Mortgage* m = property.mortgages[property.mortgages.getSize() - 1];
 		if (dynamic_cast<Cottage*>(m)) {
 			totalRefund += property.getPriceForCottage() / 2;
 		}
-		else {
+		else{
 			totalRefund += property.getPriceForCastle() / 2;
 		}
+		property.mortgages.pop_back();
 		delete m;
 	}
 
@@ -185,7 +185,7 @@ bool Player::sellProperty(Property& property) {
 	decrementPropertyCount(property.getColor());
 
 	if (wasMonopoly && !hasMonopoly(property.getColor())) {
-		std::cout << tokenToString().c_str() << " lost monopoly on "
+		std::cout << tokenToString()<< " lost monopoly on "
 			<< Property::colorToString(property.getColor()).c_str() << " properties!\n";
 	}
 

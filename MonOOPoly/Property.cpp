@@ -146,17 +146,13 @@ void Property::setColor(PropertyColor newColor) {
 }
 
 bool Property::buildCottage(Player* player) {
-    if (!player || owner != player) {
+    if (!player || owner != player)
         return false;
-    }
+    if (!player->hasMonopoly(color))
+        return false;
+    if (!Bank::subtractMoney(*player, priceForCottage))
+        return false;
 
-    if (!player->hasMonopoly(color)) {
-        return false;
-    }
-
-    if (!Bank::subtractMoney(*player, priceForCottage)) {
-        return false;
-    }
     Cottage* cottage = new Cottage();
     mortgages.push_back(cottage);
     cottage->increaseRent(*this);
@@ -164,17 +160,12 @@ bool Property::buildCottage(Player* player) {
 }
 
 bool Property::buildCastle(Player* player) {
-    if (!player || owner != player) {
+    if (!player || owner != player)
         return false;
-    }
-
-    if (!player->hasMonopoly(color)) {
+    if (!player->hasMonopoly(color))
         return false;
-    }
-
-    if (player->getMoney() < priceForCastle) {
+    if (!Bank::subtractMoney(*player, priceForCottage))
         return false;
-    }
 
     Castle* castle = new Castle();
     mortgages.push_back(castle);

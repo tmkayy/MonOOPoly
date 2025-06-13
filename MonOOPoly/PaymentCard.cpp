@@ -10,7 +10,7 @@ Card* PaymentCard::clone() const
     return new PaymentCard(*this);
 }
 
-void PaymentCard::applyEffect(Player& player) const
+void PaymentCard::applyEffect(Player& player, const Vector<Player*>& allPlayers) const
 {
     if (moneyAmount < 0)
         Bank::subtractMoney(player, moneyAmount);
