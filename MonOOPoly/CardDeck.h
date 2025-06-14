@@ -23,6 +23,8 @@ public:
     CardDeck& operator=(CardDeck&& other) noexcept;
 
     Stack<Card*> getCards() const;
+    Card* drawCard();
+    void returnCard(Card* card);
 
     void shuffle();
 };

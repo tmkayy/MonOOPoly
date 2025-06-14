@@ -107,6 +107,8 @@ double Property::getPriceForCastle() const { return priceForCastle; }
 double Property::getPriceForRent() const { return priceForRent; }
 Player* Property::getOwner() const { return owner; }
 const Vector<Mortgage*>& Property::getMortgages() const { return mortgages; }
+Vector<Mortgage*>& Property::getMortgages() { return mortgages; }
+
 PropertyColor Property::getColor() const {
     return color;
 }
@@ -146,31 +148,15 @@ void Property::setColor(PropertyColor newColor) {
 }
 
 bool Property::buildCottage(Player* player) {
-    if (!player || owner != player)
-        return false;
-    if (!player->hasMonopoly(color))
-        return false;
-    if (!Bank::subtractMoney(*player, priceForCottage))
-        return false;
-
-    Cottage* cottage = new Cottage();
-    mortgages.push_back(cottage);
-    cottage->increaseRent(*this);
-    return true;
+    BuildCottageCommand cmd(player, *this);
+    cmd.execute();
+    return cmd.wasBuilt(); // You'd need to add this getter to the command class
 }
 
 bool Property::buildCastle(Player* player) {
-    if (!player || owner != player)
-        return false;
-    if (!player->hasMonopoly(color))
-        return false;
-    if (!Bank::subtractMoney(*player, priceForCottage))
-        return false;
-
-    Castle* castle = new Castle();
-    mortgages.push_back(castle);
-    castle->increaseRent(*this);
-    return true;
+    BuildCastleCommand cmd(player, *this);
+    cmd.execute();
+    return cmd.wasBuilt(); // You'd need to add this getter to the command class
 }
 
 Field* Property::clone() const {

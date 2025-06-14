@@ -3,8 +3,13 @@
 #include <stdexcept>
 #include "Property.h"
 #include "Trade.h"
+#include "SellMortgageCommand.h"
+
+class Monopoly;
+
 class Player
 {
+	Monopoly* game;
 	Token username;
 	double money;
 	size_t id;
@@ -26,8 +31,8 @@ class Player
 	void free();
 	PropertyColor colorStringToEnum(const MyString& colorStr) const;
 public:
-	Player();
-	Player(size_t username, double money);
+	Player(Monopoly* game = nullptr);
+	Player(Monopoly* game, size_t username, double money);
 	~Player();
 	Player(const Player& other);
 	Player(Player&& other) noexcept;
@@ -41,10 +46,9 @@ public:
 	Token getUsername() const;
 	double getMoney() const;
 	size_t getTurnsInJail() const;
-	size_t getId();
+	size_t getId() const;
 	size_t getPairsThrown() const;
-	bool isImprisoned();
-	Player(size_t username, double money);
+	bool isImprisoned() const;
 
 	bool buyProperty(Property& property);
 	bool sellProperty(Property& property);//trade

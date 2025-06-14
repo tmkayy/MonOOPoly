@@ -8,7 +8,7 @@ Field* Jail::clone() const {
 }
 
 void Jail::onLand(Player& player) {
-    std::cout << player.tokenToString().c_str()
+    std::cout << player.tokenToString()
         << (player.isImprisoned() ? " is visiting jail (imprisoned)"
             : " is just visiting jail")
         << std::endl;
@@ -17,7 +17,7 @@ void Jail::onLand(Player& player) {
 void Jail::sendToJail(Player& player) {
     player.setImprisoned(true);
     player.setTurnsInJail(0);
-    std::cout << player.tokenToString().c_str() << " was sent to jail!" << std::endl;
+    std::cout << player.tokenToString()<< " was sent to jail!" << std::endl;
 }
 
 bool Jail::attemptRelease(Player& player, bool payBail, bool rolledDoubles) {
@@ -30,7 +30,7 @@ bool Jail::attemptRelease(Player& player, bool payBail, bool rolledDoubles) {
                 << " paid $100 bail and was released" << std::endl;
             return true;
         }
-        std::cout << player.tokenToString().c_str()
+        std::cout << player.tokenToString()
             << " couldn't pay $100 bail" << std::endl;
         return false;
     }

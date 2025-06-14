@@ -15,3 +15,8 @@ void MovePositionCard::applyEffect(Player& player, const Vector<Player*>& allPla
 {
     Board::setId(player, player.getId() + tiles);
 }
+
+
+void MovePositionCard::reverseEffect(Player& player, const Vector<Player*>& allPlayers) const {
+    Board::setId(player, player.getId() - tiles);
+}

@@ -17,15 +17,17 @@ void GroupPaymentCard::applyEffect(Player& player, const Vector<Player*>& allPla
 
 void GroupPaymentCard::applyEffect(Player& player, const Vector<Player*>& allPlayers) const
 {
-    for (size_t i = 0; i < allPlayers.getSize(); ++i) {
-        Player* otherPlayer = allPlayers[i];
-        if (otherPlayer != &player) {
-            Bank::transferMoney(*otherPlayer, player , paymentAmount);
-        }
-    }
+	for (size_t i = 0; i < allPlayers.getSize(); ++i) {
+		if (allPlayers[i] != &player) {
+			Bank::transferMoney(*allPlayers[i], player, paymentAmount);
+		}
+	}
 }
 
-void GroupPaymentCard::applyEffect(Player& player) const
-{
-	//useless
+void GroupPaymentCard::reverseEffect(Player& player, const Vector<Player*>& allPlayers) const {
+	for (size_t i = 0; i < allPlayers.getSize(); i++) {
+		if (allPlayers[i] != &player) {
+			Bank::transferMoney(*allPlayers[i], player, paymentAmount);
+		}
+	}
 }

@@ -125,7 +125,10 @@
   <ItemGroup>
     <ClInclude Include="Bank.h" />
     <ClInclude Include="Board.h" />
+    <ClInclude Include="BuildCastleCommand.h" />
+    <ClInclude Include="BuildCottageCommand.h" />
     <ClInclude Include="Card.h" />
+    <ClInclude Include="CardCommands.h" />
     <ClInclude Include="CardDeck.h" />
     <ClInclude Include="CardField.h" />
     <ClInclude Include="Castle.h" />
@@ -133,15 +136,24 @@
     <ClInclude Include="Cottage.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="Field.h" />
+    <ClInclude Include="GameCommand.h" />
+    <ClInclude Include="GoToJailCommand.h" />
     <ClInclude Include="GroupPaymentCard.h" />
     <ClInclude Include="Jail.h" />
     <ClInclude Include="Monopoly.h" />
     <ClInclude Include="Mortgage.h" />
+    <ClInclude Include="MovePlayerCommand.h" />
     <ClInclude Include="MovePositionCard.h" />
     <ClInclude Include="MyString.h" />
+    <ClInclude Include="PayJailFineCommand.h" />
     <ClInclude Include="PaymentCard.h" />
+    <ClInclude Include="PayRentCommand.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Property.h" />
+    <ClInclude Include="BuyPropertyCommand.h" />
+    <ClInclude Include="RollForJailReleaseCommand.h" />
+    <ClInclude Include="SellMortgageCommand.h" />
+    <ClInclude Include="SellPropertyCommand.h" />
     <ClInclude Include="SpecialField.h" />
     <ClInclude Include="Stack.hpp" />
     <ClInclude Include="Trade.h" />
@@ -150,19 +162,30 @@
   <ItemGroup>
     <ClCompile Include="Bank.cpp" />
     <ClCompile Include="Board.cpp" />
+    <ClCompile Include="BuildCastleCommand.cpp" />
+    <ClCompile Include="BuildCottageCommand.cpp" />
+    <ClCompile Include="CardCommands.cpp" />
     <ClCompile Include="CardDeck.cpp" />
     <ClCompile Include="CardField.cpp" />
     <ClCompile Include="Castle.cpp" />
     <ClCompile Include="Cottage.cpp" />
     <ClCompile Include="Dice.cpp" />
+    <ClCompile Include="GoToJailCommand.cpp" />
     <ClCompile Include="GroupPaymentCard.cpp" />
     <ClCompile Include="Jail.cpp" />
     <ClCompile Include="Monopoly.cpp" />
+    <ClCompile Include="MovePlayerCommand.cpp" />
     <ClCompile Include="MovePositionCard.cpp" />
     <ClCompile Include="MyString.cpp" />
+    <ClCompile Include="PayJailFineCommand.cpp" />
     <ClCompile Include="PaymentCard.cpp" />
+    <ClCompile Include="PayRentCommand.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Property.cpp" />
+    <ClCompile Include="BuyPropertyCommand.cpp" />
+    <ClCompile Include="RollForJailReleaseCommand.cpp" />
+    <ClCompile Include="SellMortgageCommand.cpp" />
+    <ClCompile Include="SellPropertyCommand.cpp" />
     <ClCompile Include="SpecialField.cpp" />
     <ClCompile Include="Trade.cpp" />
   </ItemGroup>

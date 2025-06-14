@@ -2,6 +2,7 @@
 #include "Bank.h"
 #include "Board.h"
 #include "Cottage.h"
+#include "Monopoly.h"
 
 void Player::free()
 {
@@ -17,6 +18,7 @@ void Player::copyFrom(const Player& other)
 	money = other.money;
 	id = other.id;
 	imprisoned = other.imprisoned;
+	this->game = other.game;
 
 	for (size_t i = 0; i < static_cast<size_t>(PropertyColor::Count); i++) {
 		propertyCounts[i] = other.propertyCounts[i];
@@ -33,23 +35,28 @@ void Player::moveFrom(Player&& other) noexcept
 	money = other.money;
 	id = other.id;
 	imprisoned = other.imprisoned;
+	this->game = other.game;
 
 	for (size_t i = 0; i < static_cast<size_t>(PropertyColor::Count); i++) {
 		propertyCounts[i] = other.propertyCounts[i];
 		other.propertyCounts[i] = 0;
 	}
 	pendingTrades = std::move(other.pendingTrades);
+	other.game = nullptr;
 }
 
-Player::Player() : username(Token::Unknown), money(0), id(0), imprisoned(false), pendingTrades()
+Player::Player(Monopoly* game)
+	: game(game), username(Token::Unknown), money(0), id(0), imprisoned(false), pendingTrades()
 {
-	//propertyCounts is already zero-initialized
+	// propertyCounts is already zero-initialized
 }
 
-Player::Player(size_t username, double money) : Player()
+Player::Player(Monopoly* game, size_t username, double money)
+	: Player(game)  //delegate to the other constructor
 {
 	setUsername(username);
 	this->money = money;
+	this->pendingTrades = Vector<Trade*>();
 }
 
 Player::~Player()
@@ -122,7 +129,7 @@ size_t Player::getTurnsInJail() const
 	return turnsInJail;
 }
 
-size_t Player::getId()
+size_t Player::getId() const
 {
 	return id;
 }
@@ -132,17 +139,9 @@ size_t Player::getPairsThrown() const
 	return pairsThrown;
 }
 
-bool Player::isImprisoned()
+bool Player::isImprisoned() const
 {
 	return imprisoned;
-}
-
-
-Player::Player(size_t username, double money)
-{
-	setUsername(username);
-	this->money = money;
-	this->pendingTrades = Vector<Trade*>();
 }
 
 bool Player::buyProperty(Property& property) {
@@ -153,31 +152,29 @@ bool Player::buyProperty(Property& property) {
 	incrementPropertyCount(property.getColor());
 
 	if (hasMonopoly(property.getColor())) {
-		std::cout << tokenToString().c_str() << " gained a monopoly on "
-			<< Property::colorToString(property.getColor()).c_str() << " properties!\n";
+		std::cout << tokenToString() << " gained a monopoly on "
+			<< Property::colorToString(property.getColor()) << " properties!\n";
 	}
 
 	return true;
 }
 
 bool Player::sellProperty(Property& property) {
-	if (property.getOwner() != this)
+	if (!game || property.getOwner() != this)
 		return false;
 
 	bool wasMonopoly = hasMonopoly(property.getColor());
-	double totalRefund = property.getPriceToBuy() / 2; //base 50% refund
+	double totalRefund = property.getPriceToBuy() / 2;
 
-	//sell buildings
-	while (property.mortgages.getSize() > 0) {
-		Mortgage* m = property.mortgages[property.mortgages.getSize() - 1];
-		if (dynamic_cast<Cottage*>(m)) {
-			totalRefund += property.getPriceForCottage() / 2;
-		}
-		else{
-			totalRefund += property.getPriceForCastle() / 2;
-		}
-		property.mortgages.pop_back();
-		delete m;
+	//sell all mortgages using command
+	while (!property.getMortgages().isEmpty()) {
+		SellMortgageCommand* cmd = new SellMortgageCommand(this, property);
+		cmd->execute();
+		totalRefund += (cmd->wasCottage ?
+			property.getPriceForCottage() :
+			property.getPriceForCastle()) / 2;
+
+		game->executeCommand(cmd);
 	}
 
 	Bank::addMoney(*this, totalRefund);
@@ -185,8 +182,8 @@ bool Player::sellProperty(Property& property) {
 	decrementPropertyCount(property.getColor());
 
 	if (wasMonopoly && !hasMonopoly(property.getColor())) {
-		std::cout << tokenToString()<< " lost monopoly on "
-			<< Property::colorToString(property.getColor()).c_str() << " properties!\n";
+		std::cout << tokenToString() << " lost monopoly on "
+			<< Property::colorToString(property.getColor()) << " properties!\n";
 	}
 
 	return true;

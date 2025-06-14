@@ -2,6 +2,7 @@
 #include "Field.h"
 class Jail:public Field
 {
+public:
 	Field* clone() const override;
     void onLand(Player& player) override;
 

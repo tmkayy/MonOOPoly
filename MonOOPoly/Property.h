@@ -5,6 +5,8 @@
 #include <stdexcept>
 #include "MyString.h"
 #include "Consts.h"
+#include "BuildCastleCommand.h"
+#include "BuildCottageCommand.h"
 
 
 class Property : public Field
@@ -41,6 +43,7 @@ public:
     double getPriceForRent() const;
     Player* getOwner() const;
     const Vector<Mortgage*>& getMortgages() const;
+    Vector<Mortgage*>& getMortgages();
     PropertyColor getColor() const;
 
     void setPriceToBuy(double price);

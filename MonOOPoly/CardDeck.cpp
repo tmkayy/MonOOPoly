@@ -125,6 +125,21 @@ Stack<Card*> CardDeck::getCards() const
     return cards;
 }
 
+Card* CardDeck::drawCard() {
+    if (cards.isEmpty()) {
+        return nullptr;
+    }
+    Card* card = cards.top();
+    cards.pop();
+    return card;
+}
+
+void CardDeck::returnCard(Card* card) {
+    if (card) {
+        cards.push(card);
+    }
+}
+
 void CardDeck::free()
 {
 	while (cards.getSize() > 0)

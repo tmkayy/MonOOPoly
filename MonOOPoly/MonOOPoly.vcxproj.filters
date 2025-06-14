@@ -49,6 +49,12 @@
     <Filter Include="Source Files\Monopoly">
       <UniqueIdentifier>{11f01903-82ba-4d0f-965b-8b05215e4bf8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Monopoly\Command">
+      <UniqueIdentifier>{35a36e4b-ac02-4519-bd55-136cf7a386d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Monopoly\Command">
+      <UniqueIdentifier>{9e9eaa98-4f4f-49ff-bd1a-654dff269f73}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Consts.h">
@@ -120,6 +126,42 @@
     <ClInclude Include="Trade.h">
       <Filter>Header Files\player</Filter>
     </ClInclude>
+    <ClInclude Include="GameCommand.h">
+      <Filter>Header Files\Monopoly\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="MovePlayerCommand.h">
+      <Filter>Header Files\Monopoly\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="BuyPropertyCommand.h">
+      <Filter>Header Files\Monopoly\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="SellPropertyCommand.h">
+      <Filter>Header Files\Monopoly\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="PayRentCommand.h">
+      <Filter>Header Files\Monopoly\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="SellMortgageCommand.h">
+      <Filter>Header Files\Monopoly\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildCottageCommand.h">
+      <Filter>Header Files\Monopoly\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildCastleCommand.h">
+      <Filter>Header Files\Monopoly\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="CardCommands.h">
+      <Filter>Header Files\Monopoly\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="GoToJailCommand.h">
+      <Filter>Header Files\Monopoly\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="PayJailFineCommand.h">
+      <Filter>Header Files\Monopoly\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="RollForJailReleaseCommand.h">
+      <Filter>Header Files\Monopoly\Command</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Player.cpp">
@@ -172,6 +214,39 @@
     </ClCompile>
     <ClCompile Include="Trade.cpp">
       <Filter>Source Files\player</Filter>
+    </ClCompile>
+    <ClCompile Include="MovePlayerCommand.cpp">
+      <Filter>Source Files\Monopoly\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="BuyPropertyCommand.cpp">
+      <Filter>Source Files\Monopoly\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="SellPropertyCommand.cpp">
+      <Filter>Source Files\Monopoly\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="PayRentCommand.cpp">
+      <Filter>Source Files\Monopoly\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildCastleCommand.cpp">
+      <Filter>Source Files\Monopoly\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildCottageCommand.cpp">
+      <Filter>Source Files\Monopoly\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="SellMortgageCommand.cpp">
+      <Filter>Source Files\Monopoly\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="CardCommands.cpp">
+      <Filter>Source Files\Monopoly\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="GoToJailCommand.cpp">
+      <Filter>Source Files\Monopoly\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="PayJailFineCommand.cpp">
+      <Filter>Source Files\Monopoly\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="RollForJailReleaseCommand.cpp">
+      <Filter>Source Files\Monopoly\Command</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

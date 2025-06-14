@@ -17,3 +17,8 @@ void PaymentCard::applyEffect(Player& player, const Vector<Player*>& allPlayers)
     else
         Bank::addMoney(player, moneyAmount);
 }
+
+
+void PaymentCard::reverseEffect(Player& player, const Vector<Player*>& allPlayers) const {
+    Bank::addMoney(player, moneyAmount); // Give the money back
+}
