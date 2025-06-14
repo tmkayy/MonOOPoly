@@ -150,13 +150,13 @@ void Property::setColor(PropertyColor newColor) {
 bool Property::buildCottage(Player* player) {
     BuildCottageCommand cmd(player, *this);
     cmd.execute();
-    return cmd.wasBuilt(); // You'd need to add this getter to the command class
+    return cmd.wasBuilt();
 }
 
 bool Property::buildCastle(Player* player) {
     BuildCastleCommand cmd(player, *this);
     cmd.execute();
-    return cmd.wasBuilt(); // You'd need to add this getter to the command class
+    return cmd.wasBuilt();
 }
 
 Field* Property::clone() const {

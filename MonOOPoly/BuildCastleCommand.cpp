@@ -30,3 +30,7 @@ void BuildCastleCommand::undo() {
 GameCommand* BuildCastleCommand::clone() const {
     return new BuildCastleCommand(*this);
 }
+
+bool BuildCastleCommand::wasBuilt() const {
+    return built;
+}

@@ -42,27 +42,52 @@ void Trade::execute() {
         return;
     }
 
-    // tansfer properties from proposer to receiver
+    //transfer properties and update color counts
     for (size_t i = 0; i < proposerProperties.getSize(); ++i) {
         Property* prop = proposerProperties[i];
         if (prop) {
+            //update color counts before changing owner
+            proposer->decrementPropertyCount(prop->getColor());
             prop->setOwner(receiver);
+            receiver->incrementPropertyCount(prop->getColor());
+
+            checkMonopolyChange(prop->getColor(), proposer, receiver);
         }
     }
 
-    //transfer properties from receiver to proposer
     for (size_t i = 0; i < receiverProperties.getSize(); ++i) {
         Property* prop = receiverProperties[i];
         if (prop) {
+            //update color counts before changing owner
+            receiver->decrementPropertyCount(prop->getColor());
             prop->setOwner(proposer);
+            proposer->incrementPropertyCount(prop->getColor());
+
+            checkMonopolyChange(prop->getColor(), receiver, proposer);
         }
     }
 
+    //handle money transfers
     if (proposerMoney > 0) {
         Bank::transferMoney(*proposer, *receiver, proposerMoney);
     }
     if (receiverMoney > 0) {
         Bank::transferMoney(*receiver, *proposer, receiverMoney);
+    }
+}
+
+void Trade::checkMonopolyChange(PropertyColor color, Player* oldOwner, Player* newOwner) {
+    bool wasMonopoly = oldOwner->hasMonopoly(color);
+    bool isNowMonopoly = newOwner->hasMonopoly(color);
+
+    if (wasMonopoly && !oldOwner->hasMonopoly(color)) {
+        std::cout << oldOwner->tokenToString() << " lost monopoly on "
+            << Property::colorToString(color) << " properties!\n";
+    }
+
+    if (!wasMonopoly && isNowMonopoly) {
+        std::cout << newOwner->tokenToString() << " gained monopoly on "
+            << Property::colorToString(color) << " properties!\n";
     }
 }
 

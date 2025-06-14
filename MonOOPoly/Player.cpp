@@ -282,6 +282,10 @@ const Vector<Trade*>& Player::getPendingTrades() const {
 	return pendingTrades;
 }
 
+Vector<Trade*>& Player::getPendingTrades() {
+	return pendingTrades;
+}
+
 int Player::getPropertyCount(PropertyColor color) const
 {
 	if ((size_t)(color) >= (size_t)(PropertyColor::Count)) {

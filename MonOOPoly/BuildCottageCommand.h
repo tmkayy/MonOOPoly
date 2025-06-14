@@ -15,4 +15,5 @@ public:
     void execute() override;
     void undo() override;
     GameCommand* clone() const override;
+    bool wasBuilt() const;
 };

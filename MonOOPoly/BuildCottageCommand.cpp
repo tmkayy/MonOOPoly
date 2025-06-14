@@ -30,3 +30,8 @@ void BuildCottageCommand::undo() {
 GameCommand* BuildCottageCommand::clone() const {
     return new BuildCottageCommand(*this);
 }
+
+bool BuildCottageCommand::wasBuilt() const
+{
+    return built;
+}

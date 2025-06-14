@@ -1,5 +1,6 @@
 #pragma once
 #include "Vector.hpp"
+#include "Consts.h"
 
 class Property;
 class Player;
@@ -9,14 +10,14 @@ class Trade {
     Player* proposer;
     Player* receiver;
     Vector<Property*> proposerProperties;
-    int proposerMoney;
     Vector<Property*> receiverProperties;
+    int proposerMoney;
     int receiverMoney;
     bool isAccepted;
 
     void execute();
-    bool isValid() const;
 public:
+    bool isValid() const;
     Trade(Player* proposer, Player* receiver);
 
     void addProposerProperty(Property* property);
@@ -35,5 +36,7 @@ public:
     bool getIsAccepted() const;
     Player* getProposer() const;
     Player* getReceiver() const;
+
+    void checkMonopolyChange(PropertyColor color, Player* oldOwner, Player* newOwner);
 };
 

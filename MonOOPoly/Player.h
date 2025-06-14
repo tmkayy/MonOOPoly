@@ -63,6 +63,7 @@ public:
 		bool acceptTrade(Trade& trade);
 		void rejectTrade(Trade& trade);
 		const Vector<Trade*>& getPendingTrades() const;
+		Vector<Trade*>& getPendingTrades();
 
 	int getPropertyCount(PropertyColor color) const;
 	int getPropertiesOfColor(const MyString& color) const;
