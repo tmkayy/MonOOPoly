@@ -1,11 +1,11 @@
 #pragma once
 #include "Vector.hpp"
 #include "Field.h"
-#include "Property.h"
 #include "Jail.h"
 #include "CardField.h"
 #include "SpecialField.h"
 
+class Property;
 class Board
 {
     Vector<Field*> board;

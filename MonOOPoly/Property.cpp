@@ -1,10 +1,6 @@
 #include "Property.h"
-#include "Consts.h"
 #include "Player.h"
-#include <stdexcept>
-#include "Castle.h"
-#include "Cottage.h"
-#include "Bank.h"
+
 
 void Property::free() {
     for (size_t i = 0; i < mortgages.getSize(); ++i) {
@@ -14,6 +10,7 @@ void Property::free() {
 }
 
 void Property::copyFrom(const Property& other) {
+    name = other.name;
     priceToBuy = other.priceToBuy;
     priceForCottage = other.priceForCottage;
     priceForCastle = other.priceForCastle;
@@ -28,6 +25,7 @@ void Property::copyFrom(const Property& other) {
 }
 
 void Property::moveFrom(Property&& other) noexcept {
+    name = std::move(other.name);
     priceToBuy = other.priceToBuy;
     other.priceToBuy = 0;
 
@@ -58,13 +56,13 @@ void Property::onLand(Player& player)
 }
 
 Property::Property()
-    : priceToBuy(0), priceForCottage(0), priceForCastle(0),
+    : name(""), priceToBuy(0), priceForCottage(0), priceForCastle(0),
     priceForRent(0), owner(nullptr), mortgages(), color(PropertyColor::Unknown) {
 }
 
-Property::Property(double buyPrice, double cottagePrice, double castlePrice,
+Property::Property(const MyString& name, double buyPrice, double cottagePrice, double castlePrice,
     double rentPrice, PropertyColor color, Player* owner)
-    : color(color)
+    : name(name), color(color)
 {
     setPriceToBuy(buyPrice);
     setPriceForCottage(cottagePrice);
@@ -101,6 +99,7 @@ Property& Property::operator=(Property&& other) noexcept {
     return *this;
 }
 
+const MyString& Property::getName() const { return name; }
 double Property::getPriceToBuy() const { return priceToBuy; }
 double Property::getPriceForCottage() const { return priceForCottage; }
 double Property::getPriceForCastle() const { return priceForCastle; }
@@ -111,6 +110,10 @@ Vector<Mortgage*>& Property::getMortgages() { return mortgages; }
 
 PropertyColor Property::getColor() const {
     return color;
+}
+
+void Property::setName(const MyString& newName) {
+    name = newName;
 }
 
 void Property::validatePrice(double price) {
@@ -147,6 +150,11 @@ void Property::setColor(PropertyColor newColor) {
     color = newColor;
 }
 
+bool Property::hasMortgages() const
+{
+    return mortgages.isEmpty();
+}
+
 bool Property::buildCottage(Player* player) {
     BuildCottageCommand cmd(player, *this);
     cmd.execute();
@@ -161,21 +169,4 @@ bool Property::buildCastle(Player* player) {
 
 Field* Property::clone() const {
     return new Property(*this);
-}
-
-
-MyString Property::colorToString(PropertyColor color) { //IDK IF I NEED THIS
-    switch (color) {
-    case PropertyColor::Brown: return "Brown";
-    case PropertyColor::LightBlue: return "Light Blue";
-    case PropertyColor::Pink: return "Pink";
-    case PropertyColor::Orange: return "Orange";
-    case PropertyColor::Red: return "Red";
-    case PropertyColor::Yellow: return "Yellow";
-    case PropertyColor::Green: return "Green";
-    case PropertyColor::Blue: return "Blue";
-    case PropertyColor::Railroad: return "Railroad";
-    case PropertyColor::Utility: return "Utility";
-    default: return "Unknown";
-    }
 }

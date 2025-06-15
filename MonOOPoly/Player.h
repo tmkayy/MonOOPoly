@@ -49,6 +49,7 @@ public:
 	size_t getId() const;
 	size_t getPairsThrown() const;
 	bool isImprisoned() const;
+	bool isBankrupt() const;
 
 	bool buyProperty(Property& property);
 	bool sellProperty(Property& property);//trade

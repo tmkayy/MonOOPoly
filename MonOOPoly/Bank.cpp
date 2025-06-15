@@ -1,4 +1,5 @@
 #include "Bank.h"
+#include "Player.h"
 
 bool Bank::addMoney(Player& player, double cash)
 {

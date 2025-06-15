@@ -1,5 +1,5 @@
 #include "Cottage.h"
-#include "Consts.h"
+#include "Property.h"
 
 Mortgage* Cottage::clone() const
 {

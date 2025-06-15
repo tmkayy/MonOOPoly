@@ -1,5 +1,6 @@
 #pragma once
 #include "Mortgage.h"
+#include "Consts.h"
 class Castle : public Mortgage
 {
 public:

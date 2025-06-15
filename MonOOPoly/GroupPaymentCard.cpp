@@ -13,10 +13,6 @@ Card* GroupPaymentCard::clone() const
 
 void GroupPaymentCard::applyEffect(Player& player, const Vector<Player*>& allPlayers) const
 {
-}
-
-void GroupPaymentCard::applyEffect(Player& player, const Vector<Player*>& allPlayers) const
-{
 	for (size_t i = 0; i < allPlayers.getSize(); ++i) {
 		if (allPlayers[i] != &player) {
 			Bank::transferMoney(*allPlayers[i], player, paymentAmount);

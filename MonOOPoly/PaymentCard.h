@@ -1,6 +1,5 @@
 #pragma once
 #include "Card.h"
-#include "Bank.h"
 class PaymentCard : public Card
 {
 	double moneyAmount = 0;

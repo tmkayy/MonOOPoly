@@ -3,6 +3,9 @@
 #include "Board.h"
 #include "Cottage.h"
 #include "Monopoly.h"
+#include "ProposeTradeCommand.h"
+#include "AcceptTradeCommand.h"
+#include "RejectTradeCommand.h"
 
 void Player::free()
 {
@@ -144,6 +147,11 @@ bool Player::isImprisoned() const
 	return imprisoned;
 }
 
+bool Player::isBankrupt() const
+{
+	return money == 0;
+}
+
 bool Player::buyProperty(Property& property) {
 	if (property.getOwner() != nullptr) return false;
 	if (!Bank::subtractMoney(*this, property.getPriceToBuy())) return false;
@@ -153,7 +161,7 @@ bool Player::buyProperty(Property& property) {
 
 	if (hasMonopoly(property.getColor())) {
 		std::cout << tokenToString() << " gained a monopoly on "
-			<< Property::colorToString(property.getColor()) << " properties!\n";
+			<< colorToString(property.getColor()) << " properties!\n";
 	}
 
 	return true;
@@ -183,7 +191,7 @@ bool Player::sellProperty(Property& property) {
 
 	if (wasMonopoly && !hasMonopoly(property.getColor())) {
 		std::cout << tokenToString() << " lost monopoly on "
-			<< Property::colorToString(property.getColor()) << " properties!\n";
+			<< colorToString(property.getColor()) << " properties!\n";
 	}
 
 	return true;
@@ -195,87 +203,22 @@ bool Player::proposeTrade(Player& receiver,
 	double moneyOffered,
 	double moneyRequested)
 {
-	if (this == &receiver) {
-		return false;
-	}
-
-	Trade* newTrade = new Trade(this, &receiver);
-
-	//verify and add offered properties
-	for (size_t i = 0; i < propertiesOffered.getSize(); i++) {
-		Property* prop = propertiesOffered[i];
-		if (prop == nullptr || prop->getOwner() != this) {
-			delete newTrade;
-			return false;
-		}
-		newTrade->addProposerProperty(prop);
-	}
-
-	//verify and add requested properties
-	for (size_t i = 0; i < propertiesRequested.getSize(); i++) {
-		Property* prop = propertiesRequested[i];
-		if (prop == nullptr || prop->getOwner() != &receiver) {
-			delete newTrade;
-			return false;
-		}
-		newTrade->addReceiverProperty(prop);
-	}
-
-	newTrade->setProposerMoney(moneyOffered);
-	newTrade->setReceiverMoney(moneyRequested);
-	receiver.pendingTrades.push_back(newTrade);
-
-	return true;
+	ProposeTradeCommand* cmd = new ProposeTradeCommand(*this, receiver,
+		propertiesOffered, propertiesRequested,
+		moneyOffered, moneyRequested);
+	return game->executeCommand(cmd);
 }
 
 bool Player::acceptTrade(Trade& trade)
 {
-	if (trade.getReceiver() != this) {
-		return false;
-	}
-
-	//check if trade is in pending trades
-	bool found = false;
-	for (size_t i = 0; i < pendingTrades.getSize(); i++) {
-		if (pendingTrades[i] == &trade) {
-			found = true;
-			break;
-		}
-	}
-
-	if (!found) {
-		return false;
-	}
-
-	trade.accept();
-
-	//remove from pending trades
-	for (size_t i = 0; i < pendingTrades.getSize(); i++) {
-		if (pendingTrades[i] == &trade) {
-			pendingTrades.remove(i);
-			break;
-		}
-	}
-
-	return true;
+	AcceptTradeCommand* cmd = new AcceptTradeCommand(trade);
+	return game->executeCommand(cmd);
 }
 
 void Player::rejectTrade(Trade& trade)
 {
-	if (trade.getReceiver() != this) {
-		return;
-	}
-
-	trade.reject();
-
-	for (size_t i = 0; i < pendingTrades.getSize(); i++) {
-		if (pendingTrades[i] == &trade) {
-			Trade* toDelete = pendingTrades[i];
-			pendingTrades.remove(i);
-			delete toDelete;
-			break;
-		}
-	}
+	RejectTradeCommand* cmd = new RejectTradeCommand(trade);
+	game->executeCommand(cmd);
 }
 
 const Vector<Trade*>& Player::getPendingTrades() const {

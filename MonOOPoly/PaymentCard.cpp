@@ -1,4 +1,5 @@
 #include "PaymentCard.h"
+#include "Bank.h"
 
 PaymentCard::PaymentCard(double money)
 {

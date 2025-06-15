@@ -1,4 +1,5 @@
 #include "AcceptTradeCommand.h"
+#include "Property.h"
 
 AcceptTradeCommand::AcceptTradeCommand(Trade& trade)
     : trade(trade), wasAccepted(trade.getIsAccepted()) {

@@ -1,6 +1,6 @@
 #pragma once
-#include "Property.h"
 
+class Property;
 class Mortgage
 {
 public:

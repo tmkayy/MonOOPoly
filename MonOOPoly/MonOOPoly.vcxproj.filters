@@ -174,6 +174,24 @@
     <ClInclude Include="DeclareBankruptcyCommand.h">
       <Filter>Header Files\Monopoly\Command</Filter>
     </ClInclude>
+    <ClInclude Include="PayTaxCommand.h">
+      <Filter>Header Files\Monopoly\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="PassGoCommand.h">
+      <Filter>Header Files\Monopoly\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="TradeSelectionCommand.h">
+      <Filter>Header Files\Monopoly\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectPropertyCommand.h">
+      <Filter>Header Files\Monopoly\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectTradePartnerCommand.h">
+      <Filter>Header Files\Monopoly\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="AddPlayerCommand.h">
+      <Filter>Header Files\Monopoly\Command</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Player.cpp">
@@ -271,6 +289,27 @@
     </ClCompile>
     <ClCompile Include="DeclareBankruptcyCommand.cpp">
       <Filter>Source Files\Monopoly\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="PayTaxCommand.cpp">
+      <Filter>Source Files\Monopoly\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="PassGoCommand.cpp">
+      <Filter>Source Files\Monopoly\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="TradeSelectionCommand.cpp">
+      <Filter>Source Files\Monopoly\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectTradePartnerCommand.cpp">
+      <Filter>Source Files\Monopoly\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectPropertyCommand.cpp">
+      <Filter>Source Files\Monopoly\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="AddPlayerCommand.cpp">
+      <Filter>Source Files\Monopoly\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

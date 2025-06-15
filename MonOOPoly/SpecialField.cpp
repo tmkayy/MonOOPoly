@@ -1,5 +1,5 @@
 #include "SpecialField.h"
-#include "Bank.h"
+#include "Player.h"
 
 SpecialField::SpecialField(Type type, const MyString& name, double value)
 	: fieldType(type), name(name), value(value)
@@ -30,9 +30,6 @@ void SpecialField::onLand(Player& player) {
         break;
     case Type::FREE_PARKING:
         //nothing ever happens...
-        break;
-    case Type::JAIL:
-        //just visiting
         break;
     case Type::GO_TO_JAIL:
         player.setImprisoned(true);

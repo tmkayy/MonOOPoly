@@ -233,7 +233,7 @@ inline void Stack<T>::moveFrom(Stack&& other) noexcept
 }
 
 template<typename T>
-inline void Stack<T>::free()
+inline void Stack<T>::free() noexcept
 {
 	delete[] this->data;
 

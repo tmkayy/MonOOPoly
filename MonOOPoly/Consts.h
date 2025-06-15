@@ -59,12 +59,12 @@ static constexpr const char* PropertyColorStrings[] = {
 	"Unknown"
 };
 
-const char* colorToString(PropertyColor color) {
+inline const char* colorToString(PropertyColor color) {
 	const size_t index = (size_t)(color);
 	return (index < (size_t)(PropertyColor::Count)) ? PropertyColorStrings[index] : "Unknown";
 }
 
-PropertyColor stringToColor(const MyString& str) {
+inline PropertyColor stringToColor(const MyString& str) {
 	for (size_t i = 0; i < (size_t)(PropertyColor::Count); ++i) {
 		if (str == PropertyColorStrings[i]) {
 			return (PropertyColor)(i);

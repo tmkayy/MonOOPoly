@@ -1,6 +1,6 @@
 #include "Jail.h"
-#include "Player.h"
 #include "Bank.h"
+#include "Player.h"
 #include <iostream>
 
 Field* Jail::clone() const {

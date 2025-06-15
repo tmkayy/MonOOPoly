@@ -1,5 +1,6 @@
 #pragma once
 #include "Card.h"
+
 class MovePositionCard :public Card
 {
 	int tiles = 0;

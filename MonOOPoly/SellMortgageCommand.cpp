@@ -18,12 +18,12 @@ void SellMortgageCommand::execute() {
     if (wasCottage) {
         Bank::addMoney(*player, property.getPriceForCottage() / 2);
         std::cout << player->tokenToString() << " sold cottage on "
-            << Property::colorToString(property.getColor()) << "\n";
+            << colorToString(property.getColor()) << "\n";
     }
     else {
         Bank::addMoney(*player, property.getPriceForCastle() / 2);
         std::cout << player->tokenToString() << " sold castle on "
-            << Property::colorToString(property.getColor()) << "\n";
+            << colorToString(property.getColor()) << "\n";
     }
 
     delete m;
@@ -34,7 +34,7 @@ void SellMortgageCommand::execute() {
     if (hadMonopoly && !player->hasMonopoly(property.getColor())) {
         monopolyLost = true;
         std::cout << player->tokenToString() << " lost monopoly on "
-            << Property::colorToString(property.getColor()) << " properties!\n";
+            << colorToString(property.getColor()) << " properties!\n";
     }
 }
 
@@ -47,7 +47,7 @@ void SellMortgageCommand::undo() {
             property.getMortgages().push_back(cottage);
             cottage->increaseRent(property);
             std::cout << "Undo: Rebuilt cottage on "
-                << Property::colorToString(property.getColor()) << "\n";
+                << colorToString(property.getColor()) << "\n";
         }
     }
     else {
@@ -56,13 +56,13 @@ void SellMortgageCommand::undo() {
             property.getMortgages().push_back(castle);
             castle->increaseRent(property);
             std::cout << "Undo: Rebuilt castle on "
-                << Property::colorToString(property.getColor()) << "\n";
+                << colorToString(property.getColor()) << "\n";
         }
     }
 
     if (monopolyLost) {
         std::cout << "Undo: Regained monopoly on "
-            << Property::colorToString(property.getColor())<< "\n";
+            << colorToString(property.getColor())<< "\n";
     }
 }
 

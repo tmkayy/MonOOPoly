@@ -1,5 +1,5 @@
 #include "Castle.h"
-#include "Consts.h"
+#include "Property.h"
 
 void Castle::increaseRent(Property& property)
 {

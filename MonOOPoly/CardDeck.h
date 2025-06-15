@@ -1,11 +1,11 @@
 #pragma once
 #include "Card.h"
-#include "PaymentCard.h"
-#include "GroupPaymentCard.h"
-#include "MovePositionCard.h"
 #include "Stack.hpp"
 #include "Vector.hpp"
 #include "Consts.h"
+#include <random>
+#include "CardField.h"
+
 class CardDeck
 {
 	Stack<Card*> cards;

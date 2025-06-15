@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AcceptTradeCommand.h" />
+    <ClInclude Include="AddPlayerCommand.h" />
     <ClInclude Include="Bank.h" />
     <ClInclude Include="Board.h" />
     <ClInclude Include="BuildCastleCommand.h" />
@@ -147,24 +148,30 @@
     <ClInclude Include="MovePlayerCommand.h" />
     <ClInclude Include="MovePositionCard.h" />
     <ClInclude Include="MyString.h" />
+    <ClInclude Include="PassGoCommand.h" />
     <ClInclude Include="PayJailFineCommand.h" />
     <ClInclude Include="PaymentCard.h" />
     <ClInclude Include="PayRentCommand.h" />
+    <ClInclude Include="PayTaxCommand.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Property.h" />
     <ClInclude Include="BuyPropertyCommand.h" />
     <ClInclude Include="ProposeTradeCommand.h" />
     <ClInclude Include="RejectTradeCommand.h" />
     <ClInclude Include="RollForJailReleaseCommand.h" />
+    <ClInclude Include="SelectPropertyCommand.h" />
+    <ClInclude Include="SelectTradePartnerCommand.h" />
     <ClInclude Include="SellMortgageCommand.h" />
     <ClInclude Include="SellPropertyCommand.h" />
     <ClInclude Include="SpecialField.h" />
     <ClInclude Include="Stack.hpp" />
     <ClInclude Include="Trade.h" />
+    <ClInclude Include="TradeSelectionCommand.h" />
     <ClInclude Include="Vector.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AcceptTradeCommand.cpp" />
+    <ClCompile Include="AddPlayerCommand.cpp" />
     <ClCompile Include="Bank.cpp" />
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="BuildCastleCommand.cpp" />
@@ -183,19 +190,25 @@
     <ClCompile Include="MovePlayerCommand.cpp" />
     <ClCompile Include="MovePositionCard.cpp" />
     <ClCompile Include="MyString.cpp" />
+    <ClCompile Include="PassGoCommand.cpp" />
     <ClCompile Include="PayJailFineCommand.cpp" />
     <ClCompile Include="PaymentCard.cpp" />
     <ClCompile Include="PayRentCommand.cpp" />
+    <ClCompile Include="PayTaxCommand.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Property.cpp" />
     <ClCompile Include="BuyPropertyCommand.cpp" />
     <ClCompile Include="ProposeTradeCommand.cpp" />
     <ClCompile Include="RejectTradeCommand.cpp" />
     <ClCompile Include="RollForJailReleaseCommand.cpp" />
+    <ClCompile Include="SelectPropertyCommand.cpp" />
+    <ClCompile Include="SelectTradePartnerCommand.cpp" />
     <ClCompile Include="SellMortgageCommand.cpp" />
     <ClCompile Include="SellPropertyCommand.cpp" />
+    <ClCompile Include="Source.cpp" />
     <ClCompile Include="SpecialField.cpp" />
     <ClCompile Include="Trade.cpp" />
+    <ClCompile Include="TradeSelectionCommand.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

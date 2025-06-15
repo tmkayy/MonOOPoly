@@ -1,7 +1,7 @@
 #include "CardDeck.h"
-#include <random>
-#include "CardField.h"
-
+#include "PaymentCard.h"
+#include "GroupPaymentCard.h"
+#include "MovePositionCard.h"
 
 CardDeck::CardDeck()
 {

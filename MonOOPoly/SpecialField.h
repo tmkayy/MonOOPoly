@@ -1,13 +1,14 @@
 #pragma once
 #include "Field.h"
 #include "MyString.h"
+#include "Bank.h"
+
 
 class SpecialField : public Field {
 public:
     enum class Type {
         GO,
         FREE_PARKING,
-        JAIL,
         GO_TO_JAIL,
         INCOME_TAX,
         LUXURY_TAX
@@ -26,6 +27,6 @@ public:
     const MyString& getName() const;
     double getValue() const;
 
-    void onLand(class Player& player) override;
-    void onPass(class Player& player) override;
+    void onLand(class Player& player);
+    void onPass(class Player& player);
 };
