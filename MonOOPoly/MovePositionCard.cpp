@@ -14,6 +14,10 @@ Card* MovePositionCard::clone() const
 void MovePositionCard::applyEffect(Player& player, const Vector<Player*>& allPlayers) const
 {
     Board::setId(player, player.getId() + tiles);
+    if(tiles> 0)
+        std::cout << "Player " << Tokens[(size_t)player.getUsername()] << " moves " << tiles << " fields forward." << std::endl;
+	else
+		std::cout << "Player " << Tokens[(size_t)player.getUsername()] << " moves " << -tiles << " fields backward." << std::endl;
 }
 
 

@@ -7,17 +7,17 @@ Field* CardField::clone() const
 	return new CardField(*this);
 }
 
-void CardField::onLand(Player& player)
+void CardField::onLand(Player& player, CardDeck& deck, const Vector<Player*>& allPlayers)
 {
-	//drawCard(player, ...); //TODO
+	drawCard(player, deck, allPlayers);
 }
 
-bool CardField::drawCard(Player& player, CardDeck& deck)
+Card* CardField::drawCard(Player& player, CardDeck& deck, const Vector<Player*>& allPlayers)
 {
-	if (deck.getCards().isEmpty()) {
-		return false;
-	}
-	/*deck.getCards().top()->applyEffect(player);*/ //TODO
-	deck.getCards().pop();
-	return true;
+    Card* card = deck.drawCard();
+    if (!card) {
+        return nullptr;
+    }
+    card->applyEffect(player, allPlayers);
+    return card;
 }

@@ -245,14 +245,18 @@ void Monopoly::handleCurrentField() {
 			break;
 
 		case SpecialField::Type::FREE_PARKING:
+			std::cout << "Free Parking! No action taken.\n";
 			break;
 
 		case SpecialField::Type::GO_TO_JAIL:
+			std::cout << "Go to Jail! Moving to jail...\n";
 			executeCommand(new GoToJailCommand(*currentPlayer));
 			break;
 
 		case SpecialField::Type::INCOME_TAX:
 		case SpecialField::Type::LUXURY_TAX:
+			std::cout<< "Landed on " << specialField->getName() << ". Paying tax of $"
+				<< specialField->getValue() << ".\n";
 			executeCommand(new PayTaxCommand(*currentPlayer, specialField->getValue()));
 			break;
 
@@ -266,6 +270,7 @@ void Monopoly::handleCurrentField() {
 		handlePropertyLanding(property);
 	}
 	else if (CardField* cardField = dynamic_cast<CardField*>(field)) {
+		std::cout << "Landed on card field: " << "\n";
 		executeCommand(new DrawCardCommand(*currentPlayer, cards, players));
 	}
 }

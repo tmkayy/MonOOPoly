@@ -6,9 +6,9 @@ class CardDeck;
 class Player;
 class CardField:public Field
 {
-	bool drawCard(Player& player, CardDeck& deck);
 public:
+	static Card* drawCard(Player& player, CardDeck& deck, const Vector<Player*>& allPlayers);
 	Field* clone() const override;
-	void onLand(Player& player);
+	void onLand(Player& player, CardDeck& deck, const Vector<Player*>& allPlayers);
 };
 

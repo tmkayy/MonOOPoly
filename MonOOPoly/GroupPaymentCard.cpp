@@ -18,6 +18,7 @@ void GroupPaymentCard::applyEffect(Player& player, const Vector<Player*>& allPla
 			Bank::transferMoney(*allPlayers[i], player, paymentAmount);
 		}
 	}
+	std::cout << "All players pay " << paymentAmount << "$ to " << Tokens[(size_t)player.getUsername()] << ".\n";
 }
 
 void GroupPaymentCard::reverseEffect(Player& player, const Vector<Player*>& allPlayers) const {

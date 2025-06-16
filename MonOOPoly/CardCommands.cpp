@@ -9,10 +9,7 @@ DrawCardCommand::~DrawCardCommand() {
 }
 
 void DrawCardCommand::execute() {
-    drawnCard = deck.drawCard();
-    if (drawnCard) {
-        drawnCard->applyEffect(player, allPlayers);
-    }
+    drawnCard = CardField::drawCard(player, deck, allPlayers);
 }
 
 void DrawCardCommand::undo() {
