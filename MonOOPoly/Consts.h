@@ -26,7 +26,7 @@ enum class Token {
 };
 
 static constexpr const char* Tokens[] = {
-		"RaceCar", "RaceCar", "Thimble", "ScottishTerrier",
+		"RaceCar", "Thimble", "ScottishTerrier",
 		"SackOfMoney", "Cat", "Penguin", "RubberDuck", "Unknown"
 };
 

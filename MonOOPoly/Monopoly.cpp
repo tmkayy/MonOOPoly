@@ -94,14 +94,29 @@ void Monopoly::addPlayerWithTokenSelection() {
 		<< "5. Cat\n6. Penguin\n7. RubberDuck\n8. Unknown\n";
 
 	int tokenChoice;
-	std::cin >> tokenChoice;
-	while (tokenChoice < 1 || tokenChoice > 8) {
-		std::cout << "Invalid choice. Select 1-8: ";
+	while (true) {
 		std::cin >> tokenChoice;
-	}
+		if (tokenChoice < 1 || tokenChoice > 8) {
+			std::cout << "Invalid choice. Select 1-8: ";
+			continue;
+		}
 
-	Token token = static_cast<Token>(tokenChoice - 1);
-	executeCommand(new AddPlayerCommand(this, token));
+		Token token = static_cast<Token>(tokenChoice - 1);
+		bool taken = false;
+		for (size_t i = 0; i < players.getSize(); ++i) {
+			if (players[i]->getUsername() == token) {
+				taken = true;
+				break;
+			}
+		}
+		if (taken) {
+			std::cout << "Token already taken. Select another: ";
+			continue;
+		}
+
+		executeCommand(new AddPlayerCommand(this, token));
+		break;
+	}
 }
 
 bool Monopoly::isGameOver() const {
@@ -182,11 +197,11 @@ void Monopoly::nextTurn() {
 		}
 	}
 
-	handleMovement();
-	handleCurrentField();
-
 	// building/trading phase if not bankrupt
 	if (!currentPlayer->isBankrupt()) {
+		std::cout << "\n" << currentPlayer->tokenToString() << "'s turn. " << currentPlayer->getMoney() << "$ Options:\n";
+		handleMovement();
+		handleCurrentField();
 		handlePlayerOptions();
 	}
 
@@ -286,6 +301,7 @@ void Monopoly::handlePlayerOptions() {
 			handleSellProperty();
 			break;
 		case 4: //end turn
+			system("cls");
 			return;
 		case 5: //declare bankruptcy
 			executeCommand(new DeclareBankruptcyCommand(*currentPlayer, board.getProperties()));
@@ -443,7 +459,7 @@ bool Monopoly::showBuyPropertyPrompt(Property& property) {
 }
 
 int Monopoly::showPlayerOptions() {
-	std::cout << "\n" << currentPlayer->tokenToString() << "'s turn. Options:\n"
+	std::cout
 		<< "1. Build\n"
 		<< "2. Trade\n"
 		<< "3. Sell Property\n"
