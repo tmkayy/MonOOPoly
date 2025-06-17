@@ -59,6 +59,7 @@ public:
 	void handleTradeOptions();
 	void handleSellProperty();
 	void handleTradeMoneyOptions();
+	void handlePendingTrades();
 
 	void advanceToNextPlayer();
 
@@ -78,6 +79,7 @@ public:
 	Player* selectTradePartner();
 
 	bool validateTrade(const Vector<Property*>& offer, const Vector<Property*>& request);
+	void displayTrade(const Trade* trade);
 
 	void initializePlayers();
 

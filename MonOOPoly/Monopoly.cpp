@@ -18,7 +18,9 @@
 #include "BuildCottageCommand.h"
 #include "BuildCastleCommand.h"
 #include "SellMortgageCommand.h"
-#include "AddPlayerCommand.h"
+#include "AddPlayerCommand.h";
+#include "AcceptTradeCommand.h";
+#include "RejectTradeCommand.h";
 
 bool Monopoly::executeCommand(GameCommand* command) {
 	if (!command)
@@ -261,7 +263,7 @@ void Monopoly::handleCurrentField() {
 
 		case SpecialField::Type::INCOME_TAX:
 		case SpecialField::Type::LUXURY_TAX:
-			std::cout<< "Landed on " << specialField->getName() << ". Paying tax of $"
+			std::cout << "Landed on " << specialField->getName() << ". Paying tax of $"
 				<< specialField->getValue() << ".\n";
 			executeCommand(new PayTaxCommand(*currentPlayer, specialField->getValue()));
 			break;
@@ -311,10 +313,13 @@ void Monopoly::handlePlayerOptions() {
 		case 3: //sell property
 			handleSellProperty();
 			break;
-		case 4: //end turn
+		case 4: //pending Trades
+			handlePendingTrades();
+			break;
+		case 5: // end Turn
 			system("cls");
 			return;
-		case 5: //declare bankruptcy
+		case 6: // declare Bankruptcy
 			executeCommand(new DeclareBankruptcyCommand(*currentPlayer, board.getProperties()));
 			return;
 		}
@@ -412,6 +417,74 @@ void Monopoly::handleTradeOptions() {
 }
 
 
+void Monopoly::displayTrade(const Trade* trade) {
+	std::cout << "From: " << trade->getProposer()->tokenToString()
+		<< " | Offer: $" << trade->getProposerMoney();
+	if (!trade->getProposerProperties().isEmpty()) {
+		std::cout << " | Properties: ";
+		for (size_t j = 0; j < trade->getProposerProperties().getSize(); ++j) {
+			std::cout << trade->getProposerProperties()[j]->getName();
+			if (j + 1 < trade->getProposerProperties().getSize()) std::cout << ", ";
+		}
+	}
+	std::cout << " | Request: $" << trade->getReceiverMoney();
+	if (!trade->getReceiverProperties().isEmpty()) {
+		std::cout << " | Wants: ";
+		for (size_t j = 0; j < trade->getReceiverProperties().getSize(); ++j) {
+			std::cout << trade->getReceiverProperties()[j]->getName();
+			if (j + 1 < trade->getReceiverProperties().getSize()) std::cout << ", ";
+		}
+	}
+	std::cout << "\n";
+}
+
+void Monopoly::handlePendingTrades() {
+	if (!currentPlayer) return;
+	Vector<Trade*>& pending = currentPlayer->getPendingTrades();
+	if (pending.isEmpty()) {
+		showMessage("No pending trades.");
+		return;
+	}
+
+	while (true) {
+		std::cout << "\nPending Trades:\n";
+		for (size_t i = 0; i < pending.getSize(); ++i) {
+			std::cout << i + 1 << ". ";
+			displayTrade(pending[i]);
+		}
+		std::cout << "0. Back\nSelect a trade to respond to (0-" << pending.getSize() << "): ";
+
+		size_t choice;
+		std::cin >> choice;
+		if (choice == 0 || choice > pending.getSize()) return;
+
+		Trade* selectedTrade = pending[choice - 1];
+		std::cout << "1. Accept\n2. Reject\n3. View Details\n0. Back\nEnter choice: ";
+		int action;
+		std::cin >> action;
+		if (action == 1) {
+			executeCommand(new AcceptTradeCommand(*selectedTrade));
+			pending.remove(choice - 1);
+			showMessage("Trade accepted.");
+		}
+		else if (action == 2) {
+			executeCommand(new RejectTradeCommand(*selectedTrade));
+			pending.remove(choice - 1);
+			showMessage("Trade rejected.");
+		}
+		else if (action == 3) {
+			std::cout << "\n--- Trade Details ---\n";
+			displayTrade(selectedTrade);
+			std::cout << "---------------------\n";
+		}
+		else if (action == 0) {
+			return;
+		}
+		else {
+			showMessage("Invalid choice.");
+		}
+	}
+}
 
 
 void Monopoly::handleSellProperty() {
@@ -475,17 +548,18 @@ int Monopoly::showPlayerOptions() {
 		<< "1. Build\n"
 		<< "2. Trade\n"
 		<< "3. Sell Property\n"
-		<< "4. End Turn\n"
-		<< "5. Declare Bankruptcy\n"
-		<< "Enter choice (1-5): ";
+		<< "4. Pending Trades\n" // Add this line
+		<< "5. End Turn\n"
+		<< "6. Declare Bankruptcy\n"
+		<< "Enter choice (1-6): ";
 
 	int choice;
 	while (true) {
 		std::cin >> choice;
-		if (choice >= 1 && choice <= 5) {
+		if (choice >= 1 && choice <= 6) {
 			return choice;
 		}
-		std::cout << "Invalid choice. Please enter 1-5: ";
+		std::cout << "Invalid choice. Please enter 1-6: ";
 	}
 }
 

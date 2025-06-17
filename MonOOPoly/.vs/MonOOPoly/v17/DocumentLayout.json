@@ -7,16 +7,28 @@
       "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Monopoly.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Board.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Board.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Monopoly.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Monopoly.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Trade.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Trade.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\AcceptTradeCommand.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:AcceptTradeCommand.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardCommands.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:CardCommands.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Property.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Property.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Monopoly.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Monopoly.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\ProposeTradeCommand.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -37,10 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\SelectPropertyCommand.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:SelectPropertyCommand.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Board.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Board.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardCommands.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -177,14 +185,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\BuildCastleCommand.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:BuildCastleCommand.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\AcceptTradeCommand.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:AcceptTradeCommand.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Trade.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|solutionrelative:Trade.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{29E61D00-8270-4BB5-9232-21D80CAA34A6}|MonOOPoly.vcxproj|C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Property.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -334,13 +334,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Monopoly.h",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Monopoly.h",
               "RelativeDocumentMoniker": "Monopoly.h",
               "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Monopoly.h",
               "RelativeToolTip": "Monopoly.h",
-              "ViewState": "AgIAABoAAAAAAAAAAAAmwCsAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAEkAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-06-15T08:42:22.947Z",
               "IsPinned": true,
@@ -354,7 +354,7 @@
               "RelativeDocumentMoniker": "Monopoly.cpp",
               "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Monopoly.cpp",
               "RelativeToolTip": "Monopoly.cpp",
-              "ViewState": "AgIAAIEBAAAAAAAAAAAAAJoBAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAB0CAAAAAAAAAAAAAC8CAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-15T14:19:23.843Z",
               "IsPinned": true,
@@ -362,13 +362,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 1,
               "Title": "Board.h",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Board.h",
               "RelativeDocumentMoniker": "Board.h",
               "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Board.h",
               "RelativeToolTip": "Board.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-06-15T13:21:14.48Z",
               "IsPinned": true,
@@ -380,33 +380,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CardCommands.h",
-              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardCommands.h",
-              "RelativeDocumentMoniker": "CardCommands.h",
-              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardCommands.h",
-              "RelativeToolTip": "CardCommands.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-15T14:14:58.86Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AddPlayerCommand.cpp",
-              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\AddPlayerCommand.cpp",
-              "RelativeDocumentMoniker": "AddPlayerCommand.cpp",
-              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\AddPlayerCommand.cpp",
-              "RelativeToolTip": "AddPlayerCommand.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-15T14:35:15.362Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "ProposeTradeCommand.h",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\ProposeTradeCommand.h",
               "RelativeDocumentMoniker": "ProposeTradeCommand.h",
@@ -419,7 +393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "ProposeTradeCommand.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\ProposeTradeCommand.cpp",
               "RelativeDocumentMoniker": "ProposeTradeCommand.cpp",
@@ -432,7 +406,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Property.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Property.cpp",
               "RelativeDocumentMoniker": "Property.cpp",
@@ -440,12 +414,11 @@
               "RelativeToolTip": "Property.cpp",
               "ViewState": "AgIAAIQAAAAAAAAAAAAmwJoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-15T14:23:12.154Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:23:12.154Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "Consts.h",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Consts.h",
               "RelativeDocumentMoniker": "Consts.h",
@@ -453,12 +426,61 @@
               "RelativeToolTip": "Consts.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-15T15:53:09.533Z",
+              "WhenOpened": "2025-06-15T15:53:09.533Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AcceptTradeCommand.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\AcceptTradeCommand.cpp",
+              "RelativeDocumentMoniker": "AcceptTradeCommand.cpp",
+              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\AcceptTradeCommand.cpp",
+              "RelativeToolTip": "AcceptTradeCommand.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-15T14:22:56.733Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
+              "Title": "Trade.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Trade.cpp",
+              "RelativeDocumentMoniker": "Trade.cpp",
+              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Trade.cpp",
+              "RelativeToolTip": "Trade.cpp",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAmwEQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-15T14:20:25.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AddPlayerCommand.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\AddPlayerCommand.cpp",
+              "RelativeDocumentMoniker": "AddPlayerCommand.cpp",
+              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\AddPlayerCommand.cpp",
+              "RelativeToolTip": "AddPlayerCommand.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-15T14:35:15.362Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CardCommands.h",
+              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardCommands.h",
+              "RelativeDocumentMoniker": "CardCommands.h",
+              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardCommands.h",
+              "RelativeToolTip": "CardCommands.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-15T14:14:58.86Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "SelectPropertyCommand.h",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\SelectPropertyCommand.h",
               "RelativeDocumentMoniker": "SelectPropertyCommand.h",
@@ -466,12 +488,11 @@
               "RelativeToolTip": "SelectPropertyCommand.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-15T14:18:26.376Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:18:26.376Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "SelectPropertyCommand.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\SelectPropertyCommand.cpp",
               "RelativeDocumentMoniker": "SelectPropertyCommand.cpp",
@@ -479,12 +500,11 @@
               "RelativeToolTip": "SelectPropertyCommand.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-15T14:22:17.703Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:22:17.703Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "CardCommands.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardCommands.cpp",
               "RelativeDocumentMoniker": "CardCommands.cpp",
@@ -492,12 +512,11 @@
               "RelativeToolTip": "CardCommands.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-15T14:22:48.492Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:22:48.492Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "Board.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Board.cpp",
               "RelativeDocumentMoniker": "Board.cpp",
@@ -505,12 +524,11 @@
               "RelativeToolTip": "Board.cpp",
               "ViewState": "AgIAAB0AAAAAAAAAAAAMwEYAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-15T15:27:59.609Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T15:27:59.609Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "BuyPropertyCommand.h",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\BuyPropertyCommand.h",
               "RelativeDocumentMoniker": "BuyPropertyCommand.h",
@@ -518,12 +536,11 @@
               "RelativeToolTip": "BuyPropertyCommand.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-15T14:14:52.574Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:14:52.574Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Card.h",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Card.h",
               "RelativeDocumentMoniker": "Card.h",
@@ -531,12 +548,11 @@
               "RelativeToolTip": "Card.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-15T14:25:02.52Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:25:02.52Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "MovePositionCard.h",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\MovePositionCard.h",
               "RelativeDocumentMoniker": "MovePositionCard.h",
@@ -548,7 +564,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "Player.h",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Player.h",
               "RelativeDocumentMoniker": "Player.h",
@@ -556,12 +572,11 @@
               "RelativeToolTip": "Player.h",
               "ViewState": "AgIAACQAAAAAAAAAAAAAADwAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-15T14:19:46.833Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:19:46.833Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "PaymentCard.h",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\PaymentCard.h",
               "RelativeDocumentMoniker": "PaymentCard.h",
@@ -573,7 +588,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "GroupPaymentCard.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\GroupPaymentCard.cpp",
               "RelativeDocumentMoniker": "GroupPaymentCard.cpp",
@@ -585,7 +600,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "PaymentCard.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\PaymentCard.cpp",
               "RelativeDocumentMoniker": "PaymentCard.cpp",
@@ -597,7 +612,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "CardDeck.h",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardDeck.h",
               "RelativeDocumentMoniker": "CardDeck.h",
@@ -605,12 +620,11 @@
               "RelativeToolTip": "CardDeck.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-15T14:25:04.687Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:25:04.687Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "MovePositionCard.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\MovePositionCard.cpp",
               "RelativeDocumentMoniker": "MovePositionCard.cpp",
@@ -618,12 +632,11 @@
               "RelativeToolTip": "MovePositionCard.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-15T14:23:01.468Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:23:01.468Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "GroupPaymentCard.h",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\GroupPaymentCard.h",
               "RelativeDocumentMoniker": "GroupPaymentCard.h",
@@ -635,7 +648,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "CardField.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardField.cpp",
               "RelativeDocumentMoniker": "CardField.cpp",
@@ -647,7 +660,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "CardField.h",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardField.h",
               "RelativeDocumentMoniker": "CardField.h",
@@ -655,12 +668,11 @@
               "RelativeToolTip": "CardField.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-15T14:25:14.353Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:25:14.353Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "SpecialField.h",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\SpecialField.h",
               "RelativeDocumentMoniker": "SpecialField.h",
@@ -668,12 +680,11 @@
               "RelativeToolTip": "SpecialField.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-15T14:25:07.179Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:25:07.179Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "CardDeck.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\CardDeck.cpp",
               "RelativeDocumentMoniker": "CardDeck.cpp",
@@ -685,7 +696,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "RollForJailReleaseCommand.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\RollForJailReleaseCommand.cpp",
               "RelativeDocumentMoniker": "RollForJailReleaseCommand.cpp",
@@ -697,7 +708,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "PassGoCommand.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\PassGoCommand.cpp",
               "RelativeDocumentMoniker": "PassGoCommand.cpp",
@@ -705,11 +716,12 @@
               "RelativeToolTip": "PassGoCommand.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-15T14:16:25.082Z"
+              "WhenOpened": "2025-06-15T14:16:25.082Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "Dice.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Dice.cpp",
               "RelativeDocumentMoniker": "Dice.cpp",
@@ -721,7 +733,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "SellPropertyCommand.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\SellPropertyCommand.cpp",
               "RelativeDocumentMoniker": "SellPropertyCommand.cpp",
@@ -729,12 +741,11 @@
               "RelativeToolTip": "SellPropertyCommand.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-15T14:22:12.161Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:22:12.161Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 33,
               "Title": "TradeSelectionCommand.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\TradeSelectionCommand.cpp",
               "RelativeDocumentMoniker": "TradeSelectionCommand.cpp",
@@ -742,11 +753,12 @@
               "RelativeToolTip": "TradeSelectionCommand.cpp",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-15T14:22:09.42Z"
+              "WhenOpened": "2025-06-15T14:22:09.42Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 34,
               "Title": "SellMortgageCommand.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\SellMortgageCommand.cpp",
               "RelativeDocumentMoniker": "SellMortgageCommand.cpp",
@@ -758,7 +770,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 35,
               "Title": "SelectTradePartnerCommand.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\SelectTradePartnerCommand.cpp",
               "RelativeDocumentMoniker": "SelectTradePartnerCommand.cpp",
@@ -771,7 +783,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 36,
               "Title": "RejectTradeCommand.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\RejectTradeCommand.cpp",
               "RelativeDocumentMoniker": "RejectTradeCommand.cpp",
@@ -779,11 +791,12 @@
               "RelativeToolTip": "RejectTradeCommand.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-15T14:17:55.404Z"
+              "WhenOpened": "2025-06-15T14:17:55.404Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 37,
               "Title": "PayTaxCommand.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\PayTaxCommand.cpp",
               "RelativeDocumentMoniker": "PayTaxCommand.cpp",
@@ -791,11 +804,12 @@
               "RelativeToolTip": "PayTaxCommand.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-15T14:17:28.507Z"
+              "WhenOpened": "2025-06-15T14:17:28.507Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 38,
               "Title": "PayRentCommand.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\PayRentCommand.cpp",
               "RelativeDocumentMoniker": "PayRentCommand.cpp",
@@ -803,11 +817,12 @@
               "RelativeToolTip": "PayRentCommand.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-15T14:17:18.643Z"
+              "WhenOpened": "2025-06-15T14:17:18.643Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 39,
               "Title": "PayJailFineCommand.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\PayJailFineCommand.cpp",
               "RelativeDocumentMoniker": "PayJailFineCommand.cpp",
@@ -819,7 +834,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 40,
               "Title": "MovePlayerCommand.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\MovePlayerCommand.cpp",
               "RelativeDocumentMoniker": "MovePlayerCommand.cpp",
@@ -831,7 +846,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 41,
               "Title": "GoToJailCommand.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\GoToJailCommand.cpp",
               "RelativeDocumentMoniker": "GoToJailCommand.cpp",
@@ -843,7 +858,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 42,
               "Title": "DeclareBankruptcyCommand.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\DeclareBankruptcyCommand.cpp",
               "RelativeDocumentMoniker": "DeclareBankruptcyCommand.cpp",
@@ -855,7 +870,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 43,
               "Title": "BuyPropertyCommand.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\BuyPropertyCommand.cpp",
               "RelativeDocumentMoniker": "BuyPropertyCommand.cpp",
@@ -863,12 +878,11 @@
               "RelativeToolTip": "BuyPropertyCommand.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-15T14:22:50.54Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:22:50.54Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 44,
               "Title": "BuildCottageCommand.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\BuildCottageCommand.cpp",
               "RelativeDocumentMoniker": "BuildCottageCommand.cpp",
@@ -880,7 +894,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 45,
               "Title": "BuildCastleCommand.cpp",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\BuildCastleCommand.cpp",
               "RelativeDocumentMoniker": "BuildCastleCommand.cpp",
@@ -892,30 +906,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "AcceptTradeCommand.cpp",
-              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\AcceptTradeCommand.cpp",
-              "RelativeDocumentMoniker": "AcceptTradeCommand.cpp",
-              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\AcceptTradeCommand.cpp",
-              "RelativeToolTip": "AcceptTradeCommand.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-15T14:22:56.733Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "Trade.cpp",
-              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Trade.cpp",
-              "RelativeDocumentMoniker": "Trade.cpp",
-              "ToolTip": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Trade.cpp",
-              "RelativeToolTip": "Trade.cpp",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAewFkAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-15T14:20:25.584Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 46,
               "Title": "Property.h",
               "DocumentMoniker": "C:\\Users\\storm\\Desktop\\MonOOPoly\\MonOOPoly\\Property.h",
@@ -924,8 +914,7 @@
               "RelativeToolTip": "Property.h",
               "ViewState": "AgIAADMAAAAAAAAAAAAUwD0AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-15T14:25:10.769Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:25:10.769Z"
             },
             {
               "$type": "Document",
@@ -937,8 +926,7 @@
               "RelativeToolTip": "AddPlayerCommand.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-15T14:34:22.812Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:34:22.812Z"
             },
             {
               "$type": "Document",
@@ -974,8 +962,7 @@
               "RelativeToolTip": "Field.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-15T14:25:12.508Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:25:12.508Z"
             },
             {
               "$type": "Document",
@@ -987,8 +974,7 @@
               "RelativeToolTip": "Jail.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-15T14:25:09.007Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:25:09.007Z"
             },
             {
               "$type": "Document",
@@ -1012,8 +998,7 @@
               "RelativeToolTip": "SpecialField.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-15T14:23:09.328Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:23:09.328Z"
             },
             {
               "$type": "Document",
@@ -1049,8 +1034,7 @@
               "RelativeToolTip": "Dice.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-15T14:19:17.845Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:19:17.845Z"
             },
             {
               "$type": "Document",
@@ -1122,8 +1106,7 @@
               "RelativeToolTip": "Trade.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-15T14:20:19.861Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:20:19.861Z"
             },
             {
               "$type": "Document",
@@ -1135,8 +1118,7 @@
               "RelativeToolTip": "BuildCastleCommand.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-15T14:14:44.514Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:14:44.514Z"
             },
             {
               "$type": "Document",
@@ -1148,8 +1130,7 @@
               "RelativeToolTip": "BuildCottageCommand.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-15T14:14:49.057Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:14:49.057Z"
             },
             {
               "$type": "Document",
@@ -1161,8 +1142,7 @@
               "RelativeToolTip": "GameCommand.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-15T14:15:17.333Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:15:17.333Z"
             },
             {
               "$type": "Document",
@@ -1174,8 +1154,7 @@
               "RelativeToolTip": "DeclareBankruptcyCommand.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-15T14:15:02.238Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:15:02.238Z"
             },
             {
               "$type": "Document",
@@ -1187,7 +1166,8 @@
               "RelativeToolTip": "AcceptTradeCommand.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-15T14:14:43.873Z"
+              "WhenOpened": "2025-06-15T14:14:43.873Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1199,8 +1179,7 @@
               "RelativeToolTip": "GoToJailCommand.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-15T14:15:20.522Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:15:20.522Z"
             },
             {
               "$type": "Document",
@@ -1212,8 +1191,7 @@
               "RelativeToolTip": "MovePlayerCommand.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-15T14:16:14.244Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:16:14.244Z"
             },
             {
               "$type": "Document",
@@ -1273,7 +1251,8 @@
               "RelativeToolTip": "RejectTradeCommand.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-15T14:18:01.347Z"
+              "WhenOpened": "2025-06-15T14:18:01.347Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1309,8 +1288,7 @@
               "RelativeToolTip": "SellMortgageCommand.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-15T14:18:46.8Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:18:46.8Z"
             },
             {
               "$type": "Document",
@@ -1334,8 +1312,7 @@
               "RelativeToolTip": "TradeSelectionCommand.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-15T14:19:11.103Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T14:19:11.103Z"
             }
           ]
         }
