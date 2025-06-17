@@ -38,6 +38,8 @@ public:
 	Monopoly(Monopoly&& other) noexcept;
 	Monopoly& operator=(Monopoly&& other) noexcept;
 
+	Board& getGameBoard();
+
 	void startGame();
 	void endGame();
 	void nextTurn();
@@ -69,7 +71,6 @@ public:
 
 	Vector<Property*> getPlayerProperties(Player& player);
 	Vector<Property*> getBuildableProperties(Player& player);
-	Vector<Property*> getSellableProperties(Player& player);
 	Vector<Player*>& getPlayers() { return players; }
 	const Vector<Player*>& getPlayers() const { return players; }
 

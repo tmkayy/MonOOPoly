@@ -174,6 +174,11 @@ Monopoly& Monopoly::operator=(Monopoly&& other) noexcept {
 	return *this;
 }
 
+Board& Monopoly::getGameBoard()
+{
+	return board;
+}
+
 void Monopoly::startGame() {
 	cards.shuffle();
 	if (!players.isEmpty()) {
@@ -234,6 +239,7 @@ void Monopoly::handleMovement() {
 void Monopoly::handleCurrentField() {
 	Field* field = board.getBoard()[currentPlayer->getId()];
 	if (dynamic_cast<Jail*>(field)) { //just visiting
+		std::cout << "Landed on jail field (just visiting): " << "\n";
 		return;
 	}
 
@@ -352,6 +358,7 @@ void Monopoly::handleTradeOptions() {
 		switch (choice) {
 		case 1: { // Add property to offer
 			Property* prop = selectProperty(availableToOffer);
+			std::cout << prop->getName();
 			if (prop) {
 				executeCommand(new TradeSelectionCommand(
 					*currentPlayer, availableToOffer, selectedToOffer, prop));
@@ -408,7 +415,7 @@ void Monopoly::handleTradeOptions() {
 
 
 void Monopoly::handleSellProperty() {
-	Vector<Property*> sellable = getSellableProperties(*currentPlayer);
+	Vector<Property*> sellable = getPlayerProperties(*currentPlayer);
 	if (sellable.isEmpty()) {
 		showMessage("No properties available to sell");
 		return;
@@ -513,9 +520,6 @@ Vector<Property*> Monopoly::getBuildableProperties(Player& player) {
 	return buildable;
 }
 
-Vector<Property*> Monopoly::getSellableProperties(Player& player) {
-	return getPlayerProperties(player);
-}
 
 Property* Monopoly::selectProperty(const Vector<Property*>& properties) {
 	if (properties.isEmpty()) {

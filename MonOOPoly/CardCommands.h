@@ -3,6 +3,7 @@
 #include "CardDeck.h"
 #include "Player.h"
 #include "Card.h"
+#include "Board.h"
 
 class DrawCardCommand : public GameCommand {
     Player& player;
@@ -16,5 +17,6 @@ public:
     void execute() override;
     void undo() override;
     GameCommand* clone() const override;
+    void handleFieldAfterMove(Player& player, Board& board, CardDeck& deck, const Vector<Player*>& allPlayers);
 };
 

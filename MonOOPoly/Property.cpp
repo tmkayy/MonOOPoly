@@ -152,7 +152,7 @@ void Property::setColor(PropertyColor newColor) {
 
 bool Property::hasMortgages() const
 {
-    return mortgages.isEmpty();
+    return !mortgages.isEmpty();
 }
 
 bool Property::buildCottage(Player* player) {

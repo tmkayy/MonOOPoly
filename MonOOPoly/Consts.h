@@ -6,6 +6,9 @@ const double cottageRent = 1.15;
 const double castleRent = 1.50;
 
 const short cardCount = 48;
+
+const short startMoney = 1500;
+
 const short fieldCount = 40;
 
 const short bailCost = 50;

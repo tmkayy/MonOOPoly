@@ -8,7 +8,7 @@ class SelectPropertyCommand : public GameCommand {
     Player& player;
     Vector<Property*>& sourceList;
     Vector<Property*>& targetList;
-    Property* selectedProperty;
+    Property*& selectedProperty;
     size_t originalIndex;
     bool wasExecuted;
 
@@ -16,7 +16,7 @@ public:
     SelectPropertyCommand(Player& player,
         Vector<Property*>& sourceList,
         Vector<Property*>& targetList,
-        Property* property);
+        Property*& property);
     void execute() override;
     void undo() override;
     GameCommand* clone() const override;

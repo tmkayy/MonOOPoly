@@ -7,7 +7,7 @@ AddPlayerCommand::AddPlayerCommand(Monopoly* game, Token token)
 
 void AddPlayerCommand::execute() {
     // Convert Token to size_t for Player constructor
-    addedPlayer = new Player(game, static_cast<size_t>(token), goMoney);
+    addedPlayer = new Player(game, static_cast<size_t>(token), startMoney);
 
     // Set initial player properties
     addedPlayer->setImprisoned(false);

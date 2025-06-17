@@ -137,6 +137,11 @@ size_t Player::getId() const
 	return id;
 }
 
+Monopoly* Player::getGame() const
+{
+	return game;
+}
+
 size_t Player::getPairsThrown() const
 {
 	return pairsThrown;

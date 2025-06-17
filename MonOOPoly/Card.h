@@ -5,4 +5,5 @@ public:
 	virtual Card* clone() const = 0;
 	virtual void applyEffect(Player& player, const Vector<Player*>& allPlayers) const = 0;
 	virtual void reverseEffect(Player& player, const Vector<Player*>& allPlayers) const = 0;
+	virtual bool isMovementCard() const { return false; }
 };

@@ -47,6 +47,7 @@ public:
 	double getMoney() const;
 	size_t getTurnsInJail() const;
 	size_t getId() const;
+	Monopoly* getGame() const;
 	size_t getPairsThrown() const;
 	bool isImprisoned() const;
 	bool isBankrupt() const;

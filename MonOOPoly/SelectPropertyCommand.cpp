@@ -3,7 +3,7 @@
 SelectPropertyCommand::SelectPropertyCommand(Player& player,
     Vector<Property*>& sourceList,
     Vector<Property*>& targetList,
-    Property* property)
+    Property*& property)
     : player(player), sourceList(sourceList), targetList(targetList),
     selectedProperty(property), originalIndex(-1), wasExecuted(false) {
 }
