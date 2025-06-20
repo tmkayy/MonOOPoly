@@ -39,6 +39,7 @@ public:
 	Monopoly& operator=(Monopoly&& other) noexcept;
 
 	Board& getGameBoard();
+	CardDeck& getCardDeck();
 
 	void startGame();
 	void endGame();

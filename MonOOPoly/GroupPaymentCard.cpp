@@ -47,3 +47,8 @@ void GroupPaymentCard::reverseEffect(Player& player, const Vector<Player*>& allP
         }
     }
 }
+
+double GroupPaymentCard::getPaymentAmount() const
+{
+	return paymentAmount;
+}

@@ -143,6 +143,7 @@
     <ClInclude Include="GoToJailCommand.h" />
     <ClInclude Include="GroupPaymentCard.h" />
     <ClInclude Include="Jail.h" />
+    <ClInclude Include="LoadGameCommand.h" />
     <ClInclude Include="Monopoly.h" />
     <ClInclude Include="Mortgage.h" />
     <ClInclude Include="MovePlayerCommand.h" />
@@ -159,6 +160,7 @@
     <ClInclude Include="ProposeTradeCommand.h" />
     <ClInclude Include="RejectTradeCommand.h" />
     <ClInclude Include="RollForJailReleaseCommand.h" />
+    <ClInclude Include="SaveGameCommand.h" />
     <ClInclude Include="SelectPropertyCommand.h" />
     <ClInclude Include="SelectTradePartnerCommand.h" />
     <ClInclude Include="SellMortgageCommand.h" />
@@ -186,6 +188,7 @@
     <ClCompile Include="GoToJailCommand.cpp" />
     <ClCompile Include="GroupPaymentCard.cpp" />
     <ClCompile Include="Jail.cpp" />
+    <ClCompile Include="LoadGameCommand.cpp" />
     <ClCompile Include="Monopoly.cpp" />
     <ClCompile Include="MovePlayerCommand.cpp" />
     <ClCompile Include="MovePositionCard.cpp" />
@@ -201,6 +204,7 @@
     <ClCompile Include="ProposeTradeCommand.cpp" />
     <ClCompile Include="RejectTradeCommand.cpp" />
     <ClCompile Include="RollForJailReleaseCommand.cpp" />
+    <ClCompile Include="SaveGameCommand.cpp" />
     <ClCompile Include="SelectPropertyCommand.cpp" />
     <ClCompile Include="SelectTradePartnerCommand.cpp" />
     <ClCompile Include="SellMortgageCommand.cpp" />

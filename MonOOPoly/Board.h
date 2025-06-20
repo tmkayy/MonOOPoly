@@ -26,7 +26,7 @@ public:
 
     static void setId(Player& player, int n);
 
-    Vector<Field*> getBoard() const;
-    Vector<Property*> getProperties() const;
-    Vector<Property*> getPropertiesByColor(PropertyColor color) const;
+    Vector<Field*>& getBoard();
+    Vector<Property*>& getProperties();
+    Vector<Property*>& getPropertiesByColor(PropertyColor color);
 };

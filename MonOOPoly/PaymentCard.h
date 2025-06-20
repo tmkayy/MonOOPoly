@@ -9,5 +9,7 @@ public:
 	Card* clone() const override;
 	void applyEffect(Player& player, const Vector<Player*>& allPlayers) const override;
 	void reverseEffect(Player& player, const Vector<Player*>& allPlayers) const override;
+
+	double getMoneyAmount() const;
 };
 

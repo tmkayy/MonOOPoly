@@ -181,6 +181,11 @@ Board& Monopoly::getGameBoard()
 	return board;
 }
 
+CardDeck& Monopoly::getCardDeck()
+{
+	return cards;
+}
+
 void Monopoly::startGame() {
 	cards.shuffle();
 	if (!players.isEmpty()) {
@@ -206,7 +211,7 @@ void Monopoly::nextTurn() {
 
 	// building/trading phase if not bankrupt
 	if (!currentPlayer->isBankrupt()) {
-		std::cout << "\n" << currentPlayer->tokenToString() << "'s turn. " << currentPlayer->getMoney() << "$ Options:\n";
+		std::cout << currentPlayer->tokenToString() << "'s turn. " << currentPlayer->getMoney() << "$\n";
 		handleMovement();
 		handleCurrentField();
 		handlePlayerOptions();
@@ -303,6 +308,7 @@ void Monopoly::handlePlayerOptions() {
 	while (true) {
 		int choice = showPlayerOptions();
 
+		std::cout << "\n";
 		switch (choice) {
 		case 1: //build
 			handleBuildingOptions();
@@ -545,6 +551,7 @@ bool Monopoly::showBuyPropertyPrompt(Property& property) {
 
 int Monopoly::showPlayerOptions() {
 	std::cout
+		<< "\n""Options:\n"
 		<< "1. Build\n"
 		<< "2. Trade\n"
 		<< "3. Sell Property\n"
@@ -735,6 +742,7 @@ void Monopoly::initializePlayers()
 	for (int i = 0; i < numPlayers; i++) {
 		addPlayerWithTokenSelection();
 	}
+	system("cls");
 }
 
 int Monopoly::showTradeSelectionMenu() {

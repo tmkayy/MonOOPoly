@@ -14,6 +14,7 @@ C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Dice.cpp;C:\Users\storm\Desktop\MonOO
 C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\GoToJailCommand.cpp;C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MonOOPoly\x64\Debug\GoToJailCommand.obj
 C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\GroupPaymentCard.cpp;C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MonOOPoly\x64\Debug\GroupPaymentCard.obj
 C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Jail.cpp;C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MonOOPoly\x64\Debug\Jail.obj
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\LoadGameCommand.cpp;C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MonOOPoly\x64\Debug\LoadGameCommand.obj
 C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp;C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MonOOPoly\x64\Debug\Monopoly.obj
 C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MovePlayerCommand.cpp;C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MonOOPoly\x64\Debug\MovePlayerCommand.obj
 C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MovePositionCard.cpp;C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MonOOPoly\x64\Debug\MovePositionCard.obj
@@ -29,6 +30,7 @@ C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\BuyPropertyCommand.cpp;C:\Users\storm
 C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\ProposeTradeCommand.cpp;C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MonOOPoly\x64\Debug\ProposeTradeCommand.obj
 C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\RejectTradeCommand.cpp;C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MonOOPoly\x64\Debug\RejectTradeCommand.obj
 C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\RollForJailReleaseCommand.cpp;C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MonOOPoly\x64\Debug\RollForJailReleaseCommand.obj
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\SaveGameCommand.cpp;C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MonOOPoly\x64\Debug\SaveGameCommand.obj
 C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\SelectPropertyCommand.cpp;C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MonOOPoly\x64\Debug\SelectPropertyCommand.obj
 C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\SelectTradePartnerCommand.cpp;C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MonOOPoly\x64\Debug\SelectTradePartnerCommand.obj
 C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\SellMortgageCommand.cpp;C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MonOOPoly\x64\Debug\SellMortgageCommand.obj

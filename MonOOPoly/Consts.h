@@ -11,7 +11,7 @@ const short startMoney = 1500;
 
 const short fieldCount = 40;
 
-const short bailCost = 50;
+const short bailCost = 100;
 const short maxTurnsJail = 3;
 const short jailPos = 10;
 

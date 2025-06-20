@@ -188,11 +188,11 @@ void Board::setId(Player& player, int n)
     player.id = (n % fieldCount + fieldCount) % fieldCount;
 }
 
-Vector<Field*> Board::getBoard() const { return board; }
+Vector<Field*>& Board::getBoard() { return board; }
 
-Vector<Property*> Board::getProperties() const { return properties; }
+Vector<Property*>& Board::getProperties() { return properties; }
 
-Vector<Property*> Board::getPropertiesByColor(PropertyColor color) const {
+Vector<Property*>& Board::getPropertiesByColor(PropertyColor color) {
     Vector<Property*> result;
     for (size_t i = 0; i < properties.getSize(); ++i) {
         if (properties[i]->getColor() == color) {

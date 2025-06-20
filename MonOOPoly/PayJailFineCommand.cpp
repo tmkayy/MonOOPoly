@@ -25,7 +25,7 @@ void PayJailFineCommand::execute() {
 void PayJailFineCommand::undo() {
     if (paid && wasInJail) {
         //only undo if payment actually occurred
-        Bank::addMoney(player, 100);  //refund the fine
+        Bank::addMoney(player, bailCost);  //refund the fine
         player.setImprisoned(true);   //put back in jail
         std::cout << player.tokenToString()
             << " $100 jail fine was refunded and player returned to jail\n";
