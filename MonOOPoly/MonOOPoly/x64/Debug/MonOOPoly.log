@@ -1,26 +1,19 @@
-﻿  AddPlayerCommand.cpp
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Dice.h(7,34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  (compiling source file 'AddPlayerCommand.cpp')
-  
-  Board.cpp
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(104,36): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-  (compiling source file 'Board.cpp')
-      C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(104,36):
-      the template instantiation context (the oldest one first) is
-          C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Board.h(11,20):
-          see reference to class template instantiation 'Vector<Field *>' being compiled
-          C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(102,42):
-          while compiling class template member function 'Vector<Field *>::Vector(size_t)'
-              C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Board.cpp(38,11):
-              see the first reference to 'Vector<Field *>::Vector' in 'Board::Board'
-  
-  CardCommands.cpp
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Dice.h(7,34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  (compiling source file 'CardCommands.cpp')
-  
-  LoadGameCommand.cpp
+﻿  LoadGameCommand.cpp
 C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Dice.h(7,34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   (compiling source file 'LoadGameCommand.cpp')
+  
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(104,36): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+  (compiling source file 'LoadGameCommand.cpp')
+      C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(104,36):
+      the template instantiation context (the oldest one first) is
+          C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Trade.h(12,23):
+          see reference to class template instantiation 'Vector<Property *>' being compiled
+          C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(99,28):
+          while compiling class template member function 'Vector<Property *>::Vector(void)'
+              C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\LoadGameCommand.cpp(57,23):
+              see the first reference to 'Vector<Property *>::Vector' in 'LoadGameCommand::execute'
+          C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(102,42):
+          while compiling class template member function 'Vector<Property *>::Vector(size_t)'
   
 C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Stack.hpp(66,36): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
   (compiling source file 'LoadGameCommand.cpp')
@@ -30,85 +23,9 @@ C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Stack.hpp(66,36): warning C4267: 'arg
           see reference to class template instantiation 'Stack<Card *>' being compiled
           C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Stack.hpp(59,26):
           while compiling class template member function 'Stack<Card *>::Stack(void)'
-              C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\LoadGameCommand.cpp(137,18):
+              C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\LoadGameCommand.cpp(143,18):
               see the first reference to 'Stack<Card *>::Stack' in 'LoadGameCommand::execute'
           C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Stack.hpp(64,34):
           while compiling class template member function 'Stack<Card *>::Stack(size_t)'
   
-  Monopoly.cpp
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Dice.h(7,34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  (compiling source file 'Monopoly.cpp')
-  
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(8,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(9,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(10,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(11,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(12,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(13,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(14,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(15,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(16,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(21,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(22,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(23,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(104,36): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-  (compiling source file 'Monopoly.cpp')
-      C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(104,36):
-      the template instantiation context (the oldest one first) is
-          C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Trade.h(12,23):
-          see reference to class template instantiation 'Vector<Property *>' being compiled
-          C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(128,1):
-          while compiling class template member function 'Vector<Property *>::Vector(Vector<Property *> &&) noexcept'
-              C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(587,2):
-              see the first reference to 'Vector<Property *>::Vector' in 'Monopoly::getPlayerProperties'
-          C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(102,42):
-          while compiling class template member function 'Vector<Property *>::Vector(size_t)'
-              C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(99,36):
-              see the first reference to 'Vector<Property *>::Vector' in 'Vector<Property *>::Vector'
-              C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(364,20):
-              see the first reference to 'Vector<Property *>::Vector' in 'Monopoly::handleTradeOptions'
-  
-  MovePlayerCommand.cpp
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Dice.h(7,34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  (compiling source file 'MovePlayerCommand.cpp')
-  
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MovePlayerCommand.cpp(5,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MovePlayerCommand.cpp(12,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  MovePositionCard.cpp
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MovePositionCard.cpp(16,41): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MovePositionCard.cpp(25,41): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  Player.cpp
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Dice.h(7,34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  (compiling source file 'Player.cpp')
-  
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Player.cpp(213,17): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Player.cpp(213,3): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(104,36): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-  (compiling source file 'Player.cpp')
-      C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(104,36):
-      the template instantiation context (the oldest one first) is
-          C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Player.h(19,24):
-          see reference to class template instantiation 'Vector<PropertyColor>' being compiled
-          C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(99,28):
-          while compiling class template member function 'Vector<PropertyColor>::Vector(void)'
-              C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Player.cpp(53,1):
-              see the first reference to 'Vector<PropertyColor>::Vector' in 'Player::Player'
-          C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(102,42):
-          while compiling class template member function 'Vector<PropertyColor>::Vector(size_t)'
-  
-  SaveGameCommand.cpp
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Dice.h(7,34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  (compiling source file 'SaveGameCommand.cpp')
-  
-  Source.cpp
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Dice.h(7,34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  (compiling source file 'Source.cpp')
-  
-  Generating Code...
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Board.cpp(202,1): warning C4172: returning address of local variable or temporary : result
   MonOOPoly.vcxproj -> C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\x64\Debug\MonOOPoly.exe

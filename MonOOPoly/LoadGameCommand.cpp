@@ -10,8 +10,9 @@
 #include "SpecialField.h"
 #include "CardField.h"
 #include "Jail.h"
+#include "Vector.hpp"
+#include "MyString.h"
 #include <fstream>
-#include <vector>
 
 LoadGameCommand::LoadGameCommand(Monopoly* game)
     : game(game) {
@@ -24,7 +25,7 @@ void LoadGameCommand::execute() {
     std::ifstream playersIn("players.bin", std::ios::binary);
     size_t playerCount = 0;
     playersIn.read(reinterpret_cast<char*>(&playerCount), sizeof(playerCount));
-    std::vector<Player*> loadedPlayers;
+    Vector<Player*> loadedPlayers;
     for (size_t i = 0; i < playerCount; ++i) {
         size_t username;
         double money;
@@ -45,7 +46,7 @@ void LoadGameCommand::execute() {
     playersIn.close();
     Vector<Player*>& players = game->getPlayers();
     players.clear();
-    for (size_t i = 0; i < loadedPlayers.size(); ++i) {
+    for (size_t i = 0; i < loadedPlayers.getSize(); ++i) {
         players.push_back(loadedPlayers[i]);
     }
 
@@ -53,12 +54,18 @@ void LoadGameCommand::execute() {
     std::ifstream propsIn("properties.bin", std::ios::binary);
     size_t propCount = 0;
     propsIn.read(reinterpret_cast<char*>(&propCount), sizeof(propCount));
-    std::vector<Property*> loadedProps;
+    Vector<Property*> loadedProps;
     for (size_t i = 0; i < propCount; ++i) {
         size_t nameLen;
         propsIn.read(reinterpret_cast<char*>(&nameLen), sizeof(nameLen));
-        std::string name(nameLen, '\0');
-        propsIn.read(&name[0], nameLen);
+        MyString name;
+        if (nameLen > 0) {
+            char* buffer = new char[nameLen + 1];
+            propsIn.read(buffer, nameLen);
+            buffer[nameLen] = '\0';
+            name = MyString(buffer);
+            delete[] buffer;
+        }
         double buyPrice, cottagePrice, castlePrice, rentPrice;
         PropertyColor color;
         propsIn.read(reinterpret_cast<char*>(&buyPrice), sizeof(buyPrice));
@@ -68,7 +75,7 @@ void LoadGameCommand::execute() {
         propsIn.read(reinterpret_cast<char*>(&color), sizeof(color));
         int ownerId;
         propsIn.read(reinterpret_cast<char*>(&ownerId), sizeof(ownerId));
-        Property* prop = new Property(name.c_str(), buyPrice, cottagePrice, castlePrice, rentPrice, color, ownerId >= 0 ? loadedPlayers[ownerId] : nullptr);
+        Property* prop = new Property(name, buyPrice, cottagePrice, castlePrice, rentPrice, color, ownerId >= 0 ? loadedPlayers[ownerId] : nullptr);
 
         // mortgages
         size_t mortgageCount;
@@ -84,7 +91,7 @@ void LoadGameCommand::execute() {
     propsIn.close();
     Vector<Property*>& properties = game->getGameBoard().getProperties();
     properties.clear();
-    for (size_t i = 0; i < loadedProps.size(); ++i) {
+    for (size_t i = 0; i < loadedProps.getSize(); ++i) {
         properties.push_back(loadedProps[i]);
     }
 
@@ -108,11 +115,17 @@ void LoadGameCommand::execute() {
             SpecialField::Type sfType = static_cast<SpecialField::Type>(sfTypeInt);
             size_t nameLen;
             boardIn.read(reinterpret_cast<char*>(&nameLen), sizeof(nameLen));
-            std::string name(nameLen, '\0');
-            boardIn.read(&name[0], nameLen);
+            MyString name;
+            if (nameLen > 0) {
+                char* buffer = new char[nameLen + 1];
+                boardIn.read(buffer, nameLen);
+                buffer[nameLen] = '\0';
+                name = MyString(buffer);
+                delete[] buffer;
+            }
             double value;
             boardIn.read(reinterpret_cast<char*>(&value), sizeof(value));
-            boardFields.push_back(new SpecialField(sfType, name.c_str(), value));
+            boardFields.push_back(new SpecialField(sfType, name, value));
         }
         else if (type == 2) {
             boardFields.push_back(new CardField());
