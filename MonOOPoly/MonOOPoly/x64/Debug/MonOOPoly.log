@@ -1,4 +1,8 @@
-﻿  LoadGameCommand.cpp
+﻿  AddPlayerCommand.cpp
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Dice.h(7,34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  (compiling source file 'AddPlayerCommand.cpp')
+  
+  LoadGameCommand.cpp
 C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Dice.h(7,34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   (compiling source file 'LoadGameCommand.cpp')
   
@@ -65,6 +69,10 @@ C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(104,36): warning C4267: 'a
               see the first reference to 'Vector<Property *>::Vector' in 'Vector<Property *>::Vector'
               C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(375,20):
               see the first reference to 'Vector<Property *>::Vector' in 'Monopoly::handleTradeOptions'
+  
+  SaveGameCommand.cpp
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Dice.h(7,34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  (compiling source file 'SaveGameCommand.cpp')
   
   Generating Code...
   MonOOPoly.vcxproj -> C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\x64\Debug\MonOOPoly.exe

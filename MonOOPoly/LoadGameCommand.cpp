@@ -202,6 +202,64 @@ void LoadGameCommand::execute() {
         temp.pop();
     }
     deckIn.close();
+
+
+    // load pending trades
+    std::ifstream tradesIn("trades.bin", std::ios::binary);
+    CheckFileOpen(tradesIn, "trades.bin");
+
+    size_t loadedPlayerCount = 0;
+    tradesIn.read(reinterpret_cast<char*>(&loadedPlayerCount), sizeof(loadedPlayerCount));
+    for (size_t i = 0; i < loadedPlayerCount; ++i) {
+        size_t tradeCount = 0;
+        tradesIn.read(reinterpret_cast<char*>(&tradeCount), sizeof(tradeCount));
+        for (size_t t = 0; t < tradeCount; ++t) {
+            int proposerIdx, receiverIdx;
+            tradesIn.read(reinterpret_cast<char*>(&proposerIdx), sizeof(proposerIdx));
+            tradesIn.read(reinterpret_cast<char*>(&receiverIdx), sizeof(receiverIdx));
+            int proposerMoney, receiverMoney;
+            tradesIn.read(reinterpret_cast<char*>(&proposerMoney), sizeof(proposerMoney));
+            tradesIn.read(reinterpret_cast<char*>(&receiverMoney), sizeof(receiverMoney));
+
+            // Proposer/receiver pointers
+            Player* proposer = loadedPlayers[proposerIdx];
+            Player* receiver = loadedPlayers[receiverIdx];
+
+            // Proposer properties
+            size_t proposerPropCount = 0;
+            tradesIn.read(reinterpret_cast<char*>(&proposerPropCount), sizeof(proposerPropCount));
+            Vector<Property*> proposerProps;
+            for (size_t pi = 0; pi < proposerPropCount; ++pi) {
+                int propIdx;
+                tradesIn.read(reinterpret_cast<char*>(&propIdx), sizeof(propIdx));
+                proposerProps.push_back(loadedProps[propIdx]);
+            }
+
+            // Receiver properties
+            size_t receiverPropCount = 0;
+            tradesIn.read(reinterpret_cast<char*>(&receiverPropCount), sizeof(receiverPropCount));
+            Vector<Property*> receiverProps;
+            for (size_t ri = 0; ri < receiverPropCount; ++ri) {
+                int propIdx;
+                tradesIn.read(reinterpret_cast<char*>(&propIdx), sizeof(propIdx));
+                receiverProps.push_back(loadedProps[propIdx]);
+            }
+
+            // Recreate the trade and add to receiver's pending trades
+            Trade* trade = new Trade(proposer, receiver);
+            for (size_t pi = 0; pi < proposerProps.getSize(); ++pi)
+                trade->addProposerProperty(proposerProps[pi]);
+            for (size_t ri = 0; ri < receiverProps.getSize(); ++ri)
+                trade->addReceiverProperty(receiverProps[ri]);
+            trade->setProposerMoney(proposerMoney);
+            trade->setReceiverMoney(receiverMoney);
+
+            receiver->getPendingTrades().push_back(trade);
+        }
+    }
+    tradesIn.close();
+
+
     std::cout << "[LoadGame] Finished loading deck.\n";
     std::cout << "[LoadGame] Load process complete.\n";
 

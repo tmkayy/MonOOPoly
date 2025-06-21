@@ -156,6 +156,63 @@ void SaveGameCommand::execute() {
         cards.pop();
     }
     deckOut.close();
+
+    // Save pending trades
+    std::ofstream tradesOut("trades.bin", std::ios::binary);
+    CheckFileOpen(tradesOut, "trades.bin");
+    tradesOut.write(reinterpret_cast<const char*>(&playerCount), sizeof(playerCount));
+
+    for (size_t i = 0; i < playerCount; ++i) {
+        const Vector<Trade*>& trades = players[i]->getPendingTrades();
+        size_t tradeCount = trades.getSize();
+        tradesOut.write(reinterpret_cast<const char*>(&tradeCount), sizeof(tradeCount));
+        for (size_t t = 0; t < tradeCount; ++t) {
+            Trade* trade = trades[t];
+            int proposerIdx = -1, receiverIdx = -1;
+            for (size_t p = 0; p < playerCount; ++p) {
+                if (players[p] == trade->getProposer()) proposerIdx = static_cast<int>(p);
+                if (players[p] == trade->getReceiver()) receiverIdx = static_cast<int>(p);
+            }
+            tradesOut.write(reinterpret_cast<const char*>(&proposerIdx), sizeof(proposerIdx));
+            tradesOut.write(reinterpret_cast<const char*>(&receiverIdx), sizeof(receiverIdx));
+            int proposerMoney = trade->getProposerMoney();
+            int receiverMoney = trade->getReceiverMoney();
+            tradesOut.write(reinterpret_cast<const char*>(&proposerMoney), sizeof(proposerMoney));
+            tradesOut.write(reinterpret_cast<const char*>(&receiverMoney), sizeof(receiverMoney));
+
+            //save proposer properties
+            const Vector<Property*>& proposerProps = trade->getProposerProperties();
+            size_t proposerPropCount = proposerProps.getSize();
+            tradesOut.write(reinterpret_cast<const char*>(&proposerPropCount), sizeof(proposerPropCount));
+            for (size_t pi = 0; pi < proposerPropCount; ++pi) {
+                //save property index in global property list
+                int propIdx = -1;
+                for (size_t j = 0; j < properties.getSize(); ++j) {
+                    if (properties[j] == proposerProps[pi]) {
+                        propIdx = static_cast<int>(j);
+                        break;
+                    }
+                }
+                tradesOut.write(reinterpret_cast<const char*>(&propIdx), sizeof(propIdx));
+            }
+
+            //save receiver properties
+            const Vector<Property*>& receiverProps = trade->getReceiverProperties();
+            size_t receiverPropCount = receiverProps.getSize();
+            tradesOut.write(reinterpret_cast<const char*>(&receiverPropCount), sizeof(receiverPropCount));
+            for (size_t ri = 0; ri < receiverPropCount; ++ri) {
+                int propIdx = -1;
+                for (size_t j = 0; j < properties.getSize(); ++j) {
+                    if (properties[j] == receiverProps[ri]) {
+                        propIdx = static_cast<int>(j);
+                        break;
+                    }
+                }
+                tradesOut.write(reinterpret_cast<const char*>(&propIdx), sizeof(propIdx));
+            }
+        }
+    }
+    tradesOut.close();
 }
 
 void SaveGameCommand::undo() {
