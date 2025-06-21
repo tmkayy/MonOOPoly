@@ -79,6 +79,9 @@ public:
 	Property* selectProperty(const Vector<Property*>& properties);
 	Player* selectTradePartner();
 
+	size_t getCurrentPlayerIndex();
+	void setCurrentPlayerIndexAndPlayer(size_t index);
+
 	bool validateTrade(const Vector<Property*>& offer, const Vector<Property*>& request);
 	void displayTrade(const Trade* trade);
 

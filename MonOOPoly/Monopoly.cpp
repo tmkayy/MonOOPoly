@@ -569,7 +569,7 @@ int Monopoly::showPlayerOptions() {
 		<< "4. Pending Trades\n"
 		<< "5. End Turn\n"
 		<< "6. Declare Bankruptcy\n"
-		<< "7. Save Game and Exit\n"
+		<< "7. Save Game and Exit (!!!THIS WILL END YOUR TURN!!!)\n"
 		<< "Enter choice (1-7): ";
 
 	int choice;
@@ -657,6 +657,11 @@ Player* Monopoly::selectTradePartner() {
 	return selected;
 }
 
+size_t Monopoly::getCurrentPlayerIndex()
+{
+	return currentPlayerIndex;
+}
+
 void Monopoly::handleTradeMoneyOptions() {
 	std::cout << "\nTrade Money Options:\n"
 		<< "1. Set money to offer\n"
@@ -695,10 +700,20 @@ void Monopoly::handleTradeMoneyOptions() {
 		break;
 	}
 	case 3:
-		// Return to trade menu
+		// return to trade menu
 		break;
 	default:
 		showMessage("Invalid choice!");
+	}
+}
+
+void Monopoly::setCurrentPlayerIndexAndPlayer(size_t index) {
+	currentPlayerIndex = index;
+	if (players.getSize() > currentPlayerIndex) {
+		currentPlayer = players[currentPlayerIndex];
+	}
+	else {
+		currentPlayer = nullptr;
 	}
 }
 

@@ -10,7 +10,7 @@ void AddPlayerCommand::execute() {
     addedPlayer = new Player(game, static_cast<size_t>(token), startMoney);
 
     // Set initial player properties
-    addedPlayer->setImprisoned(true);
+    addedPlayer->setImprisoned(false);
     addedPlayer->setTurnsInJail(0);
     addedPlayer->setPairsThrown(0);
 

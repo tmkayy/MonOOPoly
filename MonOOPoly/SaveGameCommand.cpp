@@ -24,18 +24,21 @@ void SaveGameCommand::execute() {
     for (size_t i = 0; i < playerCount; ++i) {
         Player* player = players[i];
         Token username = player->getUsername();
+        size_t usernameValue = static_cast<size_t>(username);
         double money = player->getMoney();
         size_t id = player->getId();
         size_t turnsInJail = player->getTurnsInJail();
         size_t pairsThrown = player->getPairsThrown();
         bool imprisoned = player->isImprisoned();
-        playersOut.write(reinterpret_cast<const char*>(&username), sizeof(username));
+        playersOut.write(reinterpret_cast<const char*>(&usernameValue), sizeof(usernameValue));
         playersOut.write(reinterpret_cast<const char*>(&money), sizeof(money));
         playersOut.write(reinterpret_cast<const char*>(&id), sizeof(id));
         playersOut.write(reinterpret_cast<const char*>(&turnsInJail), sizeof(turnsInJail));
         playersOut.write(reinterpret_cast<const char*>(&pairsThrown), sizeof(pairsThrown));
         playersOut.write(reinterpret_cast<const char*>(&imprisoned), sizeof(imprisoned));
     }
+    size_t currentPlayerIndex = game->getCurrentPlayerIndex();
+    playersOut.write(reinterpret_cast<const char*>(&currentPlayerIndex), sizeof(currentPlayerIndex));
     playersOut.close();
 
     //save properties (including mortgages)
