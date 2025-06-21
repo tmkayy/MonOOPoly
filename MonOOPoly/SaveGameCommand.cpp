@@ -6,6 +6,7 @@
 #include "MovePositionCard.h"
 #include "Cottage.h"
 #include "Castle.h"
+#include "Consts.h"
 
 SaveGameCommand::SaveGameCommand(Monopoly* game)
     : game(game) {
@@ -16,6 +17,7 @@ void SaveGameCommand::execute() {
 
     //save players
     std::ofstream playersOut("players.bin", std::ios::binary);
+    CheckFileOpen(playersOut, "players.bin");
     const Vector<Player*>& players = game->getPlayers();
     size_t playerCount = players.getSize();
     playersOut.write(reinterpret_cast<const char*>(&playerCount), sizeof(playerCount));
@@ -38,6 +40,7 @@ void SaveGameCommand::execute() {
 
     //save properties (including mortgages)
     std::ofstream propsOut("properties.bin", std::ios::binary);
+    CheckFileOpen(propsOut, "properties.bin");
     const Vector<Property*>& properties = game->getGameBoard().getProperties();
     size_t propCount = properties.getSize();
     propsOut.write(reinterpret_cast<const char*>(&propCount), sizeof(propCount));
@@ -80,6 +83,7 @@ void SaveGameCommand::execute() {
 
     //save board (field types and for properties, their index in the properties vector)
     std::ofstream boardOut("board.bin", std::ios::binary);
+    CheckFileOpen(boardOut, "board.bin");
     const Vector<Field*>& boardFields = game->getGameBoard().getBoard();
     size_t fieldCount = boardFields.getSize();
     boardOut.write(reinterpret_cast<const char*>(&fieldCount), sizeof(fieldCount));
@@ -124,6 +128,7 @@ void SaveGameCommand::execute() {
 
     //save card deck (stack order)
     std::ofstream deckOut("deck.bin", std::ios::binary);
+    CheckFileOpen(deckOut, "deck.bin");
     Stack<Card*> cards = game->getCardDeck().getCards();
     size_t cardCount = cards.getSize();
     deckOut.write(reinterpret_cast<const char*>(&cardCount), sizeof(cardCount));

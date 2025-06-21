@@ -13,6 +13,7 @@
 #include "Vector.hpp"
 #include "MyString.h"
 #include <fstream>
+#include "Consts.h"
 
 LoadGameCommand::LoadGameCommand(Monopoly* game)
     : game(game) {
@@ -23,6 +24,7 @@ void LoadGameCommand::execute() {
 
     // load players
     std::ifstream playersIn("players.bin", std::ios::binary);
+    CheckFileOpen(playersIn, "players.bin");
     size_t playerCount = 0;
     playersIn.read(reinterpret_cast<char*>(&playerCount), sizeof(playerCount));
     Vector<Player*> loadedPlayers;
@@ -52,6 +54,7 @@ void LoadGameCommand::execute() {
 
     // load properties
     std::ifstream propsIn("properties.bin", std::ios::binary);
+    CheckFileOpen(propsIn, "properties.bin");
     size_t propCount = 0;
     propsIn.read(reinterpret_cast<char*>(&propCount), sizeof(propCount));
     Vector<Property*> loadedProps;
@@ -97,6 +100,7 @@ void LoadGameCommand::execute() {
 
     // load board
     std::ifstream boardIn("board.bin", std::ios::binary);
+    CheckFileOpen(boardIn, "board.bin");
     size_t fieldCount = 0;
     boardIn.read(reinterpret_cast<char*>(&fieldCount), sizeof(fieldCount));
     Vector<Field*>& boardFields = game->getGameBoard().getBoard();
@@ -138,6 +142,7 @@ void LoadGameCommand::execute() {
 
     // load deck 
     std::ifstream deckIn("deck.bin", std::ios::binary);
+    CheckFileOpen(deckIn, "deck.bin");
     size_t cardCount = 0;
     deckIn.read(reinterpret_cast<char*>(&cardCount), sizeof(cardCount));
     Stack<Card*> loadedCards;

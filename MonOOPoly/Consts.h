@@ -1,5 +1,6 @@
 #pragma once
 #include "MyString.h"
+#include <fstream>
 
 const short maxTokens = 7;
 const double cottageRent = 1.15;
@@ -12,7 +13,7 @@ const short startMoney = 1500;
 const short fieldCount = 40;
 
 const short bailCost = 100;
-const short maxTurnsJail = 3;
+const short maxTurnsJail = 2;
 const short jailPos = 10;
 
 const short goMoney = 200;
@@ -74,4 +75,16 @@ inline PropertyColor stringToColor(const MyString& str) {
 		}
 	}
 	return PropertyColor::Unknown;
+}
+
+inline void CheckFileOpen(const std::ifstream& file, const MyString& filename) {
+	if (!file.is_open()) {
+		throw std::runtime_error("Failed to open file for readin");
+	}
+}
+
+inline void CheckFileOpen(const std::ofstream& file, const MyString& filename) {
+	if (!file.is_open()) {
+		throw std::runtime_error("Failed to open file for writing");
+	}
 }

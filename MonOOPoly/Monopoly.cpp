@@ -21,6 +21,7 @@
 #include "AddPlayerCommand.h";
 #include "AcceptTradeCommand.h";
 #include "RejectTradeCommand.h";
+#include "SaveGameCommand.h"
 
 bool Monopoly::executeCommand(GameCommand* command) {
 	if (!command)
@@ -221,6 +222,12 @@ void Monopoly::nextTurn() {
 }
 
 void Monopoly::handleJailTurn() {
+	std::cout << "\n";
+	if (currentPlayer->getTurnsInJail() >= maxTurnsJail) {
+		std::cout << currentPlayer->tokenToString() << " has been in jail for too long. Must pay bail.\n";
+		executeCommand(new PayJailFineCommand(*currentPlayer));
+		return;
+	}
 	int choice = showJailOptions();
 
 	if (choice == 1) {
@@ -310,16 +317,16 @@ void Monopoly::handlePlayerOptions() {
 
 		std::cout << "\n";
 		switch (choice) {
-		case 1: //build
+		case 1: // build
 			handleBuildingOptions();
 			break;
-		case 2: //trade
+		case 2: // trade
 			handleTradeOptions();
 			break;
-		case 3: //sell property
+		case 3: // sell property
 			handleSellProperty();
 			break;
-		case 4: //pending Trades
+		case 4: // pending Trades
 			handlePendingTrades();
 			break;
 		case 5: // end Turn
@@ -328,6 +335,10 @@ void Monopoly::handlePlayerOptions() {
 		case 6: // declare Bankruptcy
 			executeCommand(new DeclareBankruptcyCommand(*currentPlayer, board.getProperties()));
 			return;
+		case 7: // save game and exit
+			executeCommand(new SaveGameCommand(this));
+			std::cout << "Game saved. Exiting...\n";
+			exit(0);
 		}
 	}
 }
@@ -551,26 +562,27 @@ bool Monopoly::showBuyPropertyPrompt(Property& property) {
 
 int Monopoly::showPlayerOptions() {
 	std::cout
-		<< "\n""Options:\n"
+		<< "\nOptions:\n"
 		<< "1. Build\n"
 		<< "2. Trade\n"
 		<< "3. Sell Property\n"
-		<< "4. Pending Trades\n" // Add this line
+		<< "4. Pending Trades\n"
 		<< "5. End Turn\n"
 		<< "6. Declare Bankruptcy\n"
-		<< "Enter choice (1-6): ";
+		<< "7. Save Game and Exit\n"
+		<< "Enter choice (1-7): ";
 
 	int choice;
 	while (true) {
 		std::cin >> choice;
-		if (choice >= 1 && choice <= 6) {
+		if (choice >= 1 && choice <= 7) {
 			return choice;
 		}
-		std::cout << "Invalid choice. Please enter 1-6: ";
+		std::cout << "Invalid choice. Please enter 1-7: ";
 	}
 }
 
-void Monopoly::showMessage(const std::string& message) {
+void Monopoly::showMessage(const MyString& message) {
 	std::cout << message << "\n";
 }
 

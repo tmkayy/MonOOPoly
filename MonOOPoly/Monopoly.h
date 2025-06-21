@@ -67,7 +67,7 @@ public:
 	int showJailOptions();
 	bool showBuyPropertyPrompt(Property& property);
 	int showPlayerOptions();
-	void showMessage(const std::string& message);
+	void showMessage(const MyString& message);
 	int showTradeSelectionMenu();
 	int selectBuildingType(Property* property);
 
