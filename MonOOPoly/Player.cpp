@@ -158,8 +158,16 @@ bool Player::isBankrupt() const
 }
 
 bool Player::buyProperty(Property& property) {
-	if (property.getOwner() != nullptr) return false;
-	if (!Bank::subtractMoney(*this, property.getPriceToBuy())) return false;
+	if (property.getOwner() != nullptr) {
+		std::cout << tokenToString() << " cannot buy " 
+			<< property.getName() << " because it is already owned!\n";
+		return false;
+	}
+	if (!Bank::subtractMoney(*this, property.getPriceToBuy())) {
+		std::cout << tokenToString() << " cannot afford to buy "
+			<< property.getName() << "!\n";
+		return false;
+	}
 
 	property.setOwner(this);
 	incrementPropertyCount(property.getColor());

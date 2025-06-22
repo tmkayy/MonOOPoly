@@ -249,7 +249,8 @@ void Monopoly::handleMovement() {
 	size_t previousPosition = currentPlayer->getId();
 	executeCommand(new MovePlayerCommand(*currentPlayer, board, d1, d2));
 
-	// Handle passing Go
+	std::cout << "Landed on field: " << currentPlayer->getId() << "\n";
+	// handle passing Go
 	if (currentPlayer->getId() < previousPosition) {
 		executeCommand(new PassGoCommand(*currentPlayer, false));
 	}
@@ -347,6 +348,9 @@ void Monopoly::handlePlayerOptions() {
 		case 8: // undo last action
 			undoLastCommand();
 			std::cout << "Last action undone.\n";
+			break;
+		case 9: // view properties by color
+			viewPropertiesByColor();
 			break;
 		}
 	}
@@ -586,15 +590,16 @@ int Monopoly::showPlayerOptions() {
 		<< "6. Declare Bankruptcy\n"
 		<< "7. Save Game and Exit (!!!THIS WILL END YOUR TURN!!!)\n"
 		<< "8. Undo Last Action\n"
-		<< "Enter choice (1-8): ";
+		<< "9. View Properties by Color\n"
+		<< "Enter choice (1-9): ";
 
 	int choice;
 	while (true) {
 		std::cin >> choice;
-		if (choice >= 1 && choice <= 8) {
+		if (choice >= 1 && choice <= 9) {
 			return choice;
 		}
-		std::cout << "Invalid choice. Please enter 1-8: ";
+		std::cout << "Invalid choice. Please enter 1-9: ";
 	}
 }
 
@@ -835,7 +840,7 @@ int Monopoly::showTradeSelectionMenu() {
 int Monopoly::selectBuildingType(Property* property) {
 	if (!property)
 		showMessage("Error: Null property in offer.");
-		return 3; // Cancel if invalid property
+	return 3; // Cancel if invalid property
 
 	std::cout << "\nSelect Building Type for " << property->getName() << ":\n"
 		<< "1. Cottage (rent multiplier: " << cottageRent << "x)\n"
@@ -850,5 +855,31 @@ int Monopoly::selectBuildingType(Property* property) {
 			return choice;
 		}
 		std::cout << "Invalid choice. Please enter 1-3: ";
+	}
+}
+
+void Monopoly::viewPropertiesByColor() {
+	if (!currentPlayer) {
+		showMessage("Error: No current player.");
+		return;
+	}
+	Vector<Property*> allProps = getPlayerProperties(*currentPlayer);
+	if (allProps.isEmpty()) {
+		showMessage("You have no properties.");
+		return;
+	}
+
+	std::cout << "\nYour Properties by Color:\n";
+	for (int color = 0; color < static_cast<int>(PropertyColor::Count); ++color) {
+		bool hasAny = false;
+		for (size_t i = 0; i < allProps.getSize(); ++i) {
+			if (allProps[i]->getColor() == static_cast<PropertyColor>(color)) {
+				if (!hasAny) {
+					std::cout << colorToString(static_cast<PropertyColor>(color)) << ":\n";
+					hasAny = true;
+				}
+				std::cout << "  - " << allProps[i]->getName() << "\n";
+			}
+		}
 	}
 }

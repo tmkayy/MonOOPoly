@@ -86,6 +86,6 @@ public:
 	void displayTrade(const Trade* trade);
 
 	void initializePlayers();
-
+	void viewPropertiesByColor();
 };
 
