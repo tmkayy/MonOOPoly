@@ -203,6 +203,8 @@ void LoadGameCommand::execute() {
     }
     deckIn.close();
 
+    std::cout << "[LoadGame] Finished loading deck.\n";
+
 
     // load pending trades
     std::ifstream tradesIn("trades.bin", std::ios::binary);
@@ -255,12 +257,34 @@ void LoadGameCommand::execute() {
             trade->setReceiverMoney(receiverMoney);
 
             receiver->getPendingTrades().push_back(trade);
+
+            std::cout << "[LoadGame] Loaded trade: "
+                << "Proposer=" << proposer->tokenToString()
+                << ", Receiver=" << receiver->tokenToString()
+                << ", Offer=$" << proposerMoney
+                << ", Request=$" << receiverMoney;
+
+            if (proposerProps.getSize() > 0) {
+                std::cout << ", ProposerProps=[";
+                for (size_t pi = 0; pi < proposerProps.getSize(); ++pi) {
+                    std::cout << proposerProps[pi]->getName().c_str();
+                    if (pi + 1 < proposerProps.getSize()) std::cout << ", ";
+                }
+                std::cout << "]";
+            }
+            if (receiverProps.getSize() > 0) {
+                std::cout << ", ReceiverProps=[";
+                for (size_t ri = 0; ri < receiverProps.getSize(); ++ri) {
+                    std::cout << receiverProps[ri]->getName().c_str();
+                    if (ri + 1 < receiverProps.getSize()) std::cout << ", ";
+                }
+                std::cout << "]";
+            }
+            std::cout << std::endl;
         }
     }
     tradesIn.close();
 
-
-    std::cout << "[LoadGame] Finished loading deck.\n";
     std::cout << "[LoadGame] Load process complete.\n";
 
     game->advanceToNextPlayer();

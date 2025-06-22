@@ -33,9 +33,14 @@ bool Monopoly::executeCommand(GameCommand* command) {
 
 void Monopoly::undoLastCommand() {
 	if (!commandHistory.isEmpty()) {
-		commandHistory.peek()->undo();
-		delete commandHistory.peek();
+		GameCommand* last = commandHistory.peek();
+		std::cout << "Undoing: " << last->getDescription() << std::endl;
+		last->undo();
+		delete last;
 		commandHistory.pop_back();
+	}
+	else {
+		std::cout << "No command to undo.\n";
 	}
 }
 
@@ -339,6 +344,10 @@ void Monopoly::handlePlayerOptions() {
 			executeCommand(new SaveGameCommand(this));
 			std::cout << "Game saved. Exiting...\n";
 			exit(0);
+		case 8: // undo last action
+			undoLastCommand();
+			std::cout << "Last action undone.\n";
+			break;
 		}
 	}
 }
@@ -380,7 +389,6 @@ void Monopoly::handleTradeOptions() {
 		switch (choice) {
 		case 1: { // Add property to offer
 			Property* prop = selectProperty(availableToOffer);
-			std::cout << prop->getName();
 			if (prop) {
 				executeCommand(new TradeSelectionCommand(
 					*currentPlayer, availableToOffer, selectedToOffer, prop));
@@ -456,7 +464,10 @@ void Monopoly::displayTrade(const Trade* trade) {
 }
 
 void Monopoly::handlePendingTrades() {
-	if (!currentPlayer) return;
+	if (!currentPlayer) {
+		showMessage("Error: No current player.");
+		return;
+	}
 	Vector<Trade*>& pending = currentPlayer->getPendingTrades();
 	if (pending.isEmpty()) {
 		showMessage("No pending trades.");
@@ -476,6 +487,10 @@ void Monopoly::handlePendingTrades() {
 		if (choice == 0 || choice > pending.getSize()) return;
 
 		Trade* selectedTrade = pending[choice - 1];
+		if (!selectedTrade) {
+			showMessage("Error: Invalid trade selection.");
+			continue;
+		}
 		std::cout << "1. Accept\n2. Reject\n3. View Details\n0. Back\nEnter choice: ";
 		int action;
 		std::cin >> action;
@@ -570,15 +585,16 @@ int Monopoly::showPlayerOptions() {
 		<< "5. End Turn\n"
 		<< "6. Declare Bankruptcy\n"
 		<< "7. Save Game and Exit (!!!THIS WILL END YOUR TURN!!!)\n"
-		<< "Enter choice (1-7): ";
+		<< "8. Undo Last Action\n"
+		<< "Enter choice (1-8): ";
 
 	int choice;
 	while (true) {
 		std::cin >> choice;
-		if (choice >= 1 && choice <= 7) {
+		if (choice >= 1 && choice <= 8) {
 			return choice;
 		}
-		std::cout << "Invalid choice. Please enter 1-7: ";
+		std::cout << "Invalid choice. Please enter 1-8: ";
 	}
 }
 
@@ -616,6 +632,7 @@ Vector<Property*> Monopoly::getBuildableProperties(Player& player) {
 
 Property* Monopoly::selectProperty(const Vector<Property*>& properties) {
 	if (properties.isEmpty()) {
+		showMessage("No properties available to select.");
 		return nullptr;
 	}
 
@@ -630,6 +647,10 @@ Property* Monopoly::selectProperty(const Vector<Property*>& properties) {
 		selectionResult,
 		selected
 	));
+
+	if (!selected) {
+		showMessage("No property was selected.");
+	}
 
 	return selected;
 }
@@ -653,6 +674,10 @@ Player* Monopoly::selectTradePartner() {
 		availablePartners,
 		selected
 	));
+
+	if (!selected) {
+		showMessage("No trade partner was selected.");
+	}
 
 	return selected;
 }
@@ -719,26 +744,36 @@ void Monopoly::setCurrentPlayerIndexAndPlayer(size_t index) {
 
 bool Monopoly::validateTrade(const Vector<Property*>& offer,
 	const Vector<Property*>& request) {
-	// Trade must include at least one item (property or money)
+	if (!currentPlayer) {
+		showMessage("Error: No current player for trade validation.");
+		return false;
+	}
+	if (!tradePartner) {
+		showMessage("Error: No trade partner selected.");
+		return false;
+	}
+
+	//trade must include at least one item (property or money)
 	if (offer.isEmpty() && request.isEmpty() && moneyOffered == 0 && moneyRequested == 0) {
 		showMessage("Trade must include at least one item!");
 		return false;
 	}
 
-	// Check if player can afford the money they're offering
 	if (moneyOffered > currentPlayer->getMoney()) {
 		showMessage("You don't have enough money for this offer!");
 		return false;
 	}
 
-	// Check if trade partner can afford the money they're being asked for
 	if (moneyRequested > tradePartner->getMoney()) {
 		showMessage("Trade partner doesn't have enough money for this request!");
 		return false;
 	}
 
-	// All properties must be unencumbered (not mortgaged)
 	for (size_t i = 0; i < offer.getSize(); i++) {
+		if (!offer[i]) {
+			showMessage("Error: Null property in offer.");
+			return false;
+		}
 		if (offer[i]->hasMortgages()) {
 			showMessage("Cannot trade mortgaged properties!");
 			return false;
@@ -746,6 +781,10 @@ bool Monopoly::validateTrade(const Vector<Property*>& offer,
 	}
 
 	for (size_t i = 0; i < request.getSize(); i++) {
+		if (!request[i]) {
+			showMessage("Error: Null property in request.");
+			return false;
+		}
 		if (request[i]->hasMortgages()) {
 			showMessage("Cannot request mortgaged properties!");
 			return false;
@@ -794,7 +833,9 @@ int Monopoly::showTradeSelectionMenu() {
 }
 
 int Monopoly::selectBuildingType(Property* property) {
-	if (!property) return 3; // Cancel if invalid property
+	if (!property)
+		showMessage("Error: Null property in offer.");
+		return 3; // Cancel if invalid property
 
 	std::cout << "\nSelect Building Type for " << property->getName() << ":\n"
 		<< "1. Cottage (rent multiplier: " << cottageRent << "x)\n"

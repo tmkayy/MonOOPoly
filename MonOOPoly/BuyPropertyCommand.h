@@ -13,5 +13,6 @@ public:
     void execute() override;
     void undo() override;
     GameCommand* clone() const override;
+    const char* getDescription() const override { return "Buy Property"; }
 };
 

@@ -22,4 +22,5 @@ public:
     GameCommand* clone() const override;
 
     Property* getSelectedProperty() const;
+    const char* getDescription() const override { return "Select property"; }
 };

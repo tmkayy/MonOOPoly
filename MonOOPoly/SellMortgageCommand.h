@@ -20,4 +20,5 @@ public:
     void undo() override;
     GameCommand* clone() const override;
     bool monopolyWasLost() const { return monopolyLost; }
+    const char* getDescription() const override { return "Sell Mortgage"; }
 };
