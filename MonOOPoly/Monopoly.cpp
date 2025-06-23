@@ -549,7 +549,7 @@ void Monopoly::advanceToNextPlayer() {
 		currentPlayer = players[currentPlayerIndex];
 	} while (currentPlayer->isBankrupt() && currentPlayerIndex != 0);
 
-	// Check if all players are bankrupt
+	//check if all players are bankrupt
 	if (currentPlayer->isBankrupt()) {
 		endGame();
 	}
