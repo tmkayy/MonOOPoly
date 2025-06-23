@@ -13,5 +13,7 @@ public:
     void execute() override;
     void undo() override;
     GameCommand* clone() const override;
-    const char* getDescription() const override { return "Roll For Jail Release"; }
+    const char* getDescription() const override {
+        return "Roll For Jail Release";
+    }
 };

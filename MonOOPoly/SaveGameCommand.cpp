@@ -8,14 +8,8 @@
 #include "Castle.h"
 #include "Consts.h"
 
-SaveGameCommand::SaveGameCommand(Monopoly* game)
-    : game(game) {
-}
-
-void SaveGameCommand::execute() {
-    if (!game) return;
-
-    //save players
+void SaveGameCommand::savePlayers()
+{
     std::ofstream playersOut("players.bin", std::ios::binary);
     CheckFileOpen(playersOut, "players.bin");
     const Vector<Player*>& players = game->getPlayers();
@@ -40,11 +34,15 @@ void SaveGameCommand::execute() {
     size_t currentPlayerIndex = game->getCurrentPlayerIndex();
     playersOut.write(reinterpret_cast<const char*>(&currentPlayerIndex), sizeof(currentPlayerIndex));
     playersOut.close();
+}
 
-    //save properties (including mortgages)
+void SaveGameCommand::saveProperties()
+{
     std::ofstream propsOut("properties.bin", std::ios::binary);
     CheckFileOpen(propsOut, "properties.bin");
+    const Vector<Player*>& players = game->getPlayers();
     const Vector<Property*>& properties = game->getGameBoard().getProperties();
+    size_t playerCount = players.getSize();
     size_t propCount = properties.getSize();
     propsOut.write(reinterpret_cast<const char*>(&propCount), sizeof(propCount));
     for (size_t i = 0; i < propCount; ++i) {
@@ -83,10 +81,14 @@ void SaveGameCommand::execute() {
         }
     }
     propsOut.close();
+}
 
-    //save board (field types and for properties, their index in the properties vector)
+void SaveGameCommand::saveBoard()
+{
     std::ofstream boardOut("board.bin", std::ios::binary);
     CheckFileOpen(boardOut, "board.bin");
+    const Vector<Property*>& properties = game->getGameBoard().getProperties();
+    size_t propCount = properties.getSize();
     const Vector<Field*>& boardFields = game->getGameBoard().getBoard();
     size_t fieldCount = boardFields.getSize();
     boardOut.write(reinterpret_cast<const char*>(&fieldCount), sizeof(fieldCount));
@@ -95,7 +97,6 @@ void SaveGameCommand::execute() {
         int propIndex = -1;
         if (dynamic_cast<Property*>(boardFields[i])) {
             type = 1;
-            // Find property index
             for (size_t j = 0; j < propCount; ++j) {
                 if (properties[j] == boardFields[i]) {
                     propIndex = (int)(j);
@@ -128,8 +129,10 @@ void SaveGameCommand::execute() {
         }
     }
     boardOut.close();
+}
 
-    //save card deck (stack order)
+void SaveGameCommand::saveDeck()
+{
     std::ofstream deckOut("deck.bin", std::ios::binary);
     CheckFileOpen(deckOut, "deck.bin");
     Stack<Card*> cards = game->getCardDeck().getCards();
@@ -156,10 +159,15 @@ void SaveGameCommand::execute() {
         cards.pop();
     }
     deckOut.close();
+}
 
-    // Save pending trades
+void SaveGameCommand::savePendingTrades()
+{
     std::ofstream tradesOut("trades.bin", std::ios::binary);
     CheckFileOpen(tradesOut, "trades.bin");
+    const Vector<Player*>& players = game->getPlayers();
+    const Vector<Property*>& properties = game->getGameBoard().getProperties();
+    size_t playerCount = players.getSize();
     tradesOut.write(reinterpret_cast<const char*>(&playerCount), sizeof(playerCount));
 
     for (size_t i = 0; i < playerCount; ++i) {
@@ -185,7 +193,6 @@ void SaveGameCommand::execute() {
             size_t proposerPropCount = proposerProps.getSize();
             tradesOut.write(reinterpret_cast<const char*>(&proposerPropCount), sizeof(proposerPropCount));
             for (size_t pi = 0; pi < proposerPropCount; ++pi) {
-                //save property index in global property list
                 int propIdx = -1;
                 for (size_t j = 0; j < properties.getSize(); ++j) {
                     if (properties[j] == proposerProps[pi]) {
@@ -213,6 +220,20 @@ void SaveGameCommand::execute() {
         }
     }
     tradesOut.close();
+}
+
+SaveGameCommand::SaveGameCommand(Monopoly* game)
+    : game(game) {
+}
+
+void SaveGameCommand::execute() {
+    if (!game) return;
+
+    savePlayers();
+    saveProperties();
+    saveBoard();
+    saveDeck();
+    savePendingTrades();
 }
 
 void SaveGameCommand::undo() {

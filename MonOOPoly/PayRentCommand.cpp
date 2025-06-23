@@ -11,8 +11,10 @@ PayRentCommand::PayRentCommand(Player& payer, Property& property)
 
 void PayRentCommand::execute() {
 	amountPaid = property.getPriceForRent();
-	if (Bank::transferMoney(payer, receiver, amountPaid))
+	if (Bank::transferMoney(payer, receiver, amountPaid)) {
+		std::cout << Green << payer.tokenToString() << " paid rent of $" << amountPaid << " to " << receiver.tokenToString() << "." << Reset << std::endl;
 		return;
+	}
 
 	Monopoly* game = payer.getGame();
 	std::cout << Red << payer.tokenToString() << " does not have enough money to pay rent ($" << amountPaid << ")." << Reset << std::endl;

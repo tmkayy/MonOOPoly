@@ -16,5 +16,7 @@ public:
     void undo() override;
     GameCommand* clone() const override;
     bool wasBuilt() const;
-    const char* getDescription() const override { return "Build Castle"; }
+    const char* getDescription() const override {
+        return "Build Castle";
+    }
 };

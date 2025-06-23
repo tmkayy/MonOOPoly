@@ -30,3 +30,4 @@ void AddPlayerCommand::undo() {
 GameCommand* AddPlayerCommand::clone() const {
     return new AddPlayerCommand(*this);
 }
+

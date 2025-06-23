@@ -18,6 +18,8 @@ public:
     void undo() override;
     GameCommand* clone() const override;
     void handleFieldAfterMove(Player& player, Board& board, CardDeck& deck, const Vector<Player*>& allPlayers);
-    const char* getDescription() const override { return "Draw Card"; }
+    const char* getDescription() const override {
+        return "Draw Card";
+    }
 };
 

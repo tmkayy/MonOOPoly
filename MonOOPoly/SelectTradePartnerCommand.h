@@ -18,5 +18,7 @@ public:
     GameCommand* clone() const override;
 
     Player* getSelectedPartner() const;
-    const char* getDescription() const override { return "Select trade partner"; }
+    const char* getDescription() const override {
+        return "Select trade partner";
+    }
 };

@@ -15,24 +15,13 @@
 #include <fstream>
 #include "Consts.h"
 
-LoadGameCommand::LoadGameCommand(Monopoly* game)
-	: game(game) {
-}
-
-void LoadGameCommand::execute() {
-	if (!game) {
-		std::cout << "[LoadGame] No game instance provided." << std::endl;
-		return;
-	}
-	std::cout << "[LoadGame] Starting load process..." << std::endl;
-
-	// load players
+void LoadGameCommand::loadPlayers(Vector<Player*>& loadedPlayers)
+{
 	std::ifstream playersIn("players.bin", std::ios::binary);
 	CheckFileOpen(playersIn, "players.bin");
 	size_t playerCount = 0;
 	playersIn.read(reinterpret_cast<char*>(&playerCount), sizeof(playerCount));
 	std::cout << "[LoadGame] Player count: " << playerCount << std::endl;
-	Vector<Player*> loadedPlayers;
 	for (size_t i = 0; i < playerCount; ++i) {
 		size_t username;
 		double money;
@@ -55,7 +44,6 @@ void LoadGameCommand::execute() {
 		player->setImprisoned(imprisoned);
 		loadedPlayers.push_back(player);
 	}
-	playersIn.close();
 	Vector<Player*>& players = game->getPlayers();
 	players.clear();
 	for (size_t i = 0; i < loadedPlayers.getSize(); ++i) {
@@ -65,14 +53,16 @@ void LoadGameCommand::execute() {
 	size_t currentPlayerIndex = 0;
 	playersIn.read(reinterpret_cast<char*>(&currentPlayerIndex), sizeof(currentPlayerIndex));
 	game->setCurrentPlayerIndexAndPlayer(currentPlayerIndex);
+	playersIn.close();
+}
 
-	// load properties
+void LoadGameCommand::loadProperties(const Vector<Player*>& loadedPlayers, Vector<Property*>& loadedProps)
+{
 	std::ifstream propsIn("properties.bin", std::ios::binary);
 	CheckFileOpen(propsIn, "properties.bin");
 	size_t propCount = 0;
 	propsIn.read(reinterpret_cast<char*>(&propCount), sizeof(propCount));
 	std::cout << "[LoadGame] Property count: " << propCount << std::endl;
-	Vector<Property*> loadedProps;
 	for (size_t i = 0; i < propCount; ++i) {
 		size_t nameLen;
 		propsIn.read(reinterpret_cast<char*>(&nameLen), sizeof(nameLen));
@@ -113,15 +103,17 @@ void LoadGameCommand::execute() {
 		}
 		loadedProps.push_back(prop);
 	}
-	propsIn.close();
 	Vector<Property*>& properties = game->getGameBoard().getProperties();
 	properties.clear();
 	for (size_t i = 0; i < loadedProps.getSize(); ++i) {
 		properties.push_back(loadedProps[i]);
 	}
 	std::cout << "[LoadGame] Finished loading properties." << std::endl;
+	propsIn.close();
+}
 
-	// load board
+void LoadGameCommand::loadBoard(const Vector<Property*>& loadedProps)
+{
 	std::ifstream boardIn("board.bin", std::ios::binary);
 	CheckFileOpen(boardIn, "board.bin");
 	size_t fieldCount = 0;
@@ -167,10 +159,12 @@ void LoadGameCommand::execute() {
 			boardFields.push_back(new Jail());
 		}
 	}
-	boardIn.close();
 	std::cout << "[LoadGame] Finished loading board." << std::endl;
+	boardIn.close();
+}
 
-	// load deck 
+void LoadGameCommand::loadDeck()
+{
 	std::ifstream deckIn("deck.bin", std::ios::binary);
 	CheckFileOpen(deckIn, "deck.bin");
 	size_t cardCount = 0;
@@ -202,11 +196,11 @@ void LoadGameCommand::execute() {
 		temp.pop();
 	}
 	deckIn.close();
-
 	std::cout << "[LoadGame] Finished loading deck." << std::endl;
+}
 
-
-	// load pending trades
+void LoadGameCommand::loadPendingTrades(const Vector<Player*>& loadedPlayers, const Vector<Property*>& loadedProps)
+{
 	std::ifstream tradesIn("trades.bin", std::ios::binary);
 	CheckFileOpen(tradesIn, "trades.bin");
 
@@ -223,11 +217,9 @@ void LoadGameCommand::execute() {
 			tradesIn.read(reinterpret_cast<char*>(&proposerMoney), sizeof(proposerMoney));
 			tradesIn.read(reinterpret_cast<char*>(&receiverMoney), sizeof(receiverMoney));
 
-			// proposer/receiver pointers
 			Player* proposer = loadedPlayers[proposerIdx];
 			Player* receiver = loadedPlayers[receiverIdx];
 
-			// proposer properties
 			size_t proposerPropCount = 0;
 			tradesIn.read(reinterpret_cast<char*>(&proposerPropCount), sizeof(proposerPropCount));
 			Vector<Property*> proposerProps;
@@ -237,7 +229,6 @@ void LoadGameCommand::execute() {
 				proposerProps.push_back(loadedProps[propIdx]);
 			}
 
-			// receiver properties
 			size_t receiverPropCount = 0;
 			tradesIn.read(reinterpret_cast<char*>(&receiverPropCount), sizeof(receiverPropCount));
 			Vector<Property*> receiverProps;
@@ -247,7 +238,6 @@ void LoadGameCommand::execute() {
 				receiverProps.push_back(loadedProps[propIdx]);
 			}
 
-			// recreate the trade and add to receiver's pending trades
 			Trade* trade = new Trade(proposer, receiver);
 			for (size_t pi = 0; pi < proposerProps.getSize(); ++pi)
 				trade->addProposerProperty(proposerProps[pi]);
@@ -284,6 +274,30 @@ void LoadGameCommand::execute() {
 		}
 	}
 	tradesIn.close();
+}
+
+LoadGameCommand::LoadGameCommand(Monopoly* game)
+	: game(game) {
+}
+
+void LoadGameCommand::execute() {
+	if (!game) {
+		std::cout << "[LoadGame] No game instance provided." << std::endl;
+		return;
+	}
+	std::cout << "[LoadGame] Starting load process..." << std::endl;
+
+	Vector<Player*> loadedPlayers;
+	loadPlayers(loadedPlayers);
+
+	Vector<Property*> loadedProps;
+	loadProperties(loadedPlayers, loadedProps);
+
+	loadBoard(loadedProps);
+
+	loadDeck();
+
+	loadPendingTrades(loadedPlayers, loadedProps);
 
 	std::cout << "[LoadGame] Load process complete." << std::endl;
 

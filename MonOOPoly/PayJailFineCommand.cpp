@@ -59,3 +59,4 @@ void PayJailFineCommand::undo() {
 GameCommand* PayJailFineCommand::clone() const {
     return new PayJailFineCommand(*this);
 }
+

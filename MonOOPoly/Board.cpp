@@ -6,6 +6,7 @@ void Board::free()
     for (size_t i = 0; i < board.getSize(); ++i)
         delete board[i];
     board.clear();
+	//they were all stored in board, so i don't need to delete them again
     properties.clear();
 }
 
