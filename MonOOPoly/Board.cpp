@@ -74,7 +74,7 @@ Board::Board() {
     board.push_back(new Property("St. Charles Place", 140, 100, 100, 10, PropertyColor::Pink));
 
     // 12 - Electric Company (Utility Property)
-    board.push_back(new Property("Electric Company", 150, 0, 0, 0, PropertyColor::Utility));
+    board.push_back(new Property("Electric Company", 150, 0, 0, 20, PropertyColor::Utility));
 
     // 13 - States Avenue (Pink)
     board.push_back(new Property("States Avenue", 140, 100, 100, 10, PropertyColor::Pink));
@@ -122,7 +122,7 @@ Board::Board() {
     board.push_back(new Property("Ventnor Avenue", 260, 150, 150, 22, PropertyColor::Yellow));
 
     // 28 - Water Works (Utility Property)
-    board.push_back(new Property("Water Works", 150, 0, 0, 0, PropertyColor::Utility));
+    board.push_back(new Property("Water Works", 150, 0, 0, 20, PropertyColor::Utility));
 
     // 29 - Marvin Gardens (Yellow)
     board.push_back(new Property("Marvin Gardens", 280, 150, 150, 24, PropertyColor::Yellow));

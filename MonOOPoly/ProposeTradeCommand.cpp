@@ -30,7 +30,7 @@ ProposeTradeCommand::~ProposeTradeCommand() {
 
 void ProposeTradeCommand::execute() {
 	if (&proposer == &receiver) {
-		std::cerr << "Error: Cannot trade with yourself.\n";
+		std::cerr << Red << "Error: Cannot trade with yourself." << Reset << std::endl;
 		return;
 	}
 
@@ -55,7 +55,7 @@ void ProposeTradeCommand::execute() {
 	createdTrade->setReceiverMoney(moneyRequested);
 
 	if (!createdTrade->isValid()) {
-		std::cerr << "Error: Invalid trade proposal.\n";
+		std::cerr << Red << "Error: Invalid trade proposal." << Reset << std::endl;
 		delete createdTrade;
 		createdTrade = nullptr;
 		return;
@@ -63,8 +63,8 @@ void ProposeTradeCommand::execute() {
 
 	//add to receiver's pending trades
 	receiver.getPendingTrades().push_back(createdTrade);
-	std::cout << proposer.tokenToString() << " proposed a trade to "
-		<< receiver.tokenToString() << ".\n";
+	std::cout << Green << proposer.tokenToString() << " proposed a trade to "
+		<< receiver.tokenToString() << "." << Reset << std::endl;
 }
 
 void ProposeTradeCommand::undo() {
@@ -77,7 +77,7 @@ void ProposeTradeCommand::undo() {
 			pending.remove(i);
 			delete createdTrade;
 			createdTrade = nullptr;
-			std::cout << "Trade proposal has been withdrawn.\n";
+			std::cout << Yellow << "Trade proposal has been withdrawn." << Reset << std::endl;
 			return;
 		}
 	}

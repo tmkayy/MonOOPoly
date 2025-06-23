@@ -6,10 +6,7 @@ AddPlayerCommand::AddPlayerCommand(Monopoly* game, Token token)
 }
 
 void AddPlayerCommand::execute() {
-    // Convert Token to size_t for Player constructor
-    addedPlayer = new Player(game, static_cast<size_t>(token), startMoney);
-
-    // Set initial player properties
+    addedPlayer = new Player(game, (size_t)(token), startMoney);
     addedPlayer->setImprisoned(false);
     addedPlayer->setTurnsInJail(0);
     addedPlayer->setPairsThrown(0);
@@ -19,7 +16,6 @@ void AddPlayerCommand::execute() {
 
 void AddPlayerCommand::undo() {
     if (addedPlayer) {
-        // Remove from game's player list
         for (size_t i = 0; i < game->getPlayers().getSize(); i++) {
             if (game->getPlayers()[i] == addedPlayer) {
                 game->getPlayers().remove(i);

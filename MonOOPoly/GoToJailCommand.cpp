@@ -16,8 +16,8 @@ void GoToJailCommand::undo() {
         //only undo if player wasn't already in jail
         player.setImprisoned(false);
         player.setTurnsInJail(0);
-        std::cout << player.tokenToString()
-            << " was released from jail (undo)" << std::endl;
+        std::cout << Green << player.tokenToString()
+            << " was released from jail (undo)" << Reset << std::endl;
     }
     else {
         //restore original turn count if player was already jailed

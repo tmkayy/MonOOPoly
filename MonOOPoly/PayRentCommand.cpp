@@ -2,6 +2,7 @@
 #include "Bank.h"
 #include "Monopoly.h"
 #include "DeclareBankruptcyCommand.h"
+#include <iostream>
 
 PayRentCommand::PayRentCommand(Player& payer, Property& property)
 	: payer(payer), receiver(*property.getOwner()), property(property),
@@ -14,9 +15,9 @@ void PayRentCommand::execute() {
 		return;
 
 	Monopoly* game = payer.getGame();
-	std::cout << payer.tokenToString() << " does not have enough money to pay rent ($" << amountPaid << ").\n";
+	std::cout << Red << payer.tokenToString() << " does not have enough money to pay rent ($" << amountPaid << ")." << Reset << std::endl;
 	while (payer.getMoney() < amountPaid) {
-		std::cout << "You need to raise funds to pay rent.\n";
+		std::cout << Yellow << "You need to raise funds to pay rent." << Reset << std::endl;
 		int choice = game->showPlayerOptions();
 
 		if (choice == 3) { //sell property
@@ -30,7 +31,7 @@ void PayRentCommand::execute() {
 			return;
 		}
 		else {
-			std::cout << "You must sell or trade to raise money, or declare bankruptcy.\n";
+			std::cout << Yellow << "You must sell or trade to raise money, or declare bankruptcy." << Reset << std::endl;
 		}
 
 		if (payer.isBankrupt()) return;
@@ -38,7 +39,7 @@ void PayRentCommand::execute() {
 
 	//try to pay again
 	if (!Bank::transferMoney(payer, receiver, amountPaid)) {
-		std::cout << payer.tokenToString() << " still does not have enough money to pay rent ($" << amountPaid << ").\n";
+		std::cout << Red << payer.tokenToString() << " still does not have enough money to pay rent ($" << amountPaid << ")." << Reset << std::endl;
 		game->executeCommand(new DeclareBankruptcyCommand(payer, game->getGameBoard().getProperties()));
 	}
 }

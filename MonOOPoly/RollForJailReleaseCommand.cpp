@@ -12,14 +12,14 @@ void RollForJailReleaseCommand::execute() {
 
     if (rolledDoubles) {
         player.setImprisoned(false);
-        std::cout << player.tokenToString()
-            << " rolled doubles and was released from jail!\n";
+        std::cout << Green << player.tokenToString()
+            << " rolled doubles and was released from jail!" << Reset << std::endl;
     }
     else {
         player.setTurnsInJail(previousTurns + 1);
-        std::cout << player.tokenToString()
+        std::cout << Yellow << player.tokenToString()
             << " failed to roll doubles (turns in jail: "
-            << player.getTurnsInJail() << ")\n";
+            << player.getTurnsInJail() << ")" << Reset << std::endl;
     }
 }
 
@@ -28,8 +28,8 @@ void RollForJailReleaseCommand::undo() {
 
     if (rolledDoubles) {
         player.setImprisoned(true);
-        std::cout << player.tokenToString()
-            << " was returned to jail (undo)\n";
+        std::cout << Cyan << player.tokenToString()
+            << " was returned to jail (undo)" << Reset << std::endl;
     }
     else {
         player.setTurnsInJail(previousTurns);

@@ -82,12 +82,12 @@ void Trade::checkMonopolyChange(PropertyColor color, Player* oldOwner, Player* n
 
     if (wasMonopoly && !oldOwner->hasMonopoly(color)) {
         std::cout << oldOwner->tokenToString() << " lost monopoly on "
-            << colorToString(color) << " properties!\n";
+            << colorToString(color) << " properties!" << std::endl;
     }
 
     if (!wasMonopoly && isNowMonopoly) {
-        std::cout << newOwner->tokenToString() << " gained monopoly on "
-            << colorToString(color) << " properties!\n";
+        std::cout << newOwner->tokenToString() << " gained monopoly on " << std::endl
+            << colorToString(color) << " properties!" << std::endl;
     }
 }
 

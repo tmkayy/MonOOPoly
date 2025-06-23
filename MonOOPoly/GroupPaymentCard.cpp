@@ -19,7 +19,7 @@ void GroupPaymentCard::applyEffect(Player& player, const Vector<Player*>& allPla
                 Bank::transferMoney(*allPlayers[i], player, paymentAmount);
             }
         }
-        std::cout << "All players pay " << paymentAmount << "$ to " << Tokens[(size_t)player.getUsername()] << ".\n";
+        std::cout << "All players pay " << paymentAmount << "$ to " << Tokens[(size_t)player.getUsername()] << "." << std::endl;
     }
     else {
         for (size_t i = 0; i < allPlayers.getSize(); ++i) {
@@ -27,7 +27,7 @@ void GroupPaymentCard::applyEffect(Player& player, const Vector<Player*>& allPla
                 Bank::transferMoney(player, *allPlayers[i], -paymentAmount);
             }
         }
-        std::cout << Tokens[(size_t)player.getUsername()] << " pays " << -paymentAmount << "$ to all players.\n";
+        std::cout << Tokens[(size_t)player.getUsername()] << " pays " << -paymentAmount << "$ to all players." << std::endl;
     }
 }
 

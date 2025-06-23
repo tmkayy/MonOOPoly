@@ -15,11 +15,11 @@ void PaymentCard::applyEffect(Player& player, const Vector<Player*>& allPlayers)
 {
 	if (moneyAmount < 0) {
 		Bank::subtractMoney(player, moneyAmount);
-		std::cout << "You have paid " << -moneyAmount << "$." << std::endl;
+		std::cout << "You have paid " << Green << -moneyAmount << "$." << Reset << std::endl;
 	}
 	else {
 		Bank::addMoney(player, moneyAmount);
-		std::cout << "You have received " << moneyAmount << "$." << std::endl;
+		std::cout << "You have received " << Green << moneyAmount << "$." << Reset << std::endl;
 	}
 }
 

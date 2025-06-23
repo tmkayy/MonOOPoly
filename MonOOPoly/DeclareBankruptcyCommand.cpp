@@ -23,7 +23,7 @@ void DeclareBankruptcyCommand::execute() {
     }
 
     Bank::subtractMoney(bankruptPlayer, bankruptPlayer.getMoney());
-    std::cout << bankruptPlayer.tokenToString() << " declared bankruptcy!\n";
+    std::cout << Red << bankruptPlayer.tokenToString() << " declared bankruptcy!" << Reset << std::endl;
 }
 
 void DeclareBankruptcyCommand::undo() {

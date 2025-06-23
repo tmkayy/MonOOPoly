@@ -19,7 +19,7 @@ class Player
 	Vector<PropertyColor> monopolies;
 	Vector<Trade*> pendingTrades;
 
-	int propertyCounts[static_cast<size_t>(PropertyColor::Count)]{};
+	int propertyCounts[(size_t)(PropertyColor::Count)]{};
 
 	friend class Bank;
 	friend class Board;
@@ -55,17 +55,17 @@ public:
 	bool buyProperty(Property& property);
 	bool sellProperty(Property& property);//trade
 
-		//trade
-		bool proposeTrade(Player& receiver,
-			const Vector<Property*>& propertiesOffered,
-			const Vector<Property*>& propertiesRequested,
-			double moneyOffered = 0,
-			double moneyRequested = 0);
+	//trade
+	bool proposeTrade(Player& receiver,
+		const Vector<Property*>& propertiesOffered,
+		const Vector<Property*>& propertiesRequested,
+		double moneyOffered = 0,
+		double moneyRequested = 0);
 
-		bool acceptTrade(Trade& trade);
-		void rejectTrade(Trade& trade);
-		const Vector<Trade*>& getPendingTrades() const;
-		Vector<Trade*>& getPendingTrades();
+	bool acceptTrade(Trade& trade);
+	void rejectTrade(Trade& trade);
+	const Vector<Trade*>& getPendingTrades() const;
+	Vector<Trade*>& getPendingTrades();
 
 	int getPropertyCount(PropertyColor color) const;
 	int getPropertiesOfColor(const MyString& color) const;

@@ -23,7 +23,7 @@ void Player::copyFrom(const Player& other)
 	imprisoned = other.imprisoned;
 	this->game = other.game;
 
-	for (size_t i = 0; i < static_cast<size_t>(PropertyColor::Count); i++) {
+	for (size_t i = 0; i < (size_t)(PropertyColor::Count); i++) {
 		propertyCounts[i] = other.propertyCounts[i];
 	}
 
@@ -40,7 +40,7 @@ void Player::moveFrom(Player&& other) noexcept
 	imprisoned = other.imprisoned;
 	this->game = other.game;
 
-	for (size_t i = 0; i < static_cast<size_t>(PropertyColor::Count); i++) {
+	for (size_t i = 0; i < (size_t)(PropertyColor::Count); i++) {
 		propertyCounts[i] = other.propertyCounts[i];
 		other.propertyCounts[i] = 0;
 	}
@@ -159,13 +159,13 @@ bool Player::isBankrupt() const
 
 bool Player::buyProperty(Property& property) {
 	if (property.getOwner() != nullptr) {
-		std::cout << tokenToString() << " cannot buy " 
-			<< property.getName() << " because it is already owned!\n";
+		std::cout << tokenToString() << " cannot buy "
+			<< property.getName() << " because it is already owned!" << std::endl;
 		return false;
 	}
 	if (!Bank::subtractMoney(*this, property.getPriceToBuy())) {
 		std::cout << tokenToString() << " cannot afford to buy "
-			<< property.getName() << "!\n";
+			<< property.getName() << "!" << std::endl;
 		return false;
 	}
 
@@ -174,7 +174,7 @@ bool Player::buyProperty(Property& property) {
 
 	if (hasMonopoly(property.getColor())) {
 		std::cout << tokenToString() << " gained a monopoly on "
-			<< colorToString(property.getColor()) << " properties!\n";
+			<< colorToString(property.getColor()) << " properties!" << std::endl;
 	}
 
 	return true;
@@ -204,7 +204,7 @@ bool Player::sellProperty(Property& property) {
 
 	if (wasMonopoly && !hasMonopoly(property.getColor())) {
 		std::cout << tokenToString() << " lost monopoly on "
-			<< colorToString(property.getColor()) << " properties!\n";
+			<< colorToString(property.getColor()) << " properties!" << std::endl;
 	}
 
 	return true;
@@ -312,4 +312,5 @@ bool Player::hasMonopoly(PropertyColor color) const {
 		}();
 
 	return propertyCounts[(size_t)(color)] == required;
+	return true;
 }

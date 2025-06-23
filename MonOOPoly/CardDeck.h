@@ -3,16 +3,16 @@
 #include "Stack.hpp"
 #include "Vector.hpp"
 #include "Consts.h"
-#include <random>
-#include "CardField.h"
+#include <cstdlib>
+#include <ctime>
 
 class CardDeck
 {
-	Stack<Card*> cards;
+    Stack<Card*> cards;
 
-	void free();
-	void copyFrom(const CardDeck& other);
-	void moveFrom(CardDeck&& other) noexcept;
+    void free();
+    void copyFrom(const CardDeck& other);
+    void moveFrom(CardDeck&& other) noexcept;
 
 public:
     CardDeck();
@@ -26,6 +26,5 @@ public:
     Card* drawCard();
     void returnCard(Card* card);
 
-    void shuffle();
+    void generateDeck();
 };
-

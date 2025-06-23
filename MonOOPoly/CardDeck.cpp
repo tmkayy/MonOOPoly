@@ -5,82 +5,38 @@
 
 CardDeck::CardDeck()
 {
-    cards = Stack<Card*>(cardCount);
-    cards.push(new MovePositionCard(5));   
-    cards.push(new MovePositionCard(7));  
-    cards.push(new MovePositionCard(6));  
-    cards.push(new MovePositionCard(11));  
-    cards.push(new MovePositionCard(-3));  
-    cards.push(new MovePositionCard(-2));   
-    cards.push(new MovePositionCard(10));  
-    cards.push(new MovePositionCard(8));  
-    cards.push(new MovePositionCard(1));  
-    cards.push(new MovePositionCard(-1));  
-
-    cards.push(new GroupPaymentCard(50)); 
-    cards.push(new GroupPaymentCard(-50));
-    cards.push(new GroupPaymentCard(10)); 
-
-    cards.push(new PaymentCard(100));  
-    cards.push(new PaymentCard(-15));  
-    cards.push(new PaymentCard(150));  
-    cards.push(new PaymentCard(-20));  
-    cards.push(new PaymentCard(-25));  
-    cards.push(new PaymentCard(10));   
-    cards.push(new PaymentCard(50));   
-    cards.push(new PaymentCard(-100)); 
-    cards.push(new PaymentCard(-150)); 
-    cards.push(new PaymentCard(200));  
-    cards.push(new PaymentCard(-100)); 
-
-    cards.push(new MovePositionCard(0)); 
-    cards.push(new MovePositionCard(10));
-    cards.push(new MovePositionCard(5)); 
-
-    cards.push(new PaymentCard(200));    
-    cards.push(new PaymentCard(-50));    
-    cards.push(new PaymentCard(100));    
-    cards.push(new PaymentCard(20));     
-    cards.push(new PaymentCard(100));    
-    cards.push(new PaymentCard(-100));   
-    cards.push(new PaymentCard(-150));   
-    cards.push(new PaymentCard(25));     
-    cards.push(new PaymentCard(100));    
-    cards.push(new PaymentCard(45));     
-    cards.push(new PaymentCard(100));    
-    cards.push(new PaymentCard(50));     
-    cards.push(new PaymentCard(-50));    
-    cards.push(new PaymentCard(10));     
-    cards.push(new PaymentCard(25));     
-    cards.push(new PaymentCard(-40));    
-    cards.push(new PaymentCard(100));    
-    cards.push(new PaymentCard(-30));    
-    cards.push(new PaymentCard(75));     
-    cards.push(new PaymentCard(-20));    
-
-    shuffle();
+	cards = Stack<Card*>(cardCount);
+	generateDeck();
 }
 
-void CardDeck::shuffle()
+void CardDeck::generateDeck()
 {
-    Vector<Card*> tempVector;
-    while (!cards.isEmpty()) {
-        tempVector.push_back(cards.top());
-        cards.pop();
-    }
+	static bool seeded = false;
+	if (!seeded) {
+		std::srand((std::time(nullptr)));
+		seeded = true;
+	}
 
-    // shuffle using Fisher-Yates algorithm
-    std::random_device rd;
-    std::mt19937 g(rd());
+	free();
 
-    for (size_t i = tempVector.getSize() - 1; i > 0; --i) {
-        std::uniform_int_distribution<size_t> dist(0, i);
-        size_t j = dist(g);
-        std::swap(tempVector[i], tempVector[j]);
-    }
-    for (size_t i = 0; i < tempVector.getSize(); ++i) { //move back to stack
-        cards.push(tempVector[i]);
-    }
+	for (int i = 0; i < cardCount; ++i) {
+		int type = std::rand() % 3; // 0: PaymentCard, 1: GroupPaymentCard, 2: MovePositionCard
+		double value = 0;
+		switch (type) {
+		case 0: // PaymentCard
+			value = (std::rand() % 401) - 200; // -200 to 200
+			cards.push(new PaymentCard(value));
+			break;
+		case 1: // GroupPaymentCard
+			value = (std::rand() % 101) - 50; // -50 to 50
+			cards.push(new GroupPaymentCard(value));
+			break;
+		case 2: // MovePositionCard
+			value = (std::rand() % 21) - 10; // -10 to 10
+			cards.push(new MovePositionCard(static_cast<int>(value)));
+			break;
+		}
+	}
 }
 
 CardDeck::~CardDeck()
@@ -120,22 +76,22 @@ CardDeck& CardDeck::operator=(CardDeck&& other) noexcept
 
 Stack<Card*> CardDeck::getCards() const
 {
-    return cards;
+	return cards;
 }
 
 Card* CardDeck::drawCard() {
-    if (cards.isEmpty()) {
-        return nullptr;
-    }
-    Card* card = cards.top();
-    cards.pop();
-    return card;
+	if (cards.isEmpty()) {
+		return nullptr;
+	}
+	Card* card = cards.top();
+	cards.pop();
+	return card;
 }
 
 void CardDeck::returnCard(Card* card) {
-    if (card) {
-        cards.push(card);
-    }
+	if (card) {
+		cards.push(card);
+	}
 }
 
 void CardDeck::free()

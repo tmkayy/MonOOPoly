@@ -5,10 +5,10 @@
 int main() {
     Monopoly game;
     while (true) {
-        std::cout << "==== Monopoly ====\n";
-        std::cout << "1. New Game\n";
-        std::cout << "2. Load Game\n";
-        std::cout << "3. Exit\n";
+        std::cout << "==== Monopoly ====" << std::endl;
+        std::cout << "1. New Game" << std::endl;
+        std::cout << "2. Load Game" << std::endl;
+        std::cout << "3. Exit" << std::endl;
         std::cout << "Select option (1-3): ";
         int choice;
         std::cin >> choice;
@@ -22,15 +22,15 @@ int main() {
         else if (choice == 2) {
             system("cls");
             game.executeCommand(new LoadGameCommand(&game));
-            std::cout << "Game loaded.\n";
+            std::cout << "Game loaded." << std::endl;
             break;
         }
         else if (choice == 3) {
-            std::cout << "Goodbye!\n";
+            std::cout << "Goodbye!" << std::endl;
             return 0;
         }
         else {
-            std::cout << "Invalid option. Try again.\n";
+            std::cout << "Invalid option. Try again." << std::endl;
         }
     }
 

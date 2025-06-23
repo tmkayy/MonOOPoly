@@ -1,4 +1,5 @@
-﻿  Monopoly.cpp
+﻿  AcceptTradeCommand.cpp
+  Monopoly.cpp
 C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Dice.h(7,34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   (compiling source file 'Monopoly.cpp')
   
@@ -27,13 +28,24 @@ C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(104,36): warning C4267: 'a
           see reference to class template instantiation 'Vector<Property *>' being compiled
           C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(128,1):
           while compiling class template member function 'Vector<Property *>::Vector(Vector<Property *> &&) noexcept'
-              C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(620,2):
+              C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(624,2):
               see the first reference to 'Vector<Property *>::Vector' in 'Monopoly::getPlayerProperties'
           C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(102,42):
           while compiling class template member function 'Vector<Property *>::Vector(size_t)'
               C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(99,36):
               see the first reference to 'Vector<Property *>::Vector' in 'Vector<Property *>::Vector'
-              C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(388,20):
+              C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(391,20):
               see the first reference to 'Vector<Property *>::Vector' in 'Monopoly::handleTradeOptions'
   
+  MovePlayerCommand.cpp
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Dice.h(7,34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  (compiling source file 'MovePlayerCommand.cpp')
+  
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MovePlayerCommand.cpp(5,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MovePlayerCommand.cpp(12,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  MovePositionCard.cpp
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MovePositionCard.cpp(16,41): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MovePositionCard.cpp(25,41): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  TradeSelectionCommand.cpp
+  Generating Code...
   MonOOPoly.vcxproj -> C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\x64\Debug\MonOOPoly.exe

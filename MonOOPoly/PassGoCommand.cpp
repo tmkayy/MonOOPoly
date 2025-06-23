@@ -8,6 +8,7 @@ PassGoCommand::PassGoCommand(Player& player, bool landed)
 void PassGoCommand::execute() {
     Bank::addMoney(player, goMoney);
     moneyCollected = true;
+    std::cout << Green << "Passed GO! Collected " << Green << "$" << goMoney << Reset << std::endl;
 }
 
 void PassGoCommand::undo() {

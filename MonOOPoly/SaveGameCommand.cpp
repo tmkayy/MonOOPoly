@@ -24,7 +24,7 @@ void SaveGameCommand::execute() {
     for (size_t i = 0; i < playerCount; ++i) {
         Player* player = players[i];
         Token username = player->getUsername();
-        size_t usernameValue = static_cast<size_t>(username);
+        size_t usernameValue = (size_t)(username);
         double money = player->getMoney();
         size_t id = player->getId();
         size_t turnsInJail = player->getTurnsInJail();
@@ -65,7 +65,7 @@ void SaveGameCommand::execute() {
         int ownerId = -1;
         for (size_t j = 0; j < playerCount; ++j) {
             if (players[j] == prop->getOwner()) {
-                ownerId = static_cast<int>(j);
+                ownerId = (int)(j);
                 break;
             }
         }
@@ -98,7 +98,7 @@ void SaveGameCommand::execute() {
             // Find property index
             for (size_t j = 0; j < propCount; ++j) {
                 if (properties[j] == boardFields[i]) {
-                    propIndex = static_cast<int>(j);
+                    propIndex = (int)(j);
                     break;
                 }
             }
@@ -106,8 +106,8 @@ void SaveGameCommand::execute() {
         else if (dynamic_cast<SpecialField*>(boardFields[i])) {
             type = 0;
             boardOut.write(reinterpret_cast<const char*>(&type), sizeof(type));
-            SpecialField* sf = static_cast<SpecialField*>(boardFields[i]);
-            int sfType = static_cast<int>(sf->getType());
+            SpecialField* sf = (SpecialField*)(boardFields[i]);
+            int sfType = (int)(sf->getType());
             boardOut.write(reinterpret_cast<const char*>(&sfType), sizeof(sfType));
             size_t nameLen = sf->getName().getSize();
             boardOut.write(reinterpret_cast<const char*>(&nameLen), sizeof(nameLen));
@@ -170,8 +170,8 @@ void SaveGameCommand::execute() {
             Trade* trade = trades[t];
             int proposerIdx = -1, receiverIdx = -1;
             for (size_t p = 0; p < playerCount; ++p) {
-                if (players[p] == trade->getProposer()) proposerIdx = static_cast<int>(p);
-                if (players[p] == trade->getReceiver()) receiverIdx = static_cast<int>(p);
+                if (players[p] == trade->getProposer()) proposerIdx = (int)(p);
+                if (players[p] == trade->getReceiver()) receiverIdx = (int)(p);
             }
             tradesOut.write(reinterpret_cast<const char*>(&proposerIdx), sizeof(proposerIdx));
             tradesOut.write(reinterpret_cast<const char*>(&receiverIdx), sizeof(receiverIdx));
@@ -189,7 +189,7 @@ void SaveGameCommand::execute() {
                 int propIdx = -1;
                 for (size_t j = 0; j < properties.getSize(); ++j) {
                     if (properties[j] == proposerProps[pi]) {
-                        propIdx = static_cast<int>(j);
+                        propIdx = (int)(j);
                         break;
                     }
                 }
@@ -204,7 +204,7 @@ void SaveGameCommand::execute() {
                 int propIdx = -1;
                 for (size_t j = 0; j < properties.getSize(); ++j) {
                     if (properties[j] == receiverProps[ri]) {
-                        propIdx = static_cast<int>(j);
+                        propIdx = (int)(j);
                         break;
                     }
                 }

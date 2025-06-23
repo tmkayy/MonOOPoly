@@ -41,7 +41,7 @@ void DrawCardCommand::handleFieldAfterMove(Player& player, Board& board, CardDec
     Field* field = board.getBoard()[player.getId()];
 
     if (!field) {
-        std::cout << "Error: Player is on an invalid field." << std::endl;
+        std::cout << Red << "Error: Player is on an invalid field." << Reset << std::endl;
         return;
     }
 
@@ -49,27 +49,25 @@ void DrawCardCommand::handleFieldAfterMove(Player& player, Board& board, CardDec
         return;
     }
 
-    // You may need to get the Monopoly instance if you need to call its methods
     Monopoly* game = player.getGame();
     if (!game) return;
 
     if (SpecialField* specialField = dynamic_cast<SpecialField*>(field)) {
         switch (specialField->getType()) {
         case SpecialField::Type::GO:
-            game->executeCommand(new PassGoCommand(player, true));
-            std::cout << "Passed GO! Collected $" << goMoney << std::endl;
+            //have to pass
             break;
         case SpecialField::Type::FREE_PARKING:
-            std::cout << "Free Parking! No action taken.\n";
+            std::cout << Cyan << "Free Parking! No action taken." << Reset << std::endl;
             break;
         case SpecialField::Type::GO_TO_JAIL:
-            std::cout << "Go to Jail! Moving to jail...\n";
+            std::cout << Red << "Go to Jail! Moving to jail..." << Reset << std::endl;
             game->executeCommand(new GoToJailCommand(player));
             break;
         case SpecialField::Type::INCOME_TAX:
         case SpecialField::Type::LUXURY_TAX:
-            std::cout << "Landed on " << specialField->getName() << ". Paying tax of $"
-                << specialField->getValue() << ".\n";
+            std::cout << Yellow << "Landed on " << specialField->getName() << ". Paying tax of $"
+                << specialField->getValue() << "." << Reset << std::endl;
             game->executeCommand(new PayTaxCommand(player, specialField->getValue()));
             break;
         default:
@@ -82,7 +80,7 @@ void DrawCardCommand::handleFieldAfterMove(Player& player, Board& board, CardDec
         game->handlePropertyLanding(property);
     }
     else if (CardField* cardField = dynamic_cast<CardField*>(field)) {
-        std::cout << "Landed on card field: " << "\n";
+        std::cout << Magenta << "Landed on card field: " << Reset << std::endl;
         game->executeCommand(new DrawCardCommand(player, deck, allPlayers));
     }
 }

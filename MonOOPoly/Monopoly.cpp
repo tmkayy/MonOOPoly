@@ -34,13 +34,13 @@ bool Monopoly::executeCommand(GameCommand* command) {
 void Monopoly::undoLastCommand() {
 	if (!commandHistory.isEmpty()) {
 		GameCommand* last = commandHistory.peek();
-		std::cout << "Undoing: " << last->getDescription() << std::endl;
+		std::cout << Yellow << "Undoing: " << last->getDescription() << Reset << std::endl;
 		last->undo();
 		delete last;
 		commandHistory.pop_back();
 	}
 	else {
-		std::cout << "No command to undo.\n";
+		std::cout << Red << "No command to undo." << Reset << std::endl;
 	}
 }
 
@@ -97,19 +97,19 @@ void Monopoly::free() {
 }
 
 void Monopoly::addPlayerWithTokenSelection() {
-	std::cout << "Player " << (players.getSize() + 1) << " - Select token (1-8):\n"
-		<< "1. RaceCar\n2. Thimble\n3. ScottishTerrier\n4. SackOfMoney\n"
-		<< "5. Cat\n6. Penguin\n7. RubberDuck\n8. Unknown\n";
+	std::cout << Cyan << "Player " << (players.getSize() + 1) << " - Select token (1-8):" << Reset << std::endl
+		<< "1. RaceCar" << std::endl << "2. Thimble" << std::endl << "3. ScottishTerrier" << std::endl << "4. SackOfMoney" << std::endl
+		<< "5. Cat" << std::endl << "6. Penguin" << std::endl << "7. RubberDuck" << std::endl << "8. Unknown" << std::endl;
 
 	int tokenChoice;
 	while (true) {
 		std::cin >> tokenChoice;
 		if (tokenChoice < 1 || tokenChoice > 8) {
-			std::cout << "Invalid choice. Select 1-8: ";
+			std::cout << Red << "Invalid choice. Select 1-8: " << Reset;
 			continue;
 		}
 
-		Token token = static_cast<Token>(tokenChoice - 1);
+		Token token = (Token)(tokenChoice - 1);
 		bool taken = false;
 		for (size_t i = 0; i < players.getSize(); ++i) {
 			if (players[i]->getUsername() == token) {
@@ -118,7 +118,7 @@ void Monopoly::addPlayerWithTokenSelection() {
 			}
 		}
 		if (taken) {
-			std::cout << "Token already taken. Select another: ";
+			std::cout << Red << "Token already taken. Select another: " << Reset;
 			continue;
 		}
 
@@ -141,12 +141,12 @@ bool Monopoly::isGameOver() const {
 void Monopoly::announceWinner() const {
 	for (size_t i = 0; i < players.getSize(); i++) {
 		if (!players[i]->isBankrupt()) {
-			std::cout << "\n=== GAME OVER ===\n";
-			std::cout << "Winner: " << players[i]->tokenToString() << std::endl;
+			std::cout << Green << std::endl << "=== GAME OVER ===" << Reset << std::endl;
+			std::cout << Green << "Winner: " << players[i]->tokenToString() << Reset << std::endl;
 			return;
 		}
 	}
-	std::cout << "\n=== GAME OVER ===\nNo winner - all players bankrupt!\n";
+	std::cout << Red << std::endl << "=== GAME OVER ===" << std::endl << "No winner - all players bankrupt!" << Reset << std::endl;
 }
 
 Monopoly::Monopoly()
@@ -193,7 +193,7 @@ CardDeck& Monopoly::getCardDeck()
 }
 
 void Monopoly::startGame() {
-	cards.shuffle();
+	cards.generateDeck();
 	if (!players.isEmpty()) {
 		currentPlayerIndex = 0;
 		currentPlayer = players[0];
@@ -217,7 +217,7 @@ void Monopoly::nextTurn() {
 
 	// building/trading phase if not bankrupt
 	if (!currentPlayer->isBankrupt()) {
-		std::cout << currentPlayer->tokenToString() << "'s turn. " << currentPlayer->getMoney() << "$\n";
+		std::cout << Cyan << currentPlayer->tokenToString() << "'s turn. " << Green << currentPlayer->getMoney() << "$" << Reset << std::endl;
 		handleMovement();
 		handleCurrentField();
 		handlePlayerOptions();
@@ -227,9 +227,9 @@ void Monopoly::nextTurn() {
 }
 
 void Monopoly::handleJailTurn() {
-	std::cout << "\n";
+	std::cout << std::endl;
 	if (currentPlayer->getTurnsInJail() >= maxTurnsJail) {
-		std::cout << currentPlayer->tokenToString() << " has been in jail for too long. Must pay bail.\n";
+		std::cout << Yellow << currentPlayer->tokenToString() << " has been in jail for too long. Must pay bail." << Reset << std::endl;
 		executeCommand(new PayJailFineCommand(*currentPlayer));
 		return;
 	}
@@ -249,7 +249,7 @@ void Monopoly::handleMovement() {
 	size_t previousPosition = currentPlayer->getId();
 	executeCommand(new MovePlayerCommand(*currentPlayer, board, d1, d2));
 
-	std::cout << "Landed on field: " << currentPlayer->getId() << "\n";
+	std::cout << Magenta << "Landed on field: " << currentPlayer->getId() << Reset << std::endl;
 	// handle passing Go
 	if (currentPlayer->getId() < previousPosition) {
 		executeCommand(new PassGoCommand(*currentPlayer, false));
@@ -259,30 +259,29 @@ void Monopoly::handleMovement() {
 void Monopoly::handleCurrentField() {
 	Field* field = board.getBoard()[currentPlayer->getId()];
 	if (dynamic_cast<Jail*>(field)) { //just visiting
-		std::cout << "Landed on jail field (just visiting): " << "\n";
+		std::cout << Cyan << "Landed on jail field (just visiting): " << Reset << std::endl;
 		return;
 	}
 
 	if (SpecialField* specialField = dynamic_cast<SpecialField*>(field)) {
 		switch (specialField->getType()) {
 		case SpecialField::Type::GO:
-			executeCommand(new PassGoCommand(*currentPlayer, true));
-			std::cout << "Passed GO! Collected $" << goMoney << std::endl;
+			//have to pass to get money
 			break;
 
 		case SpecialField::Type::FREE_PARKING:
-			std::cout << "Free Parking! No action taken.\n";
+			std::cout << Cyan << "Free Parking! No action taken." << Reset << std::endl;
 			break;
 
 		case SpecialField::Type::GO_TO_JAIL:
-			std::cout << "Go to Jail! Moving to jail...\n";
+			std::cout << Red << "Go to Jail! Moving to jail..." << Reset << std::endl;
 			executeCommand(new GoToJailCommand(*currentPlayer));
 			break;
 
 		case SpecialField::Type::INCOME_TAX:
 		case SpecialField::Type::LUXURY_TAX:
-			std::cout << "Landed on " << specialField->getName() << ". Paying tax of $"
-				<< specialField->getValue() << ".\n";
+			std::cout << Yellow << "Landed on " << specialField->getName() << ". Paying tax of " << Green << "$"
+				<< specialField->getValue() << "." << Reset << std::endl;
 			executeCommand(new PayTaxCommand(*currentPlayer, specialField->getValue()));
 			break;
 
@@ -296,7 +295,7 @@ void Monopoly::handleCurrentField() {
 		handlePropertyLanding(property);
 	}
 	else if (CardField* cardField = dynamic_cast<CardField*>(field)) {
-		std::cout << "Landed on card field: " << "\n";
+		std::cout << Magenta << "Landed on card field: " << Reset << std::endl;
 		executeCommand(new DrawCardCommand(*currentPlayer, cards, players));
 	}
 }
@@ -304,7 +303,7 @@ void Monopoly::handleCurrentField() {
 
 void Monopoly::handlePropertyLanding(Property* property) {
 	std::cout << "Landed on: " << property->getName()
-		<< " (" << colorToString(property->getColor()) << ")\n";
+		<< " (" << colorToString(property->getColor()) << ")" << std::endl;
 
 	if (!property->getOwner()) {
 		//offer to buy
@@ -321,7 +320,7 @@ void Monopoly::handlePlayerOptions() {
 	while (true) {
 		int choice = showPlayerOptions();
 
-		std::cout << "\n";
+		std::cout << std::endl;
 		switch (choice) {
 		case 1: // build
 			handleBuildingOptions();
@@ -343,11 +342,11 @@ void Monopoly::handlePlayerOptions() {
 			return;
 		case 7: // save game and exit
 			executeCommand(new SaveGameCommand(this));
-			std::cout << "Game saved. Exiting...\n";
+			std::cout << "Game saved. Exiting..." << std::endl;
 			exit(0);
 		case 8: // undo last action
 			undoLastCommand();
-			std::cout << "Last action undone.\n";
+			std::cout << "Last action undone." << std::endl;
 			break;
 		case 9: // view properties by color
 			viewPropertiesByColor();
@@ -364,6 +363,10 @@ void Monopoly::handleBuildingOptions() {
 	}
 
 	Property* chosen = selectProperty(buildable);
+	if (chosen->getPriceForCottage() == 0 || chosen->getPriceForCastle() == 0) {
+		showMessage(MyString(Red) + "You cannot build on this property." + MyString(Reset));
+		return;
+	}
 	if (!chosen) return;
 
 	int buildingType = selectBuildingType(chosen);
@@ -391,7 +394,7 @@ void Monopoly::handleTradeOptions() {
 	while (true) {
 		int choice = showTradeSelectionMenu();
 		switch (choice) {
-		case 1: { // Add property to offer
+		case 1: { // add property to offer
 			Property* prop = selectProperty(availableToOffer);
 			if (prop) {
 				executeCommand(new TradeSelectionCommand(
@@ -399,7 +402,7 @@ void Monopoly::handleTradeOptions() {
 			}
 			break;
 		}
-		case 2: { // Remove property from offer
+		case 2: { // remove property from offer
 			Property* prop = selectProperty(selectedToOffer);
 			if (prop) {
 				executeCommand(new TradeSelectionCommand(
@@ -407,7 +410,7 @@ void Monopoly::handleTradeOptions() {
 			}
 			break;
 		}
-		case 3: { // Add property to request
+		case 3: { // add property to request
 			Property* prop = selectProperty(availableToRequest);
 			if (prop) {
 				executeCommand(new TradeSelectionCommand(
@@ -415,7 +418,7 @@ void Monopoly::handleTradeOptions() {
 			}
 			break;
 		}
-		case 4: { // Remove property from request
+		case 4: { // remove property from request
 			Property* prop = selectProperty(selectedToRequest);
 			if (prop) {
 				executeCommand(new TradeSelectionCommand(
@@ -423,22 +426,22 @@ void Monopoly::handleTradeOptions() {
 			}
 			break;
 		}
-		case 5: { // Set money amounts
+		case 5: { // set money amounts
 			handleTradeMoneyOptions();
 			break;
 		}
-		case 6: { // Finalize trade
+		case 6: { // finalize trade
 			if (validateTrade(selectedToOffer, selectedToRequest)) {
 				executeCommand(new ProposeTradeCommand(
 					*currentPlayer, *partner,
 					selectedToOffer, selectedToRequest,
 					moneyOffered, moneyRequested));
 			}
-			tradePartner = nullptr;  // Reset trade partner
+			tradePartner = nullptr;  // reset trade partner
 			return;
 		}
-		case 7: { // Cancel
-			tradePartner = nullptr;  // Reset trade partner
+		case 7: { // cancel
+			tradePartner = nullptr;  // reset trade partner
 			return;
 		}
 		}
@@ -447,8 +450,8 @@ void Monopoly::handleTradeOptions() {
 
 
 void Monopoly::displayTrade(const Trade* trade) {
-	std::cout << "From: " << trade->getProposer()->tokenToString()
-		<< " | Offer: $" << trade->getProposerMoney();
+	std::cout << Yellow << "From: " << trade->getProposer()->tokenToString()
+		<< " | Offer: " << Green << "$" << trade->getProposerMoney() << Yellow;
 	if (!trade->getProposerProperties().isEmpty()) {
 		std::cout << " | Properties: ";
 		for (size_t j = 0; j < trade->getProposerProperties().getSize(); ++j) {
@@ -456,7 +459,7 @@ void Monopoly::displayTrade(const Trade* trade) {
 			if (j + 1 < trade->getProposerProperties().getSize()) std::cout << ", ";
 		}
 	}
-	std::cout << " | Request: $" << trade->getReceiverMoney();
+	std::cout << " | Request: " << Green << "$" << trade->getReceiverMoney() << Yellow;
 	if (!trade->getReceiverProperties().isEmpty()) {
 		std::cout << " | Wants: ";
 		for (size_t j = 0; j < trade->getReceiverProperties().getSize(); ++j) {
@@ -464,12 +467,12 @@ void Monopoly::displayTrade(const Trade* trade) {
 			if (j + 1 < trade->getReceiverProperties().getSize()) std::cout << ", ";
 		}
 	}
-	std::cout << "\n";
+	std::cout << Reset << std::endl;
 }
 
 void Monopoly::handlePendingTrades() {
 	if (!currentPlayer) {
-		showMessage("Error: No current player.");
+		showMessage(MyString(Red) + "Error: No current player." + MyString(Reset));
 		return;
 	}
 	Vector<Trade*>& pending = currentPlayer->getPendingTrades();
@@ -479,12 +482,13 @@ void Monopoly::handlePendingTrades() {
 	}
 
 	while (true) {
-		std::cout << "\nPending Trades:\n";
+		std::cout << Cyan << std::endl << "Pending Trades:" << Reset << std::endl;
 		for (size_t i = 0; i < pending.getSize(); ++i) {
-			std::cout << i + 1 << ". ";
+			std::cout << Yellow << i + 1 << ". " << Reset;
 			displayTrade(pending[i]);
 		}
-		std::cout << "0. Back\nSelect a trade to respond to (0-" << pending.getSize() << "): ";
+		std::cout << Yellow << "0. Back" << Reset << std::endl << std::endl << Cyan
+			<< "Select a trade to respond to (0-" << pending.getSize() << "): ";
 
 		size_t choice;
 		std::cin >> choice;
@@ -492,32 +496,33 @@ void Monopoly::handlePendingTrades() {
 
 		Trade* selectedTrade = pending[choice - 1];
 		if (!selectedTrade) {
-			showMessage("Error: Invalid trade selection.");
+			showMessage(MyString(Red) + "Error: Invalid trade selection." + MyString(Reset));
 			continue;
 		}
-		std::cout << "1. Accept\n2. Reject\n3. View Details\n0. Back\nEnter choice: ";
+		std::cout << Yellow << "1. Accept" << std::endl << "2. Reject" << std::endl << "3. View Details"
+			<< std::endl << "0. Back" << std::endl << Reset << "Enter choice: ";
 		int action;
 		std::cin >> action;
 		if (action == 1) {
 			executeCommand(new AcceptTradeCommand(*selectedTrade));
 			pending.remove(choice - 1);
-			showMessage("Trade accepted.");
+			showMessage(MyString(Green) + "Trade accepted." + MyString(Reset));
 		}
 		else if (action == 2) {
 			executeCommand(new RejectTradeCommand(*selectedTrade));
 			pending.remove(choice - 1);
-			showMessage("Trade rejected.");
+			showMessage(MyString(Yellow) + "Trade rejected." + MyString(Reset));
 		}
 		else if (action == 3) {
-			std::cout << "\n--- Trade Details ---\n";
+			std::cout << Cyan << std::endl << "--- Trade Details ---" << Reset << std::endl;
 			displayTrade(selectedTrade);
-			std::cout << "---------------------\n";
+			std::cout << Cyan << "---------------------" << Reset << std::endl;
 		}
 		else if (action == 0) {
 			return;
 		}
 		else {
-			showMessage("Invalid choice.");
+			showMessage(MyString(Red) + "Invalid choice." + MyString(Reset));
 		}
 	}
 }
@@ -533,12 +538,12 @@ void Monopoly::handleSellProperty() {
 	Property* chosen = selectProperty(sellable);
 	if (!chosen) return;
 
-	if (chosen->hasMortgages()) {
+	//automatically sell all mortgages before selling the property
+	while (chosen->hasMortgages()) {
 		executeCommand(new SellMortgageCommand(currentPlayer, *chosen));
 	}
-	else {
-		executeCommand(new SellPropertyCommand(*currentPlayer, *chosen));
-	}
+
+	executeCommand(new SellPropertyCommand(*currentPlayer, *chosen));
 }
 
 void Monopoly::advanceToNextPlayer() {
@@ -556,9 +561,9 @@ void Monopoly::advanceToNextPlayer() {
 }
 
 int Monopoly::showJailOptions() {
-	std::cout << currentPlayer->tokenToString() << " is in jail. Options:\n"
-		<< "1. Roll for doubles (cost: " << maxTurnsJail << " turns max)\n"
-		<< "2. Pay $" << bailCost << " fine\n"
+	std::cout << std::endl << Cyan << currentPlayer->tokenToString() << " is in jail. Options:" << std::endl << Yellow
+		<< "1. Roll for doubles (cost: " << maxTurnsJail << " turns max)" << std::endl
+		<< "2. Pay " << Green << "$" << bailCost << Yellow << " fine" << std::endl << Reset
 		<< "Enter choice (1-2): ";
 
 	int choice;
@@ -567,13 +572,13 @@ int Monopoly::showJailOptions() {
 		if (choice == 1 || choice == 2) {
 			return choice;
 		}
-		std::cout << "Invalid choice. Please enter 1 or 2: ";
+		std::cout << Red << "Invalid choice. Please enter 1 or 2: " << Reset;
 	}
 }
 
 bool Monopoly::showBuyPropertyPrompt(Property& property) {
 	std::cout << "Would you like to buy " << property.getName()
-		<< " for $" << property.getPriceToBuy() << "? (y/n): ";
+		<< " for " << Green << "$" << property.getPriceToBuy() << Reset << "? (y/n): ";
 	char choice;
 	std::cin >> choice;
 	return (choice == 'y' || choice == 'Y');
@@ -581,16 +586,16 @@ bool Monopoly::showBuyPropertyPrompt(Property& property) {
 
 int Monopoly::showPlayerOptions() {
 	std::cout
-		<< "\nOptions:\n"
-		<< "1. Build\n"
-		<< "2. Trade\n"
-		<< "3. Sell Property\n"
-		<< "4. Pending Trades\n"
-		<< "5. End Turn\n"
-		<< "6. Declare Bankruptcy\n"
-		<< "7. Save Game and Exit (!!!THIS WILL END YOUR TURN!!!)\n"
-		<< "8. Undo Last Action\n"
-		<< "9. View Properties by Color\n"
+		<< Cyan << std::endl << "Options:" << std::endl << Reset
+		<< "1. Build" << std::endl
+		<< "2. Trade" << std::endl
+		<< "3. Sell Property" << std::endl
+		<< "4. Pending Trades" << std::endl
+		<< "5. End Turn" << std::endl
+		<< "6. Declare Bankruptcy" << std::endl
+		<< "7. Save Game and Exit " << Red << "(!!!THIS WILL END YOUR TURN!!!)" << Reset << std::endl
+		<< "8. Undo Last Action" << std::endl
+		<< "9. View Properties by Color" << std::endl
 		<< "Enter choice (1-9): ";
 
 	int choice;
@@ -599,12 +604,12 @@ int Monopoly::showPlayerOptions() {
 		if (choice >= 1 && choice <= 9) {
 			return choice;
 		}
-		std::cout << "Invalid choice. Please enter 1-9: ";
+		std::cout << Red << "Invalid choice. Please enter 1-9: " << Reset;
 	}
 }
 
 void Monopoly::showMessage(const MyString& message) {
-	std::cout << message << "\n";
+	std::cout << message << std::endl;
 }
 
 Vector<Property*> Monopoly::getPlayerProperties(Player& player) {
@@ -637,7 +642,7 @@ Vector<Property*> Monopoly::getBuildableProperties(Player& player) {
 
 Property* Monopoly::selectProperty(const Vector<Property*>& properties) {
 	if (properties.isEmpty()) {
-		showMessage("No properties available to select.");
+		showMessage(MyString(Red) + "No properties available to select." + MyString(Reset));
 		return nullptr;
 	}
 
@@ -654,7 +659,7 @@ Property* Monopoly::selectProperty(const Vector<Property*>& properties) {
 	));
 
 	if (!selected) {
-		showMessage("No property was selected.");
+		showMessage(MyString(Red) + "No property was selected." + MyString(Reset));
 	}
 
 	return selected;
@@ -670,7 +675,7 @@ Player* Monopoly::selectTradePartner() {
 	}
 
 	if (availablePartners.isEmpty()) {
-		showMessage("No available players to trade with");
+		showMessage(MyString(Red) + "No available players to trade with" + MyString(Reset));
 		return nullptr;
 	}
 
@@ -681,7 +686,7 @@ Player* Monopoly::selectTradePartner() {
 	));
 
 	if (!selected) {
-		showMessage("No trade partner was selected.");
+		showMessage(MyString(Red) + "No trade partner was selected." + MyString(Reset));
 	}
 
 	return selected;
@@ -693,10 +698,10 @@ size_t Monopoly::getCurrentPlayerIndex()
 }
 
 void Monopoly::handleTradeMoneyOptions() {
-	std::cout << "\nTrade Money Options:\n"
-		<< "1. Set money to offer\n"
-		<< "2. Set money to request\n"
-		<< "3. Back to trade menu\n"
+	std::cout << Cyan << std::endl << "Trade Money Options:" << std::endl << Yellow
+		<< "1. Set money to offer" << std::endl
+		<< "2. Set money to request" << std::endl
+		<< "3. Back to trade menu" << std::endl << Reset
 		<< "Enter choice (1-3): ";
 
 	int choice;
@@ -704,28 +709,28 @@ void Monopoly::handleTradeMoneyOptions() {
 
 	switch (choice) {
 	case 1: {
-		std::cout << "Enter amount to offer (current money: $"
-			<< currentPlayer->getMoney() << "): ";
+		std::cout << "Enter amount to offer (current money: " << Green << "$"
+			<< currentPlayer->getMoney() << Reset << "): ";
 		int amount;
 		std::cin >> amount;
 		if (amount >= 0 && amount <= currentPlayer->getMoney()) {
 			moneyOffered = amount;
 		}
 		else {
-			showMessage("Invalid amount!");
+			showMessage(MyString(Red) + "Invalid amount!" + MyString(Reset));
 		}
 		break;
 	}
 	case 2: {
-		std::cout << "Enter amount to request (partner has: $"
-			<< tradePartner->getMoney() << "): ";
+		std::cout << "Enter amount to request (partner has: " << Green << "$"
+			<< currentPlayer->getMoney() << Reset << "): ";
 		int amount;
 		std::cin >> amount;
 		if (amount >= 0) {
 			moneyRequested = amount;
 		}
 		else {
-			showMessage("Invalid amount!");
+			showMessage(MyString(Red) + "Invalid amount!" + MyString(Reset));
 		}
 		break;
 	}
@@ -733,7 +738,7 @@ void Monopoly::handleTradeMoneyOptions() {
 		// return to trade menu
 		break;
 	default:
-		showMessage("Invalid choice!");
+		showMessage(MyString(Red) + "Invalid choice!" + MyString(Reset));
 	}
 }
 
@@ -750,48 +755,48 @@ void Monopoly::setCurrentPlayerIndexAndPlayer(size_t index) {
 bool Monopoly::validateTrade(const Vector<Property*>& offer,
 	const Vector<Property*>& request) {
 	if (!currentPlayer) {
-		showMessage("Error: No current player for trade validation.");
+		showMessage(MyString(Red) + "Error: No current player for trade validation." + MyString(Reset));
 		return false;
 	}
 	if (!tradePartner) {
-		showMessage("Error: No trade partner selected.");
+		showMessage(MyString(Red) + "Error: No trade partner selected." + MyString(Reset));
 		return false;
 	}
 
 	//trade must include at least one item (property or money)
 	if (offer.isEmpty() && request.isEmpty() && moneyOffered == 0 && moneyRequested == 0) {
-		showMessage("Trade must include at least one item!");
+		showMessage(MyString(Red) + "Trade must include at least one item!" + MyString(Reset));
 		return false;
 	}
 
 	if (moneyOffered > currentPlayer->getMoney()) {
-		showMessage("You don't have enough money for this offer!");
+		showMessage(MyString(Red) + "You don't have enough money for this offer!" + MyString(Reset));
 		return false;
 	}
 
 	if (moneyRequested > tradePartner->getMoney()) {
-		showMessage("Trade partner doesn't have enough money for this request!");
+		showMessage(MyString(Red) + "Trade partner doesn't have enough money for this request!" + MyString(Reset));
 		return false;
 	}
 
 	for (size_t i = 0; i < offer.getSize(); i++) {
 		if (!offer[i]) {
-			showMessage("Error: Null property in offer.");
+			showMessage(MyString(Red) + "Error: Null property in offer." + MyString(Reset));
 			return false;
 		}
 		if (offer[i]->hasMortgages()) {
-			showMessage("Cannot trade mortgaged properties!");
+			showMessage(MyString(Red) + "Cannot trade mortgaged properties!" + MyString(Reset));
 			return false;
 		}
 	}
 
 	for (size_t i = 0; i < request.getSize(); i++) {
 		if (!request[i]) {
-			showMessage("Error: Null property in request.");
+			showMessage(MyString(Red) + "Error: Null property in request." + MyString(Reset));
 			return false;
 		}
 		if (request[i]->hasMortgages()) {
-			showMessage("Cannot request mortgaged properties!");
+			showMessage(MyString(Red) + "Cannot request mortgaged properties!" + MyString(Reset));
 			return false;
 		}
 	}
@@ -806,7 +811,7 @@ void Monopoly::initializePlayers()
 	std::cin >> numPlayers;
 
 	while (numPlayers < 2 || numPlayers > 8) {
-		std::cout << "Invalid number. Please enter between 2 and 8: ";
+		showMessage(MyString(Red) + "Invalid number. Please enter between 2 and 8: " + MyString(Reset));
 		std::cin >> numPlayers;
 	}
 
@@ -817,14 +822,14 @@ void Monopoly::initializePlayers()
 }
 
 int Monopoly::showTradeSelectionMenu() {
-	std::cout << "\nTrade Selection Menu:\n"
-		<< "1. Add property to offer\n"
-		<< "2. Remove property from offer\n"
-		<< "3. Add property to request\n"
-		<< "4. Remove property from request\n"
-		<< "5. Set money amounts\n"
-		<< "6. Finalize trade\n"
-		<< "7. Cancel trade\n"
+	std::cout << Cyan << std::endl << "Trade Selection Menu:" << std::endl << Reset
+		<< "1. Add property to offer" << std::endl
+		<< "2. Remove property from offer" << std::endl
+		<< "3. Add property to request" << std::endl
+		<< "4. Remove property from request" << std::endl
+		<< "5. Set money amounts" << std::endl
+		<< "6. Finalize trade" << std::endl
+		<< "7. Cancel trade" << std::endl
 		<< "Enter choice (1-7): ";
 
 	int choice;
@@ -833,19 +838,20 @@ int Monopoly::showTradeSelectionMenu() {
 		if (choice >= 1 && choice <= 7) {
 			return choice;
 		}
-		std::cout << "Invalid choice. Please enter 1-7: ";
+		std::cout << Red << "Invalid choice. Please enter 1-7: " << Reset;
 	}
 }
 
 int Monopoly::selectBuildingType(Property* property) {
-	if (!property)
-		showMessage("Error: Null property in offer.");
-	return 3; // Cancel if invalid property
+	if (!property) {
+		showMessage(MyString(Red) + "Error: Null property in offer." + MyString(Reset));
+		return 3; // cancel if invalid property
+	}
 
-	std::cout << "\nSelect Building Type for " << property->getName() << ":\n"
-		<< "1. Cottage (rent multiplier: " << cottageRent << "x)\n"
-		<< "2. Castle (rent multiplier: " << castleRent << "x)\n"
-		<< "3. Cancel\n"
+	std::cout << Cyan << std::endl << "Select Building Type for " << property->getName() << ":" << std::endl << Yellow
+		<< "1. Cottage " << Green << "$" << property->getPriceForCottage() << Yellow << "(rent multiplier : " << cottageRent << "x)" << std::endl
+		<< "2. Castle " << Green << "$" << property->getPriceForCastle() << Yellow << "(rent multiplier : " << castleRent << "x)" << std::endl
+		<< "3. Cancel" << std::endl << Reset
 		<< "Enter choice (1-3): ";
 
 	int choice;
@@ -854,31 +860,31 @@ int Monopoly::selectBuildingType(Property* property) {
 		if (choice >= 1 && choice <= 3) {
 			return choice;
 		}
-		std::cout << "Invalid choice. Please enter 1-3: ";
+		std::cout << MyString(Red) + "Invalid choice. Please enter 1-3: " + MyString(Reset);
 	}
 }
 
 void Monopoly::viewPropertiesByColor() {
 	if (!currentPlayer) {
-		showMessage("Error: No current player.");
+		showMessage(MyString(Red) + "Error: No current player." + MyString(Reset));
 		return;
 	}
 	Vector<Property*> allProps = getPlayerProperties(*currentPlayer);
 	if (allProps.isEmpty()) {
-		showMessage("You have no properties.");
+		showMessage(MyString(Yellow) + "You have no properties." + MyString(Reset));
 		return;
 	}
 
-	std::cout << "\nYour Properties by Color:\n";
-	for (int color = 0; color < static_cast<int>(PropertyColor::Count); ++color) {
+	std::cout << Reset << std::endl << std::endl << "Your Properties by Color:" << std::endl;
+	for (int color = 0; color < (int)(PropertyColor::Count); ++color) {
 		bool hasAny = false;
 		for (size_t i = 0; i < allProps.getSize(); ++i) {
-			if (allProps[i]->getColor() == static_cast<PropertyColor>(color)) {
+			if (allProps[i]->getColor() == (PropertyColor)(color)) {
 				if (!hasAny) {
-					std::cout << colorToString(static_cast<PropertyColor>(color)) << ":\n";
+					std::cout << colorToString((PropertyColor)(color)) << ":" << std::endl;
 					hasAny = true;
 				}
-				std::cout << "  - " << allProps[i]->getName() << "\n";
+				std::cout << "  - " << allProps[i]->getName() << std::endl;
 			}
 		}
 	}

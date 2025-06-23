@@ -1,4 +1,5 @@
 #include "SelectPropertyCommand.h"
+#include <iostream>
 
 SelectPropertyCommand::SelectPropertyCommand(Player& player,
     Vector<Property*>& sourceList,
@@ -10,15 +11,16 @@ SelectPropertyCommand::SelectPropertyCommand(Player& player,
 
 void SelectPropertyCommand::execute() {
     if (sourceList.isEmpty()) {
+        std::cout << Red << "No properties available to select." << Reset << std::endl;
         return;
     }
 
-    std::cout << "Select a property:\n";
+    std::cout << Cyan << "Select a property:" << Reset << std::endl;
     for (size_t i = 0; i < sourceList.getSize(); i++) {
-        std::cout << i + 1 << ". " << sourceList[i]->getName()
-            << " (" << colorToString(sourceList[i]->getColor()) << ")\n";
+        std::cout << Yellow << i + 1 << ". " << sourceList[i]->getName() << Reset
+            << " (" << colorToString(sourceList[i]->getColor()) << ")" << std::endl;
     }
-    std::cout << "0. Cancel\n"
+    std::cout << Yellow << "0. Cancel" << Reset << std::endl
         << "Enter choice (0-" << sourceList.getSize() << "): ";
 
     size_t choice;
@@ -30,6 +32,10 @@ void SelectPropertyCommand::execute() {
         sourceList.remove(originalIndex);
         targetList.push_back(selectedProperty);
         wasExecuted = true;
+        std::cout << Green << "Property selected: " << selectedProperty->getName() << Reset << std::endl;
+    }
+    else if (choice != 0) {
+        std::cout << Red << "Invalid choice." << Reset << std::endl;
     }
 }
 
@@ -47,6 +53,7 @@ void SelectPropertyCommand::undo() {
             sourceList.insert(selectedProperty, originalIndex);
         }
         wasExecuted = false;
+        std::cout << Yellow << "Property selection undone." << Reset << std::endl;
     }
 }
 
