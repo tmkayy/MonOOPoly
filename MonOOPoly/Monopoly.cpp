@@ -24,8 +24,10 @@
 #include "SaveGameCommand.h"
 
 bool Monopoly::executeCommand(GameCommand* command) {
-	if (!command)
+	if (!command) {
+		showMessage(MyString(Red) + "Error: Null command." + MyString(Reset));
 		return false;
+	}
 	command->execute();
 	commandHistory.push_back(command);
 	return true;
@@ -302,6 +304,10 @@ void Monopoly::handleCurrentField() {
 
 
 void Monopoly::handlePropertyLanding(Property* property) {
+	if (!property) {
+		showMessage(MyString(Red) + "Error: Null property on field." + MyString(Reset));
+		return;
+	}
 	std::cout << "Landed on: " << property->getName()
 		<< " (" << colorToString(property->getColor()) << ")" << std::endl;
 
@@ -450,6 +456,10 @@ void Monopoly::handleTradeOptions() {
 
 
 void Monopoly::displayTrade(const Trade* trade) {
+	if (!trade) {
+		showMessage(MyString(Red) + "Error: Null trade." + MyString(Reset));
+		return;
+	}
 	std::cout << Yellow << "From: " << trade->getProposer()->tokenToString()
 		<< " | Offer: " << Green << "$" << trade->getProposerMoney() << Yellow;
 	if (!trade->getProposerProperties().isEmpty()) {

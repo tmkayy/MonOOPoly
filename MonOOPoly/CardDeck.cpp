@@ -89,6 +89,10 @@ Card* CardDeck::drawCard() {
 }
 
 void CardDeck::returnCard(Card* card) {
+	if (!card) {
+		std::cout << Red << "Cannot return a null card." << Reset << std::endl;
+		return;
+	}
 	if (card) {
 		cards.push(card);
 	}

@@ -3,7 +3,7 @@
 #include "MyString.h"
 #include "Bank.h"
 
-
+class Player;
 class SpecialField : public Field {
 public:
     enum class Type {
@@ -27,6 +27,6 @@ public:
     const MyString& getName() const;
     double getValue() const;
 
-    void onLand(class Player& player);
-    void onPass(class Player& player);
+    void onLand(Player& player);
+    void onPass(Player& player);
 };

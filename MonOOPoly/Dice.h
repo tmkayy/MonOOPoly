@@ -4,7 +4,7 @@
 
 class Dice {
 public:
-    Dice() { std::srand(std::time(nullptr)); }
+    Dice();
 
     int roll() const;
 };
