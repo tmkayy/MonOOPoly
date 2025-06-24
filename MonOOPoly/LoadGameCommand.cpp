@@ -27,12 +27,16 @@ void LoadGameCommand::loadPlayers(Vector<Player*>& loadedPlayers)
 		double money;
 		size_t id, turnsInJail, pairsThrown;
 		bool imprisoned;
+		bool bankrupt;
+		size_t turnsBankrupt;
 		playersIn.read(reinterpret_cast<char*>(&username), sizeof(username));
 		playersIn.read(reinterpret_cast<char*>(&money), sizeof(money));
 		playersIn.read(reinterpret_cast<char*>(&id), sizeof(id));
 		playersIn.read(reinterpret_cast<char*>(&turnsInJail), sizeof(turnsInJail));
 		playersIn.read(reinterpret_cast<char*>(&pairsThrown), sizeof(pairsThrown));
 		playersIn.read(reinterpret_cast<char*>(&imprisoned), sizeof(imprisoned));
+		playersIn.read(reinterpret_cast<char*>(&turnsBankrupt), sizeof(turnsBankrupt));
+
 		std::cout << "[LoadGame] Player " << i << ": username=" << username
 			<< ", money=" << money << ", id=" << id
 			<< ", turnsInJail=" << turnsInJail
@@ -42,6 +46,7 @@ void LoadGameCommand::loadPlayers(Vector<Player*>& loadedPlayers)
 		player->setTurnsInJail(turnsInJail);
 		player->setPairsThrown(pairsThrown);
 		player->setImprisoned(imprisoned);
+		player->setTurnsBankrupt(turnsBankrupt);
 		loadedPlayers.push_back(player);
 	}
 	Vector<Player*>& players = game->getPlayers();
@@ -100,6 +105,9 @@ void LoadGameCommand::loadProperties(const Vector<Player*>& loadedPlayers, Vecto
 			std::cout << "[LoadGame]     Mortgage " << m << ": type=" << mortgageType << std::endl;
 			if (mortgageType == 0) prop->getMortgages().push_back(new Cottage());
 			else if (mortgageType == 1) prop->getMortgages().push_back(new Castle());
+		}
+		if (prop->getOwner() != nullptr) {
+			prop->getOwner()->incrementPropertyCount(prop->getColor());
 		}
 		loadedProps.push_back(prop);
 	}

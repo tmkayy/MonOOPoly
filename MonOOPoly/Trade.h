@@ -11,8 +11,8 @@ class Trade {
     Player* receiver;
     Vector<Property*> proposerProperties;
     Vector<Property*> receiverProperties;
-    int proposerMoney;
-    int receiverMoney;
+    double proposerMoney;
+    double receiverMoney;
     bool isAccepted;
 
     void execute();
@@ -23,16 +23,16 @@ public:
     void addProposerProperty(Property* property);
     void addReceiverProperty(Property* property);
 
-    void setProposerMoney(int amount);
-    void setReceiverMoney(int amount);
+    void setProposerMoney(double amount);
+    void setReceiverMoney(double amount);
 
     void accept();
     void reject();
 
     const Vector<Property*>& getProposerProperties() const;
     const Vector<Property*>& getReceiverProperties() const;
-    int getProposerMoney() const;
-    int getReceiverMoney() const;
+    double getProposerMoney() const;
+    double getReceiverMoney() const;
     bool getIsAccepted() const;
     Player* getProposer() const;
     Player* getReceiver() const;

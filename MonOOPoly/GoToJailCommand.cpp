@@ -1,6 +1,5 @@
 #include "GoToJailCommand.h"
 #include "Jail.h"
-#include <cassert>
 
 GoToJailCommand::GoToJailCommand(Player& player)
     : player(player), wasInJail(player.isImprisoned()) {

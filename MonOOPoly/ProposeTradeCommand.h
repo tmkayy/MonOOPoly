@@ -9,15 +9,15 @@ class ProposeTradeCommand : public GameCommand {
     Player& receiver;
     Vector<Property*> propertiesOffered;
     Vector<Property*> propertiesRequested;
-    int moneyOffered;
-    int moneyRequested;
+    double moneyOffered;
+    double moneyRequested;
     Trade* createdTrade = nullptr;
 
 public:
     ProposeTradeCommand(Player& proposer, Player& receiver,
         const Vector<Property*>& propertiesOffered,
         const Vector<Property*>& propertiesRequested,
-        int moneyOffered, int moneyRequested);
+        double moneyOffered, double moneyRequested);
     ~ProposeTradeCommand();
 
     void execute() override;

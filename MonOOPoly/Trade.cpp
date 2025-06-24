@@ -18,18 +18,18 @@ void Trade::addProposerProperty(Property* property) {
 }
 
 void Trade::addReceiverProperty(Property* property) {
-	if(!property || property->getOwner() != receiver) {
+	if (!property || property->getOwner() != receiver) {
 		std::cout << Red << "Invalid property for receiver: " << (property ? property->getName() : "null") << Reset << std::endl;
 		return;
 	}
 	receiverProperties.push_back(property);
 }
 
-void Trade::setProposerMoney(int amount) {
+void Trade::setProposerMoney(double amount) {
 	proposerMoney = amount;
 }
 
-void Trade::setReceiverMoney(int amount) {
+void Trade::setReceiverMoney(double amount) {
 	receiverMoney = amount;
 }
 
@@ -47,6 +47,7 @@ void Trade::execute() {
 
 	if (!isValid()) {
 		reject();
+		std::cout << Red << "Invalid trade attempt detected. Trade has been rejected." << Reset << std::endl;
 		return;
 	}
 
@@ -85,7 +86,6 @@ void Trade::execute() {
 }
 
 void Trade::checkMonopolyChange(PropertyColor color, Player* oldOwner, Player* newOwner) {
-	if (!oldOwner || !newOwner) return;
 	bool wasMonopoly = oldOwner->hasMonopoly(color);
 	bool isNowMonopoly = newOwner->hasMonopoly(color);
 
@@ -129,11 +129,11 @@ const Vector<Property*>& Trade::getReceiverProperties() const {
 	return receiverProperties;
 }
 
-int Trade::getProposerMoney() const {
+double Trade::getProposerMoney() const {
 	return proposerMoney;
 }
 
-int Trade::getReceiverMoney() const {
+double Trade::getReceiverMoney() const {
 	return receiverMoney;
 }
 

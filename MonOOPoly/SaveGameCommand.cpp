@@ -24,12 +24,15 @@ void SaveGameCommand::savePlayers()
         size_t turnsInJail = player->getTurnsInJail();
         size_t pairsThrown = player->getPairsThrown();
         bool imprisoned = player->isImprisoned();
+        size_t turnsBankrupt = player->getTurnsBankrupt();
+
         playersOut.write(reinterpret_cast<const char*>(&usernameValue), sizeof(usernameValue));
         playersOut.write(reinterpret_cast<const char*>(&money), sizeof(money));
         playersOut.write(reinterpret_cast<const char*>(&id), sizeof(id));
         playersOut.write(reinterpret_cast<const char*>(&turnsInJail), sizeof(turnsInJail));
         playersOut.write(reinterpret_cast<const char*>(&pairsThrown), sizeof(pairsThrown));
         playersOut.write(reinterpret_cast<const char*>(&imprisoned), sizeof(imprisoned));
+        playersOut.write(reinterpret_cast<const char*>(&turnsBankrupt), sizeof(turnsBankrupt));
     }
     size_t currentPlayerIndex = game->getCurrentPlayerIndex();
     playersOut.write(reinterpret_cast<const char*>(&currentPlayerIndex), sizeof(currentPlayerIndex));

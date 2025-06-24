@@ -99,15 +99,15 @@ void Monopoly::free() {
 }
 
 void Monopoly::addPlayerWithTokenSelection() {
-	std::cout << Cyan << "Player " << (players.getSize() + 1) << " - Select token (1-8):" << Reset << std::endl
+	std::cout << Cyan << "Player " << (players.getSize() + 1) << " - Select token (1-7):" << Reset << std::endl
 		<< "1. RaceCar" << std::endl << "2. Thimble" << std::endl << "3. ScottishTerrier" << std::endl << "4. SackOfMoney" << std::endl
-		<< "5. Cat" << std::endl << "6. Penguin" << std::endl << "7. RubberDuck" << std::endl << "8. Unknown" << std::endl;
+		<< "5. Cat" << std::endl << "6. Penguin" << std::endl << "7. RubberDuck" << std::endl;
 
 	int tokenChoice;
 	while (true) {
 		std::cin >> tokenChoice;
-		if (tokenChoice < 1 || tokenChoice > 8) {
-			std::cout << Red << "Invalid choice. Select 1-8: " << Reset;
+		if (tokenChoice < 1 || tokenChoice > 7) {
+			std::cout << Red << "Invalid choice. Select 1-7: " << Reset;
 			continue;
 		}
 
@@ -140,7 +140,7 @@ bool Monopoly::isGameOver() const {
 	return true;
 }
 
-void Monopoly::announceWinner() const {
+void Monopoly::announceWinner() {
 	for (size_t i = 0; i < players.getSize(); i++) {
 		if (!players[i]->isBankrupt()) {
 			std::cout << Green << std::endl << "=== GAME OVER ===" << Reset << std::endl;
@@ -218,11 +218,12 @@ void Monopoly::nextTurn() {
 	}
 
 	// building/trading phase if not bankrupt
-	if (!currentPlayer->isBankrupt()) {
+	if (!currentPlayer->isBankrupt() && !currentPlayer->isImprisoned()) {
 		std::cout << Cyan << currentPlayer->tokenToString() << "'s turn. " << Green << currentPlayer->getMoney() << "$" << Reset << std::endl;
 		handleMovement();
-		handleCurrentField();
-		handlePlayerOptions();
+		if (!currentPlayer->isImprisoned()&& !currentPlayer->isBankrupt()) {
+			handlePlayerOptions();
+		}
 	}
 
 	advanceToNextPlayer();
@@ -250,6 +251,8 @@ void Monopoly::handleJailTurn() {
 void Monopoly::handleMovement() {
 	size_t previousPosition = currentPlayer->getId();
 	executeCommand(new MovePlayerCommand(*currentPlayer, board, d1, d2));
+	if (currentPlayer->isImprisoned())
+		return;
 
 	std::cout << Magenta << "Landed on field: " << currentPlayer->getId() << Reset << std::endl;
 	// handle passing Go
@@ -515,8 +518,10 @@ void Monopoly::handlePendingTrades() {
 		std::cin >> action;
 		if (action == 1) {
 			executeCommand(new AcceptTradeCommand(*selectedTrade));
+			if (selectedTrade->isValid()) {
+				showMessage(MyString(Green) + "Trade accepted." + MyString(Reset));
+			}
 			pending.remove(choice - 1);
-			showMessage(MyString(Green) + "Trade accepted." + MyString(Reset));
 		}
 		else if (action == 2) {
 			executeCommand(new RejectTradeCommand(*selectedTrade));
@@ -559,19 +564,29 @@ void Monopoly::handleSellProperty() {
 void Monopoly::advanceToNextPlayer() {
 	if (players.isEmpty()) return;
 
+	size_t originalIndex = currentPlayerIndex;
+	bool allBankrupt = true;
+
 	do {
 		currentPlayerIndex = (currentPlayerIndex + 1) % players.getSize();
 		currentPlayer = players[currentPlayerIndex];
-	} while (currentPlayer->isBankrupt() && currentPlayerIndex != 0);
+		if (currentPlayerIndex == originalIndex) {
+			break;
+		}
 
-	//check if all players are bankrupt
-	if (currentPlayer->isBankrupt()) {
+		if (!currentPlayer->isBankrupt()) {
+			allBankrupt = false;
+			break;
+		}
+	} while (true);
+
+	if (allBankrupt) {
 		endGame();
 	}
 }
 
 int Monopoly::showJailOptions() {
-	std::cout << std::endl << Cyan << currentPlayer->tokenToString() << " is in jail. Options:" << std::endl << Yellow
+	std::cout << std::endl << Cyan << currentPlayer->tokenToString() << " is in jail (" << Green << "$" << currentPlayer->getMoney() << Cyan << "). Options:" << std::endl << Yellow
 		<< "1. Roll for doubles (cost: " << maxTurnsJail << " turns max)" << std::endl
 		<< "2. Pay " << Green << "$" << bailCost << Yellow << " fine" << std::endl << Reset
 		<< "Enter choice (1-2): ";
@@ -721,7 +736,7 @@ void Monopoly::handleTradeMoneyOptions() {
 	case 1: {
 		std::cout << "Enter amount to offer (current money: " << Green << "$"
 			<< currentPlayer->getMoney() << Reset << "): ";
-		int amount;
+		double amount;
 		std::cin >> amount;
 		if (amount >= 0 && amount <= currentPlayer->getMoney()) {
 			moneyOffered = amount;
@@ -733,8 +748,8 @@ void Monopoly::handleTradeMoneyOptions() {
 	}
 	case 2: {
 		std::cout << "Enter amount to request (partner has: " << Green << "$"
-			<< currentPlayer->getMoney() << Reset << "): ";
-		int amount;
+			<< tradePartner->getMoney() << Reset << "): ";
+		double amount;
 		std::cin >> amount;
 		if (amount >= 0) {
 			moneyRequested = amount;
@@ -817,11 +832,11 @@ bool Monopoly::validateTrade(const Vector<Property*>& offer,
 void Monopoly::initializePlayers()
 {
 	int numPlayers;
-	std::cout << "Enter number of players (2-8): ";
+	std::cout << "Enter number of players (2-6): ";
 	std::cin >> numPlayers;
 
-	while (numPlayers < 2 || numPlayers > 8) {
-		showMessage(MyString(Red) + "Invalid number. Please enter between 2 and 8: " + MyString(Reset));
+	while (numPlayers < 2 || numPlayers > 6) {
+		showMessage(MyString(Red) + "Invalid number. Please enter between 2 and 6: " + MyString(Reset));
 		std::cin >> numPlayers;
 	}
 

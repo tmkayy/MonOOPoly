@@ -24,6 +24,10 @@ const short maxTokens = 7;
 const double cottageRent = 1.15;
 const double castleRent = 1.50;
 
+const short maxPlayers = 6;
+
+const short incomeTax = 200;
+
 const short cardCount = 48;
 
 const short startMoney = 1500;

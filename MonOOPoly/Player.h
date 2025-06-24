@@ -15,6 +15,7 @@ class Player
 	size_t id;
 	size_t turnsInJail = 0;
 	size_t pairsThrown = 0;
+	size_t turnsBankrupt = 0;
 	bool imprisoned;
 	Vector<PropertyColor> monopolies;
 	Vector<Trade*> pendingTrades;
@@ -51,6 +52,8 @@ public:
 	size_t getPairsThrown() const;
 	bool isImprisoned() const;
 	bool isBankrupt() const;
+	size_t getTurnsBankrupt() const;
+	void setTurnsBankrupt(size_t turns);
 
 	bool buyProperty(Property& property);
 	bool sellProperty(Property& property);//trade

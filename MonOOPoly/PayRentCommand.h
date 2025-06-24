@@ -8,6 +8,7 @@ class PayRentCommand : public GameCommand {
     Player& receiver;
     Property& property;
     double amountPaid;
+	bool wasPaid;
 
 public:
     PayRentCommand(Player& payer, Property& property);

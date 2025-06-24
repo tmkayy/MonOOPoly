@@ -7,7 +7,7 @@ ProposeTradeCommand::ProposeTradeCommand(
 	Player& proposer,
 	Player& receiver,
 	const Vector<Property*>& propertiesOffered,
-	const Vector<Property*>& propertiesRequested, int moneyOffered, int moneyRequested)
+	const Vector<Property*>& propertiesRequested, double moneyOffered, double moneyRequested)
 	: proposer(proposer), receiver(receiver),
 	propertiesOffered(propertiesOffered), propertiesRequested(propertiesRequested), moneyOffered(moneyOffered), moneyRequested(moneyRequested), createdTrade(nullptr) {
 }

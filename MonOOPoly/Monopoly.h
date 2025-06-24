@@ -21,8 +21,8 @@ class Monopoly
 	Player* currentPlayer = nullptr;
 
 	//for trade logic
-	int moneyOffered;
-	int moneyRequested;
+	double moneyOffered;
+	double moneyRequested;
 	Player* tradePartner;
 
 	void copyFrom(const Monopoly& other);
@@ -46,7 +46,7 @@ public:
 	void nextTurn();
 
 	bool isGameOver() const;
-	void announceWinner() const;
+	void announceWinner();
 
 	bool executeCommand(GameCommand* command);
 	void undoLastCommand();

@@ -1,7 +1,4 @@
 ﻿  AddPlayerCommand.cpp
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Dice.h(7,34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  (compiling source file 'AddPlayerCommand.cpp')
-  
   Board.cpp
 C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(104,36): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
   (compiling source file 'Board.cpp')
@@ -15,13 +12,8 @@ C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(104,36): warning C4267: 'a
               see the first reference to 'Vector<Field *>::Vector' in 'Board::Board'
   
   CardCommands.cpp
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Dice.h(7,34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  (compiling source file 'CardCommands.cpp')
-  
   LoadGameCommand.cpp
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Dice.h(7,34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  (compiling source file 'LoadGameCommand.cpp')
-  
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\LoadGameCommand.cpp(30,8): warning C4101: 'bankrupt': unreferenced local variable
 C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(104,36): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
   (compiling source file 'LoadGameCommand.cpp')
       C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(104,36):
@@ -30,7 +22,7 @@ C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(104,36): warning C4267: 'a
           see reference to class template instantiation 'Vector<Property *>' being compiled
           C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(99,28):
           while compiling class template member function 'Vector<Property *>::Vector(void)'
-              C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\LoadGameCommand.cpp(225,22):
+              C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\LoadGameCommand.cpp(233,22):
               see the first reference to 'Vector<Property *>::Vector' in 'LoadGameCommand::loadPendingTrades'
           C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(102,42):
           while compiling class template member function 'Vector<Property *>::Vector(size_t)'
@@ -43,15 +35,12 @@ C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Stack.hpp(66,36): warning C4267: 'arg
           see reference to class template instantiation 'Stack<Card *>' being compiled
           C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Stack.hpp(59,26):
           while compiling class template member function 'Stack<Card *>::Stack(void)'
-              C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\LoadGameCommand.cpp(173,15):
+              C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\LoadGameCommand.cpp(181,15):
               see the first reference to 'Stack<Card *>::Stack' in 'LoadGameCommand::loadDeck'
           C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Stack.hpp(64,34):
           while compiling class template member function 'Stack<Card *>::Stack(size_t)'
   
   Monopoly.cpp
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Dice.h(7,34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  (compiling source file 'Monopoly.cpp')
-  
 C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(104,36): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
   (compiling source file 'Monopoly.cpp')
       C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(104,36):
@@ -60,47 +49,27 @@ C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(104,36): warning C4267: 'a
           see reference to class template instantiation 'Vector<Property *>' being compiled
           C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(128,1):
           while compiling class template member function 'Vector<Property *>::Vector(Vector<Property *> &&) noexcept'
-              C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(625,2):
+              C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(650,2):
               see the first reference to 'Vector<Property *>::Vector' in 'Monopoly::getPlayerProperties'
           C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(102,42):
           while compiling class template member function 'Vector<Property *>::Vector(size_t)'
               C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(99,36):
               see the first reference to 'Vector<Property *>::Vector' in 'Vector<Property *>::Vector'
-              C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(391,20):
+              C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Monopoly.cpp(400,20):
               see the first reference to 'Vector<Property *>::Vector' in 'Monopoly::handleTradeOptions'
   
   MovePlayerCommand.cpp
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Dice.h(7,34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  (compiling source file 'MovePlayerCommand.cpp')
-  
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MovePlayerCommand.cpp(5,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MovePlayerCommand.cpp(12,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  MovePositionCard.cpp
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MovePositionCard.cpp(16,41): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MovePositionCard.cpp(25,41): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MovePlayerCommand.cpp(7,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\MovePlayerCommand.cpp(36,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   PayJailFineCommand.cpp
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Dice.h(7,34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  (compiling source file 'PayJailFineCommand.cpp')
-  
   PayRentCommand.cpp
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Dice.h(7,34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  (compiling source file 'PayRentCommand.cpp')
-  
   PayTaxCommand.cpp
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Dice.h(7,34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  (compiling source file 'PayTaxCommand.cpp')
-  
   Player.cpp
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Dice.h(7,34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  (compiling source file 'Player.cpp')
-  
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Player.cpp(221,17): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Player.cpp(221,3): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(104,36): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
   (compiling source file 'Player.cpp')
       C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(104,36):
       the template instantiation context (the oldest one first) is
-          C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Player.h(19,24):
+          C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Player.h(20,24):
           see reference to class template instantiation 'Vector<PropertyColor>' being compiled
           C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(99,28):
           while compiling class template member function 'Vector<PropertyColor>::Vector(void)'
@@ -109,29 +78,25 @@ C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(104,36): warning C4267: 'a
           C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(102,42):
           while compiling class template member function 'Vector<PropertyColor>::Vector(size_t)'
   
-  Property.cpp
+  SaveGameCommand.cpp
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\SaveGameCommand.cpp(189,31): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\SaveGameCommand.cpp(190,31): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Source.cpp
+  Trade.cpp
 C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(104,36): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-  (compiling source file 'Property.cpp')
+  (compiling source file 'Trade.cpp')
       C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(104,36):
       the template instantiation context (the oldest one first) is
-          C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.h(24,23):
-          see reference to class template instantiation 'Vector<Mortgage *>' being compiled
+          C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Trade.h(12,23):
+          see reference to class template instantiation 'Vector<Property *>' being compiled
           C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(99,28):
-          while compiling class template member function 'Vector<Mortgage *>::Vector(void)'
-              C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Property.cpp(60,44):
-              see the first reference to 'Vector<Mortgage *>::Vector' in 'Property::Property'
+          while compiling class template member function 'Vector<Property *>::Vector(void)'
+              C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Trade.cpp(9,20):
+              see the first reference to 'Vector<Property *>::Vector' in 'Trade::Trade'
           C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Vector.hpp(102,42):
-          while compiling class template member function 'Vector<Mortgage *>::Vector(size_t)'
+          while compiling class template member function 'Vector<Property *>::Vector(size_t)'
   
-  SaveGameCommand.cpp
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Dice.h(7,34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  (compiling source file 'SaveGameCommand.cpp')
-  
-  Source.cpp
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Dice.h(7,34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  (compiling source file 'Source.cpp')
-  
-  SpecialField.cpp
   Generating Code...
-C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Board.cpp(203,1): warning C4172: returning address of local variable or temporary : result
+C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\Board.cpp(204,1): warning C4172: returning address of local variable or temporary : result
+  LINK : C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\x64\Debug\MonOOPoly.exe not found or not built by the last incremental link; performing full link
   MonOOPoly.vcxproj -> C:\Users\storm\Desktop\MonOOPoly\MonOOPoly\x64\Debug\MonOOPoly.exe

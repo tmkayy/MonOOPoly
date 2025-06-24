@@ -157,6 +157,16 @@ bool Player::isBankrupt() const
 	return money == 0;
 }
 
+size_t Player::getTurnsBankrupt() const
+{
+	return turnsBankrupt;
+}
+
+void Player::setTurnsBankrupt(size_t turns)
+{
+	turnsBankrupt = turns;
+}
+
 bool Player::buyProperty(Property& property) {
 	if (property.getOwner() != nullptr) {
 		std::cout << tokenToString() << " cannot buy "
@@ -297,20 +307,23 @@ MyString Player::tokenToString() const
 }
 
 bool Player::hasMonopoly(PropertyColor color) const {
-	if (color == PropertyColor::Railroad || color == PropertyColor::Utility) {
-		const size_t required = (color == PropertyColor::Railroad) ? 4 : 2;
-		return propertyCounts[(size_t)(color)] == required;
+	size_t required = 0;
+
+	switch (color) {
+	case PropertyColor::Brown:
+	case PropertyColor::Blue:
+		required = 2;
+		break;
+	case PropertyColor::Railroad:
+		required = 4;
+		break;
+	case PropertyColor::Utility:
+		required = 2;
+		break;
+	default:
+		required = 3;
+		break;
 	}
 
-	//standard property groups
-	size_t required = [color]() {
-		switch (color) {
-		case PropertyColor::Brown:
-		case PropertyColor::Blue: return 2;
-		default: return 3;
-		}
-		}();
-
 	return propertyCounts[(size_t)(color)] == required;
-	return true;
 }

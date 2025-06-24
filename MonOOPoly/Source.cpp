@@ -39,6 +39,7 @@ int main() {
             game.nextTurn();
         }
         game.announceWinner();
+		exit(0);
     }
     catch (const std::exception& ex) {
         std::cerr << "An error occurred: " << ex.what() << std::endl;
