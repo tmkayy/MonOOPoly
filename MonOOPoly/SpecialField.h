@@ -26,7 +26,4 @@ public:
     Type getType() const;
     const MyString& getName() const;
     double getValue() const;
-
-    void onLand(Player& player);
-    void onPass(Player& player);
 };

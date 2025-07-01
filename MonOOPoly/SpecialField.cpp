@@ -22,31 +22,3 @@ const MyString& SpecialField::getName() const {
 double SpecialField::getValue() const {
     return value;
 }
-
-void SpecialField::onLand(Player& player) {
-    switch (fieldType) {
-    case Type::GO:
-        //nothing happens unless you pass
-        break;
-    case Type::FREE_PARKING:
-        //nothing ever happens...
-        break;
-    case Type::GO_TO_JAIL:
-        player.setImprisoned(true);
-        player.setTurnsInJail(0);
-        //move to jail in the monopoly class
-        break;
-    case Type::INCOME_TAX:
-        Bank::subtractMoney(player, value);
-        break;
-    case Type::LUXURY_TAX:
-        Bank::subtractMoney(player, value);
-        break;
-    }
-}
-
-void SpecialField::onPass(Player& player) {
-    if (fieldType == Type::GO) {
-        Bank::addMoney(player, value > 0 ? value : goMoney);
-    }
-}

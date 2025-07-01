@@ -48,12 +48,6 @@ void Property::moveFrom(Property&& other) noexcept {
 	other.mortgages.clear();
 }
 
-void Property::onLand(Player& player)
-{
-	if (owner != nullptr && owner != &player) {
-		Bank::transferMoney(player, *owner, priceForRent);
-	}
-}
 
 Property::Property()
 	: name(""), priceToBuy(0), priceForCottage(0), priceForCastle(0),
